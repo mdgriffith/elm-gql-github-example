@@ -1,0 +1,2130 @@
+module GitHub.Input exposing (AbortQueuedMigrationsInput, AbortQueuedMigrationsInput_, AcceptEnterpriseAdministratorInvitationInput, AcceptEnterpriseAdministratorInvitationInput_, AcceptTopicSuggestionInput, AcceptTopicSuggestionInput_, AddAssigneesToAssignableInput, AddAssigneesToAssignableInput_, AddCommentInput, AddCommentInput_, AddDiscussionCommentInput, AddDiscussionCommentInput_, AddDiscussionPollVoteInput, AddDiscussionPollVoteInput_, AddEnterpriseSupportEntitlementInput, AddEnterpriseSupportEntitlementInput_, AddLabelsToLabelableInput, AddLabelsToLabelableInput_, AddProjectCardInput, AddProjectCardInput_, AddProjectColumnInput, AddProjectColumnInput_, AddProjectDraftIssueInput, AddProjectDraftIssueInput_, AddProjectNextItemInput, AddProjectNextItemInput_, AddProjectV2DraftIssueInput, AddProjectV2DraftIssueInput_, AddProjectV2ItemByIdInput, AddProjectV2ItemByIdInput_, AddPullRequestReviewCommentInput, AddPullRequestReviewCommentInput_, AddPullRequestReviewInput, AddPullRequestReviewInput_, AddPullRequestReviewThreadInput, AddPullRequestReviewThreadInput_, AddReactionInput, AddReactionInput_, AddStarInput, AddStarInput_, AddUpvoteInput, AddUpvoteInput_, AddVerifiableDomainInput, AddVerifiableDomainInput_, ApproveDeploymentsInput, ApproveDeploymentsInput_, ApproveVerifiableDomainInput, ApproveVerifiableDomainInput_, ArchiveRepositoryInput, ArchiveRepositoryInput_, AuditLogOrder, AuditLogOrder_, CancelEnterpriseAdminInvitationInput, CancelEnterpriseAdminInvitationInput_, CancelSponsorshipInput, CancelSponsorshipInput_, ChangeUserStatusInput, ChangeUserStatusInput_, CheckAnnotationData, CheckAnnotationData_, CheckAnnotationRange, CheckAnnotationRange_, CheckRunAction, CheckRunAction_, CheckRunFilter, CheckRunFilter_, CheckRunOutput, CheckRunOutputImage, CheckRunOutputImage_, CheckRunOutput_, CheckSuiteAutoTriggerPreference, CheckSuiteAutoTriggerPreference_, CheckSuiteFilter, CheckSuiteFilter_, ClearLabelsFromLabelableInput, ClearLabelsFromLabelableInput_, ClearProjectV2ItemFieldValueInput, ClearProjectV2ItemFieldValueInput_, CloneProjectInput, CloneProjectInput_, CloneTemplateRepositoryInput, CloneTemplateRepositoryInput_, CloseIssueInput, CloseIssueInput_, ClosePullRequestInput, ClosePullRequestInput_, CommitAuthor, CommitAuthor_, CommitContributionOrder, CommitContributionOrder_, CommitMessage, CommitMessage_, CommittableBranch, CommittableBranch_, ContributionOrder, ContributionOrder_, ConvertProjectCardNoteToIssueInput, ConvertProjectCardNoteToIssueInput_, ConvertPullRequestToDraftInput, ConvertPullRequestToDraftInput_, CreateBranchProtectionRuleInput, CreateBranchProtectionRuleInput_, CreateCheckRunInput, CreateCheckRunInput_, CreateCheckSuiteInput, CreateCheckSuiteInput_, CreateCommitOnBranchInput, CreateCommitOnBranchInput_, CreateDiscussionInput, CreateDiscussionInput_, CreateEnterpriseOrganizationInput, CreateEnterpriseOrganizationInput_, CreateEnvironmentInput, CreateEnvironmentInput_, CreateIpAllowListEntryInput, CreateIpAllowListEntryInput_, CreateIssueInput, CreateIssueInput_, CreateLinkedBranchInput, CreateLinkedBranchInput_, CreateMigrationSourceInput, CreateMigrationSourceInput_, CreateProjectInput, CreateProjectInput_, CreateProjectV2Input, CreateProjectV2Input_, CreatePullRequestInput, CreatePullRequestInput_, CreateRefInput, CreateRefInput_, CreateRepositoryInput, CreateRepositoryInput_, CreateSponsorsTierInput, CreateSponsorsTierInput_, CreateSponsorshipInput, CreateSponsorshipInput_, CreateTeamDiscussionCommentInput, CreateTeamDiscussionCommentInput_, CreateTeamDiscussionInput, CreateTeamDiscussionInput_, DeclineTopicSuggestionInput, DeclineTopicSuggestionInput_, DeleteBranchProtectionRuleInput, DeleteBranchProtectionRuleInput_, DeleteDeploymentInput, DeleteDeploymentInput_, DeleteDiscussionCommentInput, DeleteDiscussionCommentInput_, DeleteDiscussionInput, DeleteDiscussionInput_, DeleteEnvironmentInput, DeleteEnvironmentInput_, DeleteIpAllowListEntryInput, DeleteIpAllowListEntryInput_, DeleteIssueCommentInput, DeleteIssueCommentInput_, DeleteIssueInput, DeleteIssueInput_, DeleteLinkedBranchInput, DeleteLinkedBranchInput_, DeleteProjectCardInput, DeleteProjectCardInput_, DeleteProjectColumnInput, DeleteProjectColumnInput_, DeleteProjectInput, DeleteProjectInput_, DeleteProjectNextItemInput, DeleteProjectNextItemInput_, DeleteProjectV2ItemInput, DeleteProjectV2ItemInput_, DeletePullRequestReviewCommentInput, DeletePullRequestReviewCommentInput_, DeletePullRequestReviewInput, DeletePullRequestReviewInput_, DeleteRefInput, DeleteRefInput_, DeleteTeamDiscussionCommentInput, DeleteTeamDiscussionCommentInput_, DeleteTeamDiscussionInput, DeleteTeamDiscussionInput_, DeleteVerifiableDomainInput, DeleteVerifiableDomainInput_, DeploymentOrder, DeploymentOrder_, DisablePullRequestAutoMergeInput, DisablePullRequestAutoMergeInput_, DiscussionOrder, DiscussionOrder_, DiscussionPollOptionOrder, DiscussionPollOptionOrder_, DismissPullRequestReviewInput, DismissPullRequestReviewInput_, DismissRepositoryVulnerabilityAlertInput, DismissRepositoryVulnerabilityAlertInput_, DraftPullRequestReviewComment, DraftPullRequestReviewComment_, DraftPullRequestReviewThread, DraftPullRequestReviewThread_, EnablePullRequestAutoMergeInput, EnablePullRequestAutoMergeInput_, EnterpriseAdministratorInvitationOrder, EnterpriseAdministratorInvitationOrder_, EnterpriseMemberOrder, EnterpriseMemberOrder_, EnterpriseServerInstallationOrder, EnterpriseServerInstallationOrder_, EnterpriseServerUserAccountEmailOrder, EnterpriseServerUserAccountEmailOrder_, EnterpriseServerUserAccountOrder, EnterpriseServerUserAccountOrder_, EnterpriseServerUserAccountsUploadOrder, EnterpriseServerUserAccountsUploadOrder_, FileAddition, FileAddition_, FileChanges, FileChanges_, FileDeletion, FileDeletion_, FollowOrganizationInput, FollowOrganizationInput_, FollowUserInput, FollowUserInput_, GistOrder, GistOrder_, GrantEnterpriseOrganizationsMigratorRoleInput, GrantEnterpriseOrganizationsMigratorRoleInput_, GrantMigratorRoleInput, GrantMigratorRoleInput_, InviteEnterpriseAdminInput, InviteEnterpriseAdminInput_, IpAllowListEntryOrder, IpAllowListEntryOrder_, IssueCommentOrder, IssueCommentOrder_, IssueFilters, IssueFilters_, IssueOrder, IssueOrder_, LabelOrder, LabelOrder_, LanguageOrder, LanguageOrder_, LinkRepositoryToProjectInput, LinkRepositoryToProjectInput_, LockLockableInput, LockLockableInput_, MarkDiscussionCommentAsAnswerInput, MarkDiscussionCommentAsAnswerInput_, MarkFileAsViewedInput, MarkFileAsViewedInput_, MarkPullRequestReadyForReviewInput, MarkPullRequestReadyForReviewInput_, MergeBranchInput, MergeBranchInput_, MergePullRequestInput, MergePullRequestInput_, MilestoneOrder, MilestoneOrder_, MinimizeCommentInput, MinimizeCommentInput_, MoveProjectCardInput, MoveProjectCardInput_, MoveProjectColumnInput, MoveProjectColumnInput_, OrgEnterpriseOwnerOrder, OrgEnterpriseOwnerOrder_, OrganizationOrder, OrganizationOrder_, PackageFileOrder, PackageFileOrder_, PackageOrder, PackageOrder_, PackageVersionOrder, PackageVersionOrder_, PinIssueInput, PinIssueInput_, ProjectOrder, ProjectOrder_, ProjectV2FieldOrder, ProjectV2FieldOrder_, ProjectV2FieldValue, ProjectV2FieldValue_, ProjectV2ItemFieldValueOrder, ProjectV2ItemFieldValueOrder_, ProjectV2ItemOrder, ProjectV2ItemOrder_, ProjectV2Order, ProjectV2Order_, ProjectV2ViewOrder, ProjectV2ViewOrder_, PullRequestOrder, PullRequestOrder_, ReactionOrder, ReactionOrder_, RefOrder, RefOrder_, RegenerateEnterpriseIdentityProviderRecoveryCodesInput, RegenerateEnterpriseIdentityProviderRecoveryCodesInput_, RegenerateVerifiableDomainTokenInput, RegenerateVerifiableDomainTokenInput_, RejectDeploymentsInput, RejectDeploymentsInput_, ReleaseOrder, ReleaseOrder_, RemoveAssigneesFromAssignableInput, RemoveAssigneesFromAssignableInput_, RemoveEnterpriseAdminInput, RemoveEnterpriseAdminInput_, RemoveEnterpriseIdentityProviderInput, RemoveEnterpriseIdentityProviderInput_, RemoveEnterpriseOrganizationInput, RemoveEnterpriseOrganizationInput_, RemoveEnterpriseSupportEntitlementInput, RemoveEnterpriseSupportEntitlementInput_, RemoveLabelsFromLabelableInput, RemoveLabelsFromLabelableInput_, RemoveOutsideCollaboratorInput, RemoveOutsideCollaboratorInput_, RemoveReactionInput, RemoveReactionInput_, RemoveStarInput, RemoveStarInput_, RemoveUpvoteInput, RemoveUpvoteInput_, ReopenIssueInput, ReopenIssueInput_, ReopenPullRequestInput, ReopenPullRequestInput_, RepositoryInvitationOrder, RepositoryInvitationOrder_, RepositoryMigrationOrder, RepositoryMigrationOrder_, RepositoryOrder, RepositoryOrder_, RequestReviewsInput, RequestReviewsInput_, RequiredStatusCheckInput, RequiredStatusCheckInput_, RerequestCheckSuiteInput, RerequestCheckSuiteInput_, ResolveReviewThreadInput, ResolveReviewThreadInput_, RevokeEnterpriseOrganizationsMigratorRoleInput, RevokeEnterpriseOrganizationsMigratorRoleInput_, RevokeMigratorRoleInput, RevokeMigratorRoleInput_, SavedReplyOrder, SavedReplyOrder_, SecurityAdvisoryIdentifierFilter, SecurityAdvisoryIdentifierFilter_, SecurityAdvisoryOrder, SecurityAdvisoryOrder_, SecurityVulnerabilityOrder, SecurityVulnerabilityOrder_, SetEnterpriseIdentityProviderInput, SetEnterpriseIdentityProviderInput_, SetOrganizationInteractionLimitInput, SetOrganizationInteractionLimitInput_, SetRepositoryInteractionLimitInput, SetRepositoryInteractionLimitInput_, SetUserInteractionLimitInput, SetUserInteractionLimitInput_, SponsorOrder, SponsorOrder_, SponsorableOrder, SponsorableOrder_, SponsorsActivityOrder, SponsorsActivityOrder_, SponsorsTierOrder, SponsorsTierOrder_, SponsorshipNewsletterOrder, SponsorshipNewsletterOrder_, SponsorshipOrder, SponsorshipOrder_, StarOrder, StarOrder_, StartRepositoryMigrationInput, StartRepositoryMigrationInput_, SubmitPullRequestReviewInput, SubmitPullRequestReviewInput_, TeamDiscussionCommentOrder, TeamDiscussionCommentOrder_, TeamDiscussionOrder, TeamDiscussionOrder_, TeamMemberOrder, TeamMemberOrder_, TeamOrder, TeamOrder_, TeamRepositoryOrder, TeamRepositoryOrder_, TransferIssueInput, TransferIssueInput_, UnarchiveRepositoryInput, UnarchiveRepositoryInput_, UnfollowOrganizationInput, UnfollowOrganizationInput_, UnfollowUserInput, UnfollowUserInput_, UnlinkRepositoryFromProjectInput, UnlinkRepositoryFromProjectInput_, UnlockLockableInput, UnlockLockableInput_, UnmarkDiscussionCommentAsAnswerInput, UnmarkDiscussionCommentAsAnswerInput_, UnmarkFileAsViewedInput, UnmarkFileAsViewedInput_, UnmarkIssueAsDuplicateInput, UnmarkIssueAsDuplicateInput_, UnminimizeCommentInput, UnminimizeCommentInput_, UnpinIssueInput, UnpinIssueInput_, UnresolveReviewThreadInput, UnresolveReviewThreadInput_, UpdateBranchProtectionRuleInput, UpdateBranchProtectionRuleInput_, UpdateCheckRunInput, UpdateCheckRunInput_, UpdateCheckSuitePreferencesInput, UpdateCheckSuitePreferencesInput_, UpdateDiscussionCommentInput, UpdateDiscussionCommentInput_, UpdateDiscussionInput, UpdateDiscussionInput_, UpdateEnterpriseAdministratorRoleInput, UpdateEnterpriseAdministratorRoleInput_, UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput, UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput_, UpdateEnterpriseDefaultRepositoryPermissionSettingInput, UpdateEnterpriseDefaultRepositoryPermissionSettingInput_, UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput, UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput_, UpdateEnterpriseMembersCanCreateRepositoriesSettingInput, UpdateEnterpriseMembersCanCreateRepositoriesSettingInput_, UpdateEnterpriseMembersCanDeleteIssuesSettingInput, UpdateEnterpriseMembersCanDeleteIssuesSettingInput_, UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput, UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput_, UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput, UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput_, UpdateEnterpriseMembersCanMakePurchasesSettingInput, UpdateEnterpriseMembersCanMakePurchasesSettingInput_, UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput, UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput_, UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput, UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput_, UpdateEnterpriseOrganizationProjectsSettingInput, UpdateEnterpriseOrganizationProjectsSettingInput_, UpdateEnterpriseOwnerOrganizationRoleInput, UpdateEnterpriseOwnerOrganizationRoleInput_, UpdateEnterpriseProfileInput, UpdateEnterpriseProfileInput_, UpdateEnterpriseRepositoryProjectsSettingInput, UpdateEnterpriseRepositoryProjectsSettingInput_, UpdateEnterpriseTeamDiscussionsSettingInput, UpdateEnterpriseTeamDiscussionsSettingInput_, UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput, UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput_, UpdateEnvironmentInput, UpdateEnvironmentInput_, UpdateIpAllowListEnabledSettingInput, UpdateIpAllowListEnabledSettingInput_, UpdateIpAllowListEntryInput, UpdateIpAllowListEntryInput_, UpdateIpAllowListForInstalledAppsEnabledSettingInput, UpdateIpAllowListForInstalledAppsEnabledSettingInput_, UpdateIssueCommentInput, UpdateIssueCommentInput_, UpdateIssueInput, UpdateIssueInput_, UpdateNotificationRestrictionSettingInput, UpdateNotificationRestrictionSettingInput_, UpdateOrganizationAllowPrivateRepositoryForkingSettingInput, UpdateOrganizationAllowPrivateRepositoryForkingSettingInput_, UpdateOrganizationWebCommitSignoffSettingInput, UpdateOrganizationWebCommitSignoffSettingInput_, UpdateProjectCardInput, UpdateProjectCardInput_, UpdateProjectColumnInput, UpdateProjectColumnInput_, UpdateProjectDraftIssueInput, UpdateProjectDraftIssueInput_, UpdateProjectInput, UpdateProjectInput_, UpdateProjectNextInput, UpdateProjectNextInput_, UpdateProjectNextItemFieldInput, UpdateProjectNextItemFieldInput_, UpdateProjectV2DraftIssueInput, UpdateProjectV2DraftIssueInput_, UpdateProjectV2Input, UpdateProjectV2Input_, UpdateProjectV2ItemFieldValueInput, UpdateProjectV2ItemFieldValueInput_, UpdateProjectV2ItemPositionInput, UpdateProjectV2ItemPositionInput_, UpdatePullRequestBranchInput, UpdatePullRequestBranchInput_, UpdatePullRequestInput, UpdatePullRequestInput_, UpdatePullRequestReviewCommentInput, UpdatePullRequestReviewCommentInput_, UpdatePullRequestReviewInput, UpdatePullRequestReviewInput_, UpdateRefInput, UpdateRefInput_, UpdateRepositoryInput, UpdateRepositoryInput_, UpdateRepositoryWebCommitSignoffSettingInput, UpdateRepositoryWebCommitSignoffSettingInput_, UpdateSponsorshipPreferencesInput, UpdateSponsorshipPreferencesInput_, UpdateSubscriptionInput, UpdateSubscriptionInput_, UpdateTeamDiscussionCommentInput, UpdateTeamDiscussionCommentInput_, UpdateTeamDiscussionInput, UpdateTeamDiscussionInput_, UpdateTeamsRepositoryInput, UpdateTeamsRepositoryInput_, UpdateTopicsInput, UpdateTopicsInput_, UserStatusOrder, UserStatusOrder_, VerifiableDomainOrder, VerifiableDomainOrder_, VerifyVerifiableDomainInput, VerifyVerifiableDomainInput_, WorkflowRunOrder, WorkflowRunOrder_)
+
+{-| 
+@docs WorkflowRunOrder_, WorkflowRunOrder, VerifyVerifiableDomainInput_, VerifyVerifiableDomainInput, VerifiableDomainOrder_, VerifiableDomainOrder, UserStatusOrder_, UserStatusOrder, UpdateTopicsInput_, UpdateTopicsInput, UpdateTeamsRepositoryInput_, UpdateTeamsRepositoryInput, UpdateTeamDiscussionInput_, UpdateTeamDiscussionInput, UpdateTeamDiscussionCommentInput_, UpdateTeamDiscussionCommentInput, UpdateSubscriptionInput_, UpdateSubscriptionInput, UpdateSponsorshipPreferencesInput_, UpdateSponsorshipPreferencesInput, UpdateRepositoryWebCommitSignoffSettingInput_, UpdateRepositoryWebCommitSignoffSettingInput, UpdateRepositoryInput_, UpdateRepositoryInput, UpdateRefInput_, UpdateRefInput, UpdatePullRequestReviewInput_, UpdatePullRequestReviewInput, UpdatePullRequestReviewCommentInput_, UpdatePullRequestReviewCommentInput, UpdatePullRequestInput_, UpdatePullRequestInput, UpdatePullRequestBranchInput_, UpdatePullRequestBranchInput, UpdateProjectV2ItemPositionInput_, UpdateProjectV2ItemPositionInput, UpdateProjectV2ItemFieldValueInput_, UpdateProjectV2ItemFieldValueInput, UpdateProjectV2Input_, UpdateProjectV2Input, UpdateProjectV2DraftIssueInput_, UpdateProjectV2DraftIssueInput, UpdateProjectNextItemFieldInput_, UpdateProjectNextItemFieldInput, UpdateProjectNextInput_, UpdateProjectNextInput, UpdateProjectInput_, UpdateProjectInput, UpdateProjectDraftIssueInput_, UpdateProjectDraftIssueInput, UpdateProjectColumnInput_, UpdateProjectColumnInput, UpdateProjectCardInput_, UpdateProjectCardInput, UpdateOrganizationWebCommitSignoffSettingInput_, UpdateOrganizationWebCommitSignoffSettingInput, UpdateOrganizationAllowPrivateRepositoryForkingSettingInput_, UpdateOrganizationAllowPrivateRepositoryForkingSettingInput, UpdateNotificationRestrictionSettingInput_, UpdateNotificationRestrictionSettingInput, UpdateIssueInput_, UpdateIssueInput, UpdateIssueCommentInput_, UpdateIssueCommentInput, UpdateIpAllowListForInstalledAppsEnabledSettingInput_, UpdateIpAllowListForInstalledAppsEnabledSettingInput, UpdateIpAllowListEntryInput_, UpdateIpAllowListEntryInput, UpdateIpAllowListEnabledSettingInput_, UpdateIpAllowListEnabledSettingInput, UpdateEnvironmentInput_, UpdateEnvironmentInput, UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput_, UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput, UpdateEnterpriseTeamDiscussionsSettingInput_, UpdateEnterpriseTeamDiscussionsSettingInput, UpdateEnterpriseRepositoryProjectsSettingInput_, UpdateEnterpriseRepositoryProjectsSettingInput, UpdateEnterpriseProfileInput_, UpdateEnterpriseProfileInput, UpdateEnterpriseOwnerOrganizationRoleInput_, UpdateEnterpriseOwnerOrganizationRoleInput, UpdateEnterpriseOrganizationProjectsSettingInput_, UpdateEnterpriseOrganizationProjectsSettingInput, UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput_, UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput, UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput_, UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput, UpdateEnterpriseMembersCanMakePurchasesSettingInput_, UpdateEnterpriseMembersCanMakePurchasesSettingInput, UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput_, UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput, UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput_, UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput, UpdateEnterpriseMembersCanDeleteIssuesSettingInput_, UpdateEnterpriseMembersCanDeleteIssuesSettingInput, UpdateEnterpriseMembersCanCreateRepositoriesSettingInput_, UpdateEnterpriseMembersCanCreateRepositoriesSettingInput, UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput_, UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput, UpdateEnterpriseDefaultRepositoryPermissionSettingInput_, UpdateEnterpriseDefaultRepositoryPermissionSettingInput, UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput_, UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput, UpdateEnterpriseAdministratorRoleInput_, UpdateEnterpriseAdministratorRoleInput, UpdateDiscussionInput_, UpdateDiscussionInput, UpdateDiscussionCommentInput_, UpdateDiscussionCommentInput, UpdateCheckSuitePreferencesInput_, UpdateCheckSuitePreferencesInput, UpdateCheckRunInput_, UpdateCheckRunInput, UpdateBranchProtectionRuleInput_, UpdateBranchProtectionRuleInput, UnresolveReviewThreadInput_, UnresolveReviewThreadInput, UnpinIssueInput_, UnpinIssueInput, UnminimizeCommentInput_, UnminimizeCommentInput, UnmarkIssueAsDuplicateInput_, UnmarkIssueAsDuplicateInput, UnmarkFileAsViewedInput_, UnmarkFileAsViewedInput, UnmarkDiscussionCommentAsAnswerInput_, UnmarkDiscussionCommentAsAnswerInput, UnlockLockableInput_, UnlockLockableInput, UnlinkRepositoryFromProjectInput_, UnlinkRepositoryFromProjectInput, UnfollowUserInput_, UnfollowUserInput, UnfollowOrganizationInput_, UnfollowOrganizationInput, UnarchiveRepositoryInput_, UnarchiveRepositoryInput, TransferIssueInput_, TransferIssueInput, TeamRepositoryOrder_, TeamRepositoryOrder, TeamOrder_, TeamOrder, TeamMemberOrder_, TeamMemberOrder, TeamDiscussionOrder_, TeamDiscussionOrder, TeamDiscussionCommentOrder_, TeamDiscussionCommentOrder, SubmitPullRequestReviewInput_, SubmitPullRequestReviewInput, StartRepositoryMigrationInput_, StartRepositoryMigrationInput, StarOrder_, StarOrder, SponsorshipOrder_, SponsorshipOrder, SponsorshipNewsletterOrder_, SponsorshipNewsletterOrder, SponsorsTierOrder_, SponsorsTierOrder, SponsorsActivityOrder_, SponsorsActivityOrder, SponsorableOrder_, SponsorableOrder, SponsorOrder_, SponsorOrder, SetUserInteractionLimitInput_, SetUserInteractionLimitInput, SetRepositoryInteractionLimitInput_, SetRepositoryInteractionLimitInput, SetOrganizationInteractionLimitInput_, SetOrganizationInteractionLimitInput, SetEnterpriseIdentityProviderInput_, SetEnterpriseIdentityProviderInput, SecurityVulnerabilityOrder_, SecurityVulnerabilityOrder, SecurityAdvisoryOrder_, SecurityAdvisoryOrder, SecurityAdvisoryIdentifierFilter_, SecurityAdvisoryIdentifierFilter, SavedReplyOrder_, SavedReplyOrder, RevokeMigratorRoleInput_, RevokeMigratorRoleInput, RevokeEnterpriseOrganizationsMigratorRoleInput_, RevokeEnterpriseOrganizationsMigratorRoleInput, ResolveReviewThreadInput_, ResolveReviewThreadInput, RerequestCheckSuiteInput_, RerequestCheckSuiteInput, RequiredStatusCheckInput_, RequiredStatusCheckInput, RequestReviewsInput_, RequestReviewsInput, RepositoryOrder_, RepositoryOrder, RepositoryMigrationOrder_, RepositoryMigrationOrder, RepositoryInvitationOrder_, RepositoryInvitationOrder, ReopenPullRequestInput_, ReopenPullRequestInput, ReopenIssueInput_, ReopenIssueInput, RemoveUpvoteInput_, RemoveUpvoteInput, RemoveStarInput_, RemoveStarInput, RemoveReactionInput_, RemoveReactionInput, RemoveOutsideCollaboratorInput_, RemoveOutsideCollaboratorInput, RemoveLabelsFromLabelableInput_, RemoveLabelsFromLabelableInput, RemoveEnterpriseSupportEntitlementInput_, RemoveEnterpriseSupportEntitlementInput, RemoveEnterpriseOrganizationInput_, RemoveEnterpriseOrganizationInput, RemoveEnterpriseIdentityProviderInput_, RemoveEnterpriseIdentityProviderInput, RemoveEnterpriseAdminInput_, RemoveEnterpriseAdminInput, RemoveAssigneesFromAssignableInput_, RemoveAssigneesFromAssignableInput, ReleaseOrder_, ReleaseOrder, RejectDeploymentsInput_, RejectDeploymentsInput, RegenerateVerifiableDomainTokenInput_, RegenerateVerifiableDomainTokenInput, RegenerateEnterpriseIdentityProviderRecoveryCodesInput_, RegenerateEnterpriseIdentityProviderRecoveryCodesInput, RefOrder_, RefOrder, ReactionOrder_, ReactionOrder, PullRequestOrder_, PullRequestOrder, ProjectV2ViewOrder_, ProjectV2ViewOrder, ProjectV2Order_, ProjectV2Order, ProjectV2ItemOrder_, ProjectV2ItemOrder, ProjectV2ItemFieldValueOrder_, ProjectV2ItemFieldValueOrder, ProjectV2FieldValue_, ProjectV2FieldValue, ProjectV2FieldOrder_, ProjectV2FieldOrder, ProjectOrder_, ProjectOrder, PinIssueInput_, PinIssueInput, PackageVersionOrder_, PackageVersionOrder, PackageOrder_, PackageOrder, PackageFileOrder_, PackageFileOrder, OrganizationOrder_, OrganizationOrder, OrgEnterpriseOwnerOrder_, OrgEnterpriseOwnerOrder, MoveProjectColumnInput_, MoveProjectColumnInput, MoveProjectCardInput_, MoveProjectCardInput, MinimizeCommentInput_, MinimizeCommentInput, MilestoneOrder_, MilestoneOrder, MergePullRequestInput_, MergePullRequestInput, MergeBranchInput_, MergeBranchInput, MarkPullRequestReadyForReviewInput_, MarkPullRequestReadyForReviewInput, MarkFileAsViewedInput_, MarkFileAsViewedInput, MarkDiscussionCommentAsAnswerInput_, MarkDiscussionCommentAsAnswerInput, LockLockableInput_, LockLockableInput, LinkRepositoryToProjectInput_, LinkRepositoryToProjectInput, LanguageOrder_, LanguageOrder, LabelOrder_, LabelOrder, IssueOrder_, IssueOrder, IssueFilters_, IssueFilters, IssueCommentOrder_, IssueCommentOrder, IpAllowListEntryOrder_, IpAllowListEntryOrder, InviteEnterpriseAdminInput_, InviteEnterpriseAdminInput, GrantMigratorRoleInput_, GrantMigratorRoleInput, GrantEnterpriseOrganizationsMigratorRoleInput_, GrantEnterpriseOrganizationsMigratorRoleInput, GistOrder_, GistOrder, FollowUserInput_, FollowUserInput, FollowOrganizationInput_, FollowOrganizationInput, FileDeletion_, FileDeletion, FileChanges_, FileChanges, FileAddition_, FileAddition, EnterpriseServerUserAccountsUploadOrder_, EnterpriseServerUserAccountsUploadOrder, EnterpriseServerUserAccountOrder_, EnterpriseServerUserAccountOrder, EnterpriseServerUserAccountEmailOrder_, EnterpriseServerUserAccountEmailOrder, EnterpriseServerInstallationOrder_, EnterpriseServerInstallationOrder, EnterpriseMemberOrder_, EnterpriseMemberOrder, EnterpriseAdministratorInvitationOrder_, EnterpriseAdministratorInvitationOrder, EnablePullRequestAutoMergeInput_, EnablePullRequestAutoMergeInput, DraftPullRequestReviewThread_, DraftPullRequestReviewThread, DraftPullRequestReviewComment_, DraftPullRequestReviewComment, DismissRepositoryVulnerabilityAlertInput_, DismissRepositoryVulnerabilityAlertInput, DismissPullRequestReviewInput_, DismissPullRequestReviewInput, DiscussionPollOptionOrder_, DiscussionPollOptionOrder, DiscussionOrder_, DiscussionOrder, DisablePullRequestAutoMergeInput_, DisablePullRequestAutoMergeInput, DeploymentOrder_, DeploymentOrder, DeleteVerifiableDomainInput_, DeleteVerifiableDomainInput, DeleteTeamDiscussionInput_, DeleteTeamDiscussionInput, DeleteTeamDiscussionCommentInput_, DeleteTeamDiscussionCommentInput, DeleteRefInput_, DeleteRefInput, DeletePullRequestReviewInput_, DeletePullRequestReviewInput, DeletePullRequestReviewCommentInput_, DeletePullRequestReviewCommentInput, DeleteProjectV2ItemInput_, DeleteProjectV2ItemInput, DeleteProjectNextItemInput_, DeleteProjectNextItemInput, DeleteProjectInput_, DeleteProjectInput, DeleteProjectColumnInput_, DeleteProjectColumnInput, DeleteProjectCardInput_, DeleteProjectCardInput, DeleteLinkedBranchInput_, DeleteLinkedBranchInput, DeleteIssueInput_, DeleteIssueInput, DeleteIssueCommentInput_, DeleteIssueCommentInput, DeleteIpAllowListEntryInput_, DeleteIpAllowListEntryInput, DeleteEnvironmentInput_, DeleteEnvironmentInput, DeleteDiscussionInput_, DeleteDiscussionInput, DeleteDiscussionCommentInput_, DeleteDiscussionCommentInput, DeleteDeploymentInput_, DeleteDeploymentInput, DeleteBranchProtectionRuleInput_, DeleteBranchProtectionRuleInput, DeclineTopicSuggestionInput_, DeclineTopicSuggestionInput, CreateTeamDiscussionInput_, CreateTeamDiscussionInput, CreateTeamDiscussionCommentInput_, CreateTeamDiscussionCommentInput, CreateSponsorshipInput_, CreateSponsorshipInput, CreateSponsorsTierInput_, CreateSponsorsTierInput, CreateRepositoryInput_, CreateRepositoryInput, CreateRefInput_, CreateRefInput, CreatePullRequestInput_, CreatePullRequestInput, CreateProjectV2Input_, CreateProjectV2Input, CreateProjectInput_, CreateProjectInput, CreateMigrationSourceInput_, CreateMigrationSourceInput, CreateLinkedBranchInput_, CreateLinkedBranchInput, CreateIssueInput_, CreateIssueInput, CreateIpAllowListEntryInput_, CreateIpAllowListEntryInput, CreateEnvironmentInput_, CreateEnvironmentInput, CreateEnterpriseOrganizationInput_, CreateEnterpriseOrganizationInput, CreateDiscussionInput_, CreateDiscussionInput, CreateCommitOnBranchInput_, CreateCommitOnBranchInput, CreateCheckSuiteInput_, CreateCheckSuiteInput, CreateCheckRunInput_, CreateCheckRunInput, CreateBranchProtectionRuleInput_, CreateBranchProtectionRuleInput, ConvertPullRequestToDraftInput_, ConvertPullRequestToDraftInput, ConvertProjectCardNoteToIssueInput_, ConvertProjectCardNoteToIssueInput, ContributionOrder_, ContributionOrder, CommittableBranch_, CommittableBranch, CommitMessage_, CommitMessage, CommitContributionOrder_, CommitContributionOrder, CommitAuthor_, CommitAuthor, ClosePullRequestInput_, ClosePullRequestInput, CloseIssueInput_, CloseIssueInput, CloneTemplateRepositoryInput_, CloneTemplateRepositoryInput, CloneProjectInput_, CloneProjectInput, ClearProjectV2ItemFieldValueInput_, ClearProjectV2ItemFieldValueInput, ClearLabelsFromLabelableInput_, ClearLabelsFromLabelableInput, CheckSuiteFilter_, CheckSuiteFilter, CheckSuiteAutoTriggerPreference_, CheckSuiteAutoTriggerPreference, CheckRunOutputImage_, CheckRunOutputImage, CheckRunOutput_, CheckRunOutput, CheckRunFilter_, CheckRunFilter, CheckRunAction_, CheckRunAction, CheckAnnotationRange_, CheckAnnotationRange, CheckAnnotationData_, CheckAnnotationData, ChangeUserStatusInput_, ChangeUserStatusInput, CancelSponsorshipInput_, CancelSponsorshipInput, CancelEnterpriseAdminInvitationInput_, CancelEnterpriseAdminInvitationInput, AuditLogOrder_, AuditLogOrder, ArchiveRepositoryInput_, ArchiveRepositoryInput, ApproveVerifiableDomainInput_, ApproveVerifiableDomainInput, ApproveDeploymentsInput_, ApproveDeploymentsInput, AddVerifiableDomainInput_, AddVerifiableDomainInput, AddUpvoteInput_, AddUpvoteInput, AddStarInput_, AddStarInput, AddReactionInput_, AddReactionInput, AddPullRequestReviewThreadInput_, AddPullRequestReviewThreadInput, AddPullRequestReviewInput_, AddPullRequestReviewInput, AddPullRequestReviewCommentInput_, AddPullRequestReviewCommentInput, AddProjectV2ItemByIdInput_, AddProjectV2ItemByIdInput, AddProjectV2DraftIssueInput_, AddProjectV2DraftIssueInput, AddProjectNextItemInput_, AddProjectNextItemInput, AddProjectDraftIssueInput_, AddProjectDraftIssueInput, AddProjectColumnInput_, AddProjectColumnInput, AddProjectCardInput_, AddProjectCardInput, AddLabelsToLabelableInput_, AddLabelsToLabelableInput, AddEnterpriseSupportEntitlementInput_, AddEnterpriseSupportEntitlementInput, AddDiscussionPollVoteInput_, AddDiscussionPollVoteInput, AddDiscussionCommentInput_, AddDiscussionCommentInput, AddCommentInput_, AddCommentInput, AddAssigneesToAssignableInput_, AddAssigneesToAssignableInput, AcceptTopicSuggestionInput_, AcceptTopicSuggestionInput, AcceptEnterpriseAdministratorInvitationInput_, AcceptEnterpriseAdministratorInvitationInput, AbortQueuedMigrationsInput_, AbortQueuedMigrationsInput
+-}
+
+
+import GraphQL.Engine
+
+
+type alias AbortQueuedMigrationsInput =
+    GraphQL.Engine.InputObject AbortQueuedMigrationsInput_
+
+
+type AbortQueuedMigrationsInput_
+    = AbortQueuedMigrationsInput_
+
+
+type alias AcceptEnterpriseAdministratorInvitationInput =
+    GraphQL.Engine.InputObject AcceptEnterpriseAdministratorInvitationInput_
+
+
+type AcceptEnterpriseAdministratorInvitationInput_
+    = AcceptEnterpriseAdministratorInvitationInput_
+
+
+type alias AcceptTopicSuggestionInput =
+    GraphQL.Engine.InputObject AcceptTopicSuggestionInput_
+
+
+type AcceptTopicSuggestionInput_
+    = AcceptTopicSuggestionInput_
+
+
+type alias AddAssigneesToAssignableInput =
+    GraphQL.Engine.InputObject AddAssigneesToAssignableInput_
+
+
+type AddAssigneesToAssignableInput_
+    = AddAssigneesToAssignableInput_
+
+
+type alias AddCommentInput =
+    GraphQL.Engine.InputObject AddCommentInput_
+
+
+type AddCommentInput_
+    = AddCommentInput_
+
+
+type alias AddDiscussionCommentInput =
+    GraphQL.Engine.InputObject AddDiscussionCommentInput_
+
+
+type AddDiscussionCommentInput_
+    = AddDiscussionCommentInput_
+
+
+type alias AddDiscussionPollVoteInput =
+    GraphQL.Engine.InputObject AddDiscussionPollVoteInput_
+
+
+type AddDiscussionPollVoteInput_
+    = AddDiscussionPollVoteInput_
+
+
+type alias AddEnterpriseSupportEntitlementInput =
+    GraphQL.Engine.InputObject AddEnterpriseSupportEntitlementInput_
+
+
+type AddEnterpriseSupportEntitlementInput_
+    = AddEnterpriseSupportEntitlementInput_
+
+
+type alias AddLabelsToLabelableInput =
+    GraphQL.Engine.InputObject AddLabelsToLabelableInput_
+
+
+type AddLabelsToLabelableInput_
+    = AddLabelsToLabelableInput_
+
+
+type alias AddProjectCardInput =
+    GraphQL.Engine.InputObject AddProjectCardInput_
+
+
+type AddProjectCardInput_
+    = AddProjectCardInput_
+
+
+type alias AddProjectColumnInput =
+    GraphQL.Engine.InputObject AddProjectColumnInput_
+
+
+type AddProjectColumnInput_
+    = AddProjectColumnInput_
+
+
+type alias AddProjectDraftIssueInput =
+    GraphQL.Engine.InputObject AddProjectDraftIssueInput_
+
+
+type AddProjectDraftIssueInput_
+    = AddProjectDraftIssueInput_
+
+
+type alias AddProjectNextItemInput =
+    GraphQL.Engine.InputObject AddProjectNextItemInput_
+
+
+type AddProjectNextItemInput_
+    = AddProjectNextItemInput_
+
+
+type alias AddProjectV2DraftIssueInput =
+    GraphQL.Engine.InputObject AddProjectV2DraftIssueInput_
+
+
+type AddProjectV2DraftIssueInput_
+    = AddProjectV2DraftIssueInput_
+
+
+type alias AddProjectV2ItemByIdInput =
+    GraphQL.Engine.InputObject AddProjectV2ItemByIdInput_
+
+
+type AddProjectV2ItemByIdInput_
+    = AddProjectV2ItemByIdInput_
+
+
+type alias AddPullRequestReviewCommentInput =
+    GraphQL.Engine.InputObject AddPullRequestReviewCommentInput_
+
+
+type AddPullRequestReviewCommentInput_
+    = AddPullRequestReviewCommentInput_
+
+
+type alias AddPullRequestReviewInput =
+    GraphQL.Engine.InputObject AddPullRequestReviewInput_
+
+
+type AddPullRequestReviewInput_
+    = AddPullRequestReviewInput_
+
+
+type alias AddPullRequestReviewThreadInput =
+    GraphQL.Engine.InputObject AddPullRequestReviewThreadInput_
+
+
+type AddPullRequestReviewThreadInput_
+    = AddPullRequestReviewThreadInput_
+
+
+type alias AddReactionInput =
+    GraphQL.Engine.InputObject AddReactionInput_
+
+
+type AddReactionInput_
+    = AddReactionInput_
+
+
+type alias AddStarInput =
+    GraphQL.Engine.InputObject AddStarInput_
+
+
+type AddStarInput_
+    = AddStarInput_
+
+
+type alias AddUpvoteInput =
+    GraphQL.Engine.InputObject AddUpvoteInput_
+
+
+type AddUpvoteInput_
+    = AddUpvoteInput_
+
+
+type alias AddVerifiableDomainInput =
+    GraphQL.Engine.InputObject AddVerifiableDomainInput_
+
+
+type AddVerifiableDomainInput_
+    = AddVerifiableDomainInput_
+
+
+type alias ApproveDeploymentsInput =
+    GraphQL.Engine.InputObject ApproveDeploymentsInput_
+
+
+type ApproveDeploymentsInput_
+    = ApproveDeploymentsInput_
+
+
+type alias ApproveVerifiableDomainInput =
+    GraphQL.Engine.InputObject ApproveVerifiableDomainInput_
+
+
+type ApproveVerifiableDomainInput_
+    = ApproveVerifiableDomainInput_
+
+
+type alias ArchiveRepositoryInput =
+    GraphQL.Engine.InputObject ArchiveRepositoryInput_
+
+
+type ArchiveRepositoryInput_
+    = ArchiveRepositoryInput_
+
+
+type alias AuditLogOrder =
+    GraphQL.Engine.InputObject AuditLogOrder_
+
+
+type AuditLogOrder_
+    = AuditLogOrder_
+
+
+type alias CancelEnterpriseAdminInvitationInput =
+    GraphQL.Engine.InputObject CancelEnterpriseAdminInvitationInput_
+
+
+type CancelEnterpriseAdminInvitationInput_
+    = CancelEnterpriseAdminInvitationInput_
+
+
+type alias CancelSponsorshipInput =
+    GraphQL.Engine.InputObject CancelSponsorshipInput_
+
+
+type CancelSponsorshipInput_
+    = CancelSponsorshipInput_
+
+
+type alias ChangeUserStatusInput =
+    GraphQL.Engine.InputObject ChangeUserStatusInput_
+
+
+type ChangeUserStatusInput_
+    = ChangeUserStatusInput_
+
+
+type alias CheckAnnotationData =
+    GraphQL.Engine.InputObject CheckAnnotationData_
+
+
+type CheckAnnotationData_
+    = CheckAnnotationData_
+
+
+type alias CheckAnnotationRange =
+    GraphQL.Engine.InputObject CheckAnnotationRange_
+
+
+type CheckAnnotationRange_
+    = CheckAnnotationRange_
+
+
+type alias CheckRunAction =
+    GraphQL.Engine.InputObject CheckRunAction_
+
+
+type CheckRunAction_
+    = CheckRunAction_
+
+
+type alias CheckRunFilter =
+    GraphQL.Engine.InputObject CheckRunFilter_
+
+
+type CheckRunFilter_
+    = CheckRunFilter_
+
+
+type alias CheckRunOutput =
+    GraphQL.Engine.InputObject CheckRunOutput_
+
+
+type CheckRunOutput_
+    = CheckRunOutput_
+
+
+type alias CheckRunOutputImage =
+    GraphQL.Engine.InputObject CheckRunOutputImage_
+
+
+type CheckRunOutputImage_
+    = CheckRunOutputImage_
+
+
+type alias CheckSuiteAutoTriggerPreference =
+    GraphQL.Engine.InputObject CheckSuiteAutoTriggerPreference_
+
+
+type CheckSuiteAutoTriggerPreference_
+    = CheckSuiteAutoTriggerPreference_
+
+
+type alias CheckSuiteFilter =
+    GraphQL.Engine.InputObject CheckSuiteFilter_
+
+
+type CheckSuiteFilter_
+    = CheckSuiteFilter_
+
+
+type alias ClearLabelsFromLabelableInput =
+    GraphQL.Engine.InputObject ClearLabelsFromLabelableInput_
+
+
+type ClearLabelsFromLabelableInput_
+    = ClearLabelsFromLabelableInput_
+
+
+type alias ClearProjectV2ItemFieldValueInput =
+    GraphQL.Engine.InputObject ClearProjectV2ItemFieldValueInput_
+
+
+type ClearProjectV2ItemFieldValueInput_
+    = ClearProjectV2ItemFieldValueInput_
+
+
+type alias CloneProjectInput =
+    GraphQL.Engine.InputObject CloneProjectInput_
+
+
+type CloneProjectInput_
+    = CloneProjectInput_
+
+
+type alias CloneTemplateRepositoryInput =
+    GraphQL.Engine.InputObject CloneTemplateRepositoryInput_
+
+
+type CloneTemplateRepositoryInput_
+    = CloneTemplateRepositoryInput_
+
+
+type alias CloseIssueInput =
+    GraphQL.Engine.InputObject CloseIssueInput_
+
+
+type CloseIssueInput_
+    = CloseIssueInput_
+
+
+type alias ClosePullRequestInput =
+    GraphQL.Engine.InputObject ClosePullRequestInput_
+
+
+type ClosePullRequestInput_
+    = ClosePullRequestInput_
+
+
+type alias CommitAuthor =
+    GraphQL.Engine.InputObject CommitAuthor_
+
+
+type CommitAuthor_
+    = CommitAuthor_
+
+
+type alias CommitContributionOrder =
+    GraphQL.Engine.InputObject CommitContributionOrder_
+
+
+type CommitContributionOrder_
+    = CommitContributionOrder_
+
+
+type alias CommitMessage =
+    GraphQL.Engine.InputObject CommitMessage_
+
+
+type CommitMessage_
+    = CommitMessage_
+
+
+type alias CommittableBranch =
+    GraphQL.Engine.InputObject CommittableBranch_
+
+
+type CommittableBranch_
+    = CommittableBranch_
+
+
+type alias ContributionOrder =
+    GraphQL.Engine.InputObject ContributionOrder_
+
+
+type ContributionOrder_
+    = ContributionOrder_
+
+
+type alias ConvertProjectCardNoteToIssueInput =
+    GraphQL.Engine.InputObject ConvertProjectCardNoteToIssueInput_
+
+
+type ConvertProjectCardNoteToIssueInput_
+    = ConvertProjectCardNoteToIssueInput_
+
+
+type alias ConvertPullRequestToDraftInput =
+    GraphQL.Engine.InputObject ConvertPullRequestToDraftInput_
+
+
+type ConvertPullRequestToDraftInput_
+    = ConvertPullRequestToDraftInput_
+
+
+type alias CreateBranchProtectionRuleInput =
+    GraphQL.Engine.InputObject CreateBranchProtectionRuleInput_
+
+
+type CreateBranchProtectionRuleInput_
+    = CreateBranchProtectionRuleInput_
+
+
+type alias CreateCheckRunInput =
+    GraphQL.Engine.InputObject CreateCheckRunInput_
+
+
+type CreateCheckRunInput_
+    = CreateCheckRunInput_
+
+
+type alias CreateCheckSuiteInput =
+    GraphQL.Engine.InputObject CreateCheckSuiteInput_
+
+
+type CreateCheckSuiteInput_
+    = CreateCheckSuiteInput_
+
+
+type alias CreateCommitOnBranchInput =
+    GraphQL.Engine.InputObject CreateCommitOnBranchInput_
+
+
+type CreateCommitOnBranchInput_
+    = CreateCommitOnBranchInput_
+
+
+type alias CreateDiscussionInput =
+    GraphQL.Engine.InputObject CreateDiscussionInput_
+
+
+type CreateDiscussionInput_
+    = CreateDiscussionInput_
+
+
+type alias CreateEnterpriseOrganizationInput =
+    GraphQL.Engine.InputObject CreateEnterpriseOrganizationInput_
+
+
+type CreateEnterpriseOrganizationInput_
+    = CreateEnterpriseOrganizationInput_
+
+
+type alias CreateEnvironmentInput =
+    GraphQL.Engine.InputObject CreateEnvironmentInput_
+
+
+type CreateEnvironmentInput_
+    = CreateEnvironmentInput_
+
+
+type alias CreateIpAllowListEntryInput =
+    GraphQL.Engine.InputObject CreateIpAllowListEntryInput_
+
+
+type CreateIpAllowListEntryInput_
+    = CreateIpAllowListEntryInput_
+
+
+type alias CreateIssueInput =
+    GraphQL.Engine.InputObject CreateIssueInput_
+
+
+type CreateIssueInput_
+    = CreateIssueInput_
+
+
+type alias CreateLinkedBranchInput =
+    GraphQL.Engine.InputObject CreateLinkedBranchInput_
+
+
+type CreateLinkedBranchInput_
+    = CreateLinkedBranchInput_
+
+
+type alias CreateMigrationSourceInput =
+    GraphQL.Engine.InputObject CreateMigrationSourceInput_
+
+
+type CreateMigrationSourceInput_
+    = CreateMigrationSourceInput_
+
+
+type alias CreateProjectInput =
+    GraphQL.Engine.InputObject CreateProjectInput_
+
+
+type CreateProjectInput_
+    = CreateProjectInput_
+
+
+type alias CreateProjectV2Input =
+    GraphQL.Engine.InputObject CreateProjectV2Input_
+
+
+type CreateProjectV2Input_
+    = CreateProjectV2Input_
+
+
+type alias CreatePullRequestInput =
+    GraphQL.Engine.InputObject CreatePullRequestInput_
+
+
+type CreatePullRequestInput_
+    = CreatePullRequestInput_
+
+
+type alias CreateRefInput =
+    GraphQL.Engine.InputObject CreateRefInput_
+
+
+type CreateRefInput_
+    = CreateRefInput_
+
+
+type alias CreateRepositoryInput =
+    GraphQL.Engine.InputObject CreateRepositoryInput_
+
+
+type CreateRepositoryInput_
+    = CreateRepositoryInput_
+
+
+type alias CreateSponsorsTierInput =
+    GraphQL.Engine.InputObject CreateSponsorsTierInput_
+
+
+type CreateSponsorsTierInput_
+    = CreateSponsorsTierInput_
+
+
+type alias CreateSponsorshipInput =
+    GraphQL.Engine.InputObject CreateSponsorshipInput_
+
+
+type CreateSponsorshipInput_
+    = CreateSponsorshipInput_
+
+
+type alias CreateTeamDiscussionCommentInput =
+    GraphQL.Engine.InputObject CreateTeamDiscussionCommentInput_
+
+
+type CreateTeamDiscussionCommentInput_
+    = CreateTeamDiscussionCommentInput_
+
+
+type alias CreateTeamDiscussionInput =
+    GraphQL.Engine.InputObject CreateTeamDiscussionInput_
+
+
+type CreateTeamDiscussionInput_
+    = CreateTeamDiscussionInput_
+
+
+type alias DeclineTopicSuggestionInput =
+    GraphQL.Engine.InputObject DeclineTopicSuggestionInput_
+
+
+type DeclineTopicSuggestionInput_
+    = DeclineTopicSuggestionInput_
+
+
+type alias DeleteBranchProtectionRuleInput =
+    GraphQL.Engine.InputObject DeleteBranchProtectionRuleInput_
+
+
+type DeleteBranchProtectionRuleInput_
+    = DeleteBranchProtectionRuleInput_
+
+
+type alias DeleteDeploymentInput =
+    GraphQL.Engine.InputObject DeleteDeploymentInput_
+
+
+type DeleteDeploymentInput_
+    = DeleteDeploymentInput_
+
+
+type alias DeleteDiscussionCommentInput =
+    GraphQL.Engine.InputObject DeleteDiscussionCommentInput_
+
+
+type DeleteDiscussionCommentInput_
+    = DeleteDiscussionCommentInput_
+
+
+type alias DeleteDiscussionInput =
+    GraphQL.Engine.InputObject DeleteDiscussionInput_
+
+
+type DeleteDiscussionInput_
+    = DeleteDiscussionInput_
+
+
+type alias DeleteEnvironmentInput =
+    GraphQL.Engine.InputObject DeleteEnvironmentInput_
+
+
+type DeleteEnvironmentInput_
+    = DeleteEnvironmentInput_
+
+
+type alias DeleteIpAllowListEntryInput =
+    GraphQL.Engine.InputObject DeleteIpAllowListEntryInput_
+
+
+type DeleteIpAllowListEntryInput_
+    = DeleteIpAllowListEntryInput_
+
+
+type alias DeleteIssueCommentInput =
+    GraphQL.Engine.InputObject DeleteIssueCommentInput_
+
+
+type DeleteIssueCommentInput_
+    = DeleteIssueCommentInput_
+
+
+type alias DeleteIssueInput =
+    GraphQL.Engine.InputObject DeleteIssueInput_
+
+
+type DeleteIssueInput_
+    = DeleteIssueInput_
+
+
+type alias DeleteLinkedBranchInput =
+    GraphQL.Engine.InputObject DeleteLinkedBranchInput_
+
+
+type DeleteLinkedBranchInput_
+    = DeleteLinkedBranchInput_
+
+
+type alias DeleteProjectCardInput =
+    GraphQL.Engine.InputObject DeleteProjectCardInput_
+
+
+type DeleteProjectCardInput_
+    = DeleteProjectCardInput_
+
+
+type alias DeleteProjectColumnInput =
+    GraphQL.Engine.InputObject DeleteProjectColumnInput_
+
+
+type DeleteProjectColumnInput_
+    = DeleteProjectColumnInput_
+
+
+type alias DeleteProjectInput =
+    GraphQL.Engine.InputObject DeleteProjectInput_
+
+
+type DeleteProjectInput_
+    = DeleteProjectInput_
+
+
+type alias DeleteProjectNextItemInput =
+    GraphQL.Engine.InputObject DeleteProjectNextItemInput_
+
+
+type DeleteProjectNextItemInput_
+    = DeleteProjectNextItemInput_
+
+
+type alias DeleteProjectV2ItemInput =
+    GraphQL.Engine.InputObject DeleteProjectV2ItemInput_
+
+
+type DeleteProjectV2ItemInput_
+    = DeleteProjectV2ItemInput_
+
+
+type alias DeletePullRequestReviewCommentInput =
+    GraphQL.Engine.InputObject DeletePullRequestReviewCommentInput_
+
+
+type DeletePullRequestReviewCommentInput_
+    = DeletePullRequestReviewCommentInput_
+
+
+type alias DeletePullRequestReviewInput =
+    GraphQL.Engine.InputObject DeletePullRequestReviewInput_
+
+
+type DeletePullRequestReviewInput_
+    = DeletePullRequestReviewInput_
+
+
+type alias DeleteRefInput =
+    GraphQL.Engine.InputObject DeleteRefInput_
+
+
+type DeleteRefInput_
+    = DeleteRefInput_
+
+
+type alias DeleteTeamDiscussionCommentInput =
+    GraphQL.Engine.InputObject DeleteTeamDiscussionCommentInput_
+
+
+type DeleteTeamDiscussionCommentInput_
+    = DeleteTeamDiscussionCommentInput_
+
+
+type alias DeleteTeamDiscussionInput =
+    GraphQL.Engine.InputObject DeleteTeamDiscussionInput_
+
+
+type DeleteTeamDiscussionInput_
+    = DeleteTeamDiscussionInput_
+
+
+type alias DeleteVerifiableDomainInput =
+    GraphQL.Engine.InputObject DeleteVerifiableDomainInput_
+
+
+type DeleteVerifiableDomainInput_
+    = DeleteVerifiableDomainInput_
+
+
+type alias DeploymentOrder =
+    GraphQL.Engine.InputObject DeploymentOrder_
+
+
+type DeploymentOrder_
+    = DeploymentOrder_
+
+
+type alias DisablePullRequestAutoMergeInput =
+    GraphQL.Engine.InputObject DisablePullRequestAutoMergeInput_
+
+
+type DisablePullRequestAutoMergeInput_
+    = DisablePullRequestAutoMergeInput_
+
+
+type alias DiscussionOrder =
+    GraphQL.Engine.InputObject DiscussionOrder_
+
+
+type DiscussionOrder_
+    = DiscussionOrder_
+
+
+type alias DiscussionPollOptionOrder =
+    GraphQL.Engine.InputObject DiscussionPollOptionOrder_
+
+
+type DiscussionPollOptionOrder_
+    = DiscussionPollOptionOrder_
+
+
+type alias DismissPullRequestReviewInput =
+    GraphQL.Engine.InputObject DismissPullRequestReviewInput_
+
+
+type DismissPullRequestReviewInput_
+    = DismissPullRequestReviewInput_
+
+
+type alias DismissRepositoryVulnerabilityAlertInput =
+    GraphQL.Engine.InputObject DismissRepositoryVulnerabilityAlertInput_
+
+
+type DismissRepositoryVulnerabilityAlertInput_
+    = DismissRepositoryVulnerabilityAlertInput_
+
+
+type alias DraftPullRequestReviewComment =
+    GraphQL.Engine.InputObject DraftPullRequestReviewComment_
+
+
+type DraftPullRequestReviewComment_
+    = DraftPullRequestReviewComment_
+
+
+type alias DraftPullRequestReviewThread =
+    GraphQL.Engine.InputObject DraftPullRequestReviewThread_
+
+
+type DraftPullRequestReviewThread_
+    = DraftPullRequestReviewThread_
+
+
+type alias EnablePullRequestAutoMergeInput =
+    GraphQL.Engine.InputObject EnablePullRequestAutoMergeInput_
+
+
+type EnablePullRequestAutoMergeInput_
+    = EnablePullRequestAutoMergeInput_
+
+
+type alias EnterpriseAdministratorInvitationOrder =
+    GraphQL.Engine.InputObject EnterpriseAdministratorInvitationOrder_
+
+
+type EnterpriseAdministratorInvitationOrder_
+    = EnterpriseAdministratorInvitationOrder_
+
+
+type alias EnterpriseMemberOrder =
+    GraphQL.Engine.InputObject EnterpriseMemberOrder_
+
+
+type EnterpriseMemberOrder_
+    = EnterpriseMemberOrder_
+
+
+type alias EnterpriseServerInstallationOrder =
+    GraphQL.Engine.InputObject EnterpriseServerInstallationOrder_
+
+
+type EnterpriseServerInstallationOrder_
+    = EnterpriseServerInstallationOrder_
+
+
+type alias EnterpriseServerUserAccountEmailOrder =
+    GraphQL.Engine.InputObject EnterpriseServerUserAccountEmailOrder_
+
+
+type EnterpriseServerUserAccountEmailOrder_
+    = EnterpriseServerUserAccountEmailOrder_
+
+
+type alias EnterpriseServerUserAccountOrder =
+    GraphQL.Engine.InputObject EnterpriseServerUserAccountOrder_
+
+
+type EnterpriseServerUserAccountOrder_
+    = EnterpriseServerUserAccountOrder_
+
+
+type alias EnterpriseServerUserAccountsUploadOrder =
+    GraphQL.Engine.InputObject EnterpriseServerUserAccountsUploadOrder_
+
+
+type EnterpriseServerUserAccountsUploadOrder_
+    = EnterpriseServerUserAccountsUploadOrder_
+
+
+type alias FileAddition =
+    GraphQL.Engine.InputObject FileAddition_
+
+
+type FileAddition_
+    = FileAddition_
+
+
+type alias FileChanges =
+    GraphQL.Engine.InputObject FileChanges_
+
+
+type FileChanges_
+    = FileChanges_
+
+
+type alias FileDeletion =
+    GraphQL.Engine.InputObject FileDeletion_
+
+
+type FileDeletion_
+    = FileDeletion_
+
+
+type alias FollowOrganizationInput =
+    GraphQL.Engine.InputObject FollowOrganizationInput_
+
+
+type FollowOrganizationInput_
+    = FollowOrganizationInput_
+
+
+type alias FollowUserInput =
+    GraphQL.Engine.InputObject FollowUserInput_
+
+
+type FollowUserInput_
+    = FollowUserInput_
+
+
+type alias GistOrder =
+    GraphQL.Engine.InputObject GistOrder_
+
+
+type GistOrder_
+    = GistOrder_
+
+
+type alias GrantEnterpriseOrganizationsMigratorRoleInput =
+    GraphQL.Engine.InputObject GrantEnterpriseOrganizationsMigratorRoleInput_
+
+
+type GrantEnterpriseOrganizationsMigratorRoleInput_
+    = GrantEnterpriseOrganizationsMigratorRoleInput_
+
+
+type alias GrantMigratorRoleInput =
+    GraphQL.Engine.InputObject GrantMigratorRoleInput_
+
+
+type GrantMigratorRoleInput_
+    = GrantMigratorRoleInput_
+
+
+type alias InviteEnterpriseAdminInput =
+    GraphQL.Engine.InputObject InviteEnterpriseAdminInput_
+
+
+type InviteEnterpriseAdminInput_
+    = InviteEnterpriseAdminInput_
+
+
+type alias IpAllowListEntryOrder =
+    GraphQL.Engine.InputObject IpAllowListEntryOrder_
+
+
+type IpAllowListEntryOrder_
+    = IpAllowListEntryOrder_
+
+
+type alias IssueCommentOrder =
+    GraphQL.Engine.InputObject IssueCommentOrder_
+
+
+type IssueCommentOrder_
+    = IssueCommentOrder_
+
+
+type alias IssueFilters =
+    GraphQL.Engine.InputObject IssueFilters_
+
+
+type IssueFilters_
+    = IssueFilters_
+
+
+type alias IssueOrder =
+    GraphQL.Engine.InputObject IssueOrder_
+
+
+type IssueOrder_
+    = IssueOrder_
+
+
+type alias LabelOrder =
+    GraphQL.Engine.InputObject LabelOrder_
+
+
+type LabelOrder_
+    = LabelOrder_
+
+
+type alias LanguageOrder =
+    GraphQL.Engine.InputObject LanguageOrder_
+
+
+type LanguageOrder_
+    = LanguageOrder_
+
+
+type alias LinkRepositoryToProjectInput =
+    GraphQL.Engine.InputObject LinkRepositoryToProjectInput_
+
+
+type LinkRepositoryToProjectInput_
+    = LinkRepositoryToProjectInput_
+
+
+type alias LockLockableInput =
+    GraphQL.Engine.InputObject LockLockableInput_
+
+
+type LockLockableInput_
+    = LockLockableInput_
+
+
+type alias MarkDiscussionCommentAsAnswerInput =
+    GraphQL.Engine.InputObject MarkDiscussionCommentAsAnswerInput_
+
+
+type MarkDiscussionCommentAsAnswerInput_
+    = MarkDiscussionCommentAsAnswerInput_
+
+
+type alias MarkFileAsViewedInput =
+    GraphQL.Engine.InputObject MarkFileAsViewedInput_
+
+
+type MarkFileAsViewedInput_
+    = MarkFileAsViewedInput_
+
+
+type alias MarkPullRequestReadyForReviewInput =
+    GraphQL.Engine.InputObject MarkPullRequestReadyForReviewInput_
+
+
+type MarkPullRequestReadyForReviewInput_
+    = MarkPullRequestReadyForReviewInput_
+
+
+type alias MergeBranchInput =
+    GraphQL.Engine.InputObject MergeBranchInput_
+
+
+type MergeBranchInput_
+    = MergeBranchInput_
+
+
+type alias MergePullRequestInput =
+    GraphQL.Engine.InputObject MergePullRequestInput_
+
+
+type MergePullRequestInput_
+    = MergePullRequestInput_
+
+
+type alias MilestoneOrder =
+    GraphQL.Engine.InputObject MilestoneOrder_
+
+
+type MilestoneOrder_
+    = MilestoneOrder_
+
+
+type alias MinimizeCommentInput =
+    GraphQL.Engine.InputObject MinimizeCommentInput_
+
+
+type MinimizeCommentInput_
+    = MinimizeCommentInput_
+
+
+type alias MoveProjectCardInput =
+    GraphQL.Engine.InputObject MoveProjectCardInput_
+
+
+type MoveProjectCardInput_
+    = MoveProjectCardInput_
+
+
+type alias MoveProjectColumnInput =
+    GraphQL.Engine.InputObject MoveProjectColumnInput_
+
+
+type MoveProjectColumnInput_
+    = MoveProjectColumnInput_
+
+
+type alias OrgEnterpriseOwnerOrder =
+    GraphQL.Engine.InputObject OrgEnterpriseOwnerOrder_
+
+
+type OrgEnterpriseOwnerOrder_
+    = OrgEnterpriseOwnerOrder_
+
+
+type alias OrganizationOrder =
+    GraphQL.Engine.InputObject OrganizationOrder_
+
+
+type OrganizationOrder_
+    = OrganizationOrder_
+
+
+type alias PackageFileOrder =
+    GraphQL.Engine.InputObject PackageFileOrder_
+
+
+type PackageFileOrder_
+    = PackageFileOrder_
+
+
+type alias PackageOrder =
+    GraphQL.Engine.InputObject PackageOrder_
+
+
+type PackageOrder_
+    = PackageOrder_
+
+
+type alias PackageVersionOrder =
+    GraphQL.Engine.InputObject PackageVersionOrder_
+
+
+type PackageVersionOrder_
+    = PackageVersionOrder_
+
+
+type alias PinIssueInput =
+    GraphQL.Engine.InputObject PinIssueInput_
+
+
+type PinIssueInput_
+    = PinIssueInput_
+
+
+type alias ProjectOrder =
+    GraphQL.Engine.InputObject ProjectOrder_
+
+
+type ProjectOrder_
+    = ProjectOrder_
+
+
+type alias ProjectV2FieldOrder =
+    GraphQL.Engine.InputObject ProjectV2FieldOrder_
+
+
+type ProjectV2FieldOrder_
+    = ProjectV2FieldOrder_
+
+
+type alias ProjectV2FieldValue =
+    GraphQL.Engine.InputObject ProjectV2FieldValue_
+
+
+type ProjectV2FieldValue_
+    = ProjectV2FieldValue_
+
+
+type alias ProjectV2ItemFieldValueOrder =
+    GraphQL.Engine.InputObject ProjectV2ItemFieldValueOrder_
+
+
+type ProjectV2ItemFieldValueOrder_
+    = ProjectV2ItemFieldValueOrder_
+
+
+type alias ProjectV2ItemOrder =
+    GraphQL.Engine.InputObject ProjectV2ItemOrder_
+
+
+type ProjectV2ItemOrder_
+    = ProjectV2ItemOrder_
+
+
+type alias ProjectV2Order =
+    GraphQL.Engine.InputObject ProjectV2Order_
+
+
+type ProjectV2Order_
+    = ProjectV2Order_
+
+
+type alias ProjectV2ViewOrder =
+    GraphQL.Engine.InputObject ProjectV2ViewOrder_
+
+
+type ProjectV2ViewOrder_
+    = ProjectV2ViewOrder_
+
+
+type alias PullRequestOrder =
+    GraphQL.Engine.InputObject PullRequestOrder_
+
+
+type PullRequestOrder_
+    = PullRequestOrder_
+
+
+type alias ReactionOrder =
+    GraphQL.Engine.InputObject ReactionOrder_
+
+
+type ReactionOrder_
+    = ReactionOrder_
+
+
+type alias RefOrder =
+    GraphQL.Engine.InputObject RefOrder_
+
+
+type RefOrder_
+    = RefOrder_
+
+
+type alias RegenerateEnterpriseIdentityProviderRecoveryCodesInput =
+    GraphQL.Engine.InputObject RegenerateEnterpriseIdentityProviderRecoveryCodesInput_
+
+
+type RegenerateEnterpriseIdentityProviderRecoveryCodesInput_
+    = RegenerateEnterpriseIdentityProviderRecoveryCodesInput_
+
+
+type alias RegenerateVerifiableDomainTokenInput =
+    GraphQL.Engine.InputObject RegenerateVerifiableDomainTokenInput_
+
+
+type RegenerateVerifiableDomainTokenInput_
+    = RegenerateVerifiableDomainTokenInput_
+
+
+type alias RejectDeploymentsInput =
+    GraphQL.Engine.InputObject RejectDeploymentsInput_
+
+
+type RejectDeploymentsInput_
+    = RejectDeploymentsInput_
+
+
+type alias ReleaseOrder =
+    GraphQL.Engine.InputObject ReleaseOrder_
+
+
+type ReleaseOrder_
+    = ReleaseOrder_
+
+
+type alias RemoveAssigneesFromAssignableInput =
+    GraphQL.Engine.InputObject RemoveAssigneesFromAssignableInput_
+
+
+type RemoveAssigneesFromAssignableInput_
+    = RemoveAssigneesFromAssignableInput_
+
+
+type alias RemoveEnterpriseAdminInput =
+    GraphQL.Engine.InputObject RemoveEnterpriseAdminInput_
+
+
+type RemoveEnterpriseAdminInput_
+    = RemoveEnterpriseAdminInput_
+
+
+type alias RemoveEnterpriseIdentityProviderInput =
+    GraphQL.Engine.InputObject RemoveEnterpriseIdentityProviderInput_
+
+
+type RemoveEnterpriseIdentityProviderInput_
+    = RemoveEnterpriseIdentityProviderInput_
+
+
+type alias RemoveEnterpriseOrganizationInput =
+    GraphQL.Engine.InputObject RemoveEnterpriseOrganizationInput_
+
+
+type RemoveEnterpriseOrganizationInput_
+    = RemoveEnterpriseOrganizationInput_
+
+
+type alias RemoveEnterpriseSupportEntitlementInput =
+    GraphQL.Engine.InputObject RemoveEnterpriseSupportEntitlementInput_
+
+
+type RemoveEnterpriseSupportEntitlementInput_
+    = RemoveEnterpriseSupportEntitlementInput_
+
+
+type alias RemoveLabelsFromLabelableInput =
+    GraphQL.Engine.InputObject RemoveLabelsFromLabelableInput_
+
+
+type RemoveLabelsFromLabelableInput_
+    = RemoveLabelsFromLabelableInput_
+
+
+type alias RemoveOutsideCollaboratorInput =
+    GraphQL.Engine.InputObject RemoveOutsideCollaboratorInput_
+
+
+type RemoveOutsideCollaboratorInput_
+    = RemoveOutsideCollaboratorInput_
+
+
+type alias RemoveReactionInput =
+    GraphQL.Engine.InputObject RemoveReactionInput_
+
+
+type RemoveReactionInput_
+    = RemoveReactionInput_
+
+
+type alias RemoveStarInput =
+    GraphQL.Engine.InputObject RemoveStarInput_
+
+
+type RemoveStarInput_
+    = RemoveStarInput_
+
+
+type alias RemoveUpvoteInput =
+    GraphQL.Engine.InputObject RemoveUpvoteInput_
+
+
+type RemoveUpvoteInput_
+    = RemoveUpvoteInput_
+
+
+type alias ReopenIssueInput =
+    GraphQL.Engine.InputObject ReopenIssueInput_
+
+
+type ReopenIssueInput_
+    = ReopenIssueInput_
+
+
+type alias ReopenPullRequestInput =
+    GraphQL.Engine.InputObject ReopenPullRequestInput_
+
+
+type ReopenPullRequestInput_
+    = ReopenPullRequestInput_
+
+
+type alias RepositoryInvitationOrder =
+    GraphQL.Engine.InputObject RepositoryInvitationOrder_
+
+
+type RepositoryInvitationOrder_
+    = RepositoryInvitationOrder_
+
+
+type alias RepositoryMigrationOrder =
+    GraphQL.Engine.InputObject RepositoryMigrationOrder_
+
+
+type RepositoryMigrationOrder_
+    = RepositoryMigrationOrder_
+
+
+type alias RepositoryOrder =
+    GraphQL.Engine.InputObject RepositoryOrder_
+
+
+type RepositoryOrder_
+    = RepositoryOrder_
+
+
+type alias RequestReviewsInput =
+    GraphQL.Engine.InputObject RequestReviewsInput_
+
+
+type RequestReviewsInput_
+    = RequestReviewsInput_
+
+
+type alias RequiredStatusCheckInput =
+    GraphQL.Engine.InputObject RequiredStatusCheckInput_
+
+
+type RequiredStatusCheckInput_
+    = RequiredStatusCheckInput_
+
+
+type alias RerequestCheckSuiteInput =
+    GraphQL.Engine.InputObject RerequestCheckSuiteInput_
+
+
+type RerequestCheckSuiteInput_
+    = RerequestCheckSuiteInput_
+
+
+type alias ResolveReviewThreadInput =
+    GraphQL.Engine.InputObject ResolveReviewThreadInput_
+
+
+type ResolveReviewThreadInput_
+    = ResolveReviewThreadInput_
+
+
+type alias RevokeEnterpriseOrganizationsMigratorRoleInput =
+    GraphQL.Engine.InputObject RevokeEnterpriseOrganizationsMigratorRoleInput_
+
+
+type RevokeEnterpriseOrganizationsMigratorRoleInput_
+    = RevokeEnterpriseOrganizationsMigratorRoleInput_
+
+
+type alias RevokeMigratorRoleInput =
+    GraphQL.Engine.InputObject RevokeMigratorRoleInput_
+
+
+type RevokeMigratorRoleInput_
+    = RevokeMigratorRoleInput_
+
+
+type alias SavedReplyOrder =
+    GraphQL.Engine.InputObject SavedReplyOrder_
+
+
+type SavedReplyOrder_
+    = SavedReplyOrder_
+
+
+type alias SecurityAdvisoryIdentifierFilter =
+    GraphQL.Engine.InputObject SecurityAdvisoryIdentifierFilter_
+
+
+type SecurityAdvisoryIdentifierFilter_
+    = SecurityAdvisoryIdentifierFilter_
+
+
+type alias SecurityAdvisoryOrder =
+    GraphQL.Engine.InputObject SecurityAdvisoryOrder_
+
+
+type SecurityAdvisoryOrder_
+    = SecurityAdvisoryOrder_
+
+
+type alias SecurityVulnerabilityOrder =
+    GraphQL.Engine.InputObject SecurityVulnerabilityOrder_
+
+
+type SecurityVulnerabilityOrder_
+    = SecurityVulnerabilityOrder_
+
+
+type alias SetEnterpriseIdentityProviderInput =
+    GraphQL.Engine.InputObject SetEnterpriseIdentityProviderInput_
+
+
+type SetEnterpriseIdentityProviderInput_
+    = SetEnterpriseIdentityProviderInput_
+
+
+type alias SetOrganizationInteractionLimitInput =
+    GraphQL.Engine.InputObject SetOrganizationInteractionLimitInput_
+
+
+type SetOrganizationInteractionLimitInput_
+    = SetOrganizationInteractionLimitInput_
+
+
+type alias SetRepositoryInteractionLimitInput =
+    GraphQL.Engine.InputObject SetRepositoryInteractionLimitInput_
+
+
+type SetRepositoryInteractionLimitInput_
+    = SetRepositoryInteractionLimitInput_
+
+
+type alias SetUserInteractionLimitInput =
+    GraphQL.Engine.InputObject SetUserInteractionLimitInput_
+
+
+type SetUserInteractionLimitInput_
+    = SetUserInteractionLimitInput_
+
+
+type alias SponsorOrder =
+    GraphQL.Engine.InputObject SponsorOrder_
+
+
+type SponsorOrder_
+    = SponsorOrder_
+
+
+type alias SponsorableOrder =
+    GraphQL.Engine.InputObject SponsorableOrder_
+
+
+type SponsorableOrder_
+    = SponsorableOrder_
+
+
+type alias SponsorsActivityOrder =
+    GraphQL.Engine.InputObject SponsorsActivityOrder_
+
+
+type SponsorsActivityOrder_
+    = SponsorsActivityOrder_
+
+
+type alias SponsorsTierOrder =
+    GraphQL.Engine.InputObject SponsorsTierOrder_
+
+
+type SponsorsTierOrder_
+    = SponsorsTierOrder_
+
+
+type alias SponsorshipNewsletterOrder =
+    GraphQL.Engine.InputObject SponsorshipNewsletterOrder_
+
+
+type SponsorshipNewsletterOrder_
+    = SponsorshipNewsletterOrder_
+
+
+type alias SponsorshipOrder =
+    GraphQL.Engine.InputObject SponsorshipOrder_
+
+
+type SponsorshipOrder_
+    = SponsorshipOrder_
+
+
+type alias StarOrder =
+    GraphQL.Engine.InputObject StarOrder_
+
+
+type StarOrder_
+    = StarOrder_
+
+
+type alias StartRepositoryMigrationInput =
+    GraphQL.Engine.InputObject StartRepositoryMigrationInput_
+
+
+type StartRepositoryMigrationInput_
+    = StartRepositoryMigrationInput_
+
+
+type alias SubmitPullRequestReviewInput =
+    GraphQL.Engine.InputObject SubmitPullRequestReviewInput_
+
+
+type SubmitPullRequestReviewInput_
+    = SubmitPullRequestReviewInput_
+
+
+type alias TeamDiscussionCommentOrder =
+    GraphQL.Engine.InputObject TeamDiscussionCommentOrder_
+
+
+type TeamDiscussionCommentOrder_
+    = TeamDiscussionCommentOrder_
+
+
+type alias TeamDiscussionOrder =
+    GraphQL.Engine.InputObject TeamDiscussionOrder_
+
+
+type TeamDiscussionOrder_
+    = TeamDiscussionOrder_
+
+
+type alias TeamMemberOrder =
+    GraphQL.Engine.InputObject TeamMemberOrder_
+
+
+type TeamMemberOrder_
+    = TeamMemberOrder_
+
+
+type alias TeamOrder =
+    GraphQL.Engine.InputObject TeamOrder_
+
+
+type TeamOrder_
+    = TeamOrder_
+
+
+type alias TeamRepositoryOrder =
+    GraphQL.Engine.InputObject TeamRepositoryOrder_
+
+
+type TeamRepositoryOrder_
+    = TeamRepositoryOrder_
+
+
+type alias TransferIssueInput =
+    GraphQL.Engine.InputObject TransferIssueInput_
+
+
+type TransferIssueInput_
+    = TransferIssueInput_
+
+
+type alias UnarchiveRepositoryInput =
+    GraphQL.Engine.InputObject UnarchiveRepositoryInput_
+
+
+type UnarchiveRepositoryInput_
+    = UnarchiveRepositoryInput_
+
+
+type alias UnfollowOrganizationInput =
+    GraphQL.Engine.InputObject UnfollowOrganizationInput_
+
+
+type UnfollowOrganizationInput_
+    = UnfollowOrganizationInput_
+
+
+type alias UnfollowUserInput =
+    GraphQL.Engine.InputObject UnfollowUserInput_
+
+
+type UnfollowUserInput_
+    = UnfollowUserInput_
+
+
+type alias UnlinkRepositoryFromProjectInput =
+    GraphQL.Engine.InputObject UnlinkRepositoryFromProjectInput_
+
+
+type UnlinkRepositoryFromProjectInput_
+    = UnlinkRepositoryFromProjectInput_
+
+
+type alias UnlockLockableInput =
+    GraphQL.Engine.InputObject UnlockLockableInput_
+
+
+type UnlockLockableInput_
+    = UnlockLockableInput_
+
+
+type alias UnmarkDiscussionCommentAsAnswerInput =
+    GraphQL.Engine.InputObject UnmarkDiscussionCommentAsAnswerInput_
+
+
+type UnmarkDiscussionCommentAsAnswerInput_
+    = UnmarkDiscussionCommentAsAnswerInput_
+
+
+type alias UnmarkFileAsViewedInput =
+    GraphQL.Engine.InputObject UnmarkFileAsViewedInput_
+
+
+type UnmarkFileAsViewedInput_
+    = UnmarkFileAsViewedInput_
+
+
+type alias UnmarkIssueAsDuplicateInput =
+    GraphQL.Engine.InputObject UnmarkIssueAsDuplicateInput_
+
+
+type UnmarkIssueAsDuplicateInput_
+    = UnmarkIssueAsDuplicateInput_
+
+
+type alias UnminimizeCommentInput =
+    GraphQL.Engine.InputObject UnminimizeCommentInput_
+
+
+type UnminimizeCommentInput_
+    = UnminimizeCommentInput_
+
+
+type alias UnpinIssueInput =
+    GraphQL.Engine.InputObject UnpinIssueInput_
+
+
+type UnpinIssueInput_
+    = UnpinIssueInput_
+
+
+type alias UnresolveReviewThreadInput =
+    GraphQL.Engine.InputObject UnresolveReviewThreadInput_
+
+
+type UnresolveReviewThreadInput_
+    = UnresolveReviewThreadInput_
+
+
+type alias UpdateBranchProtectionRuleInput =
+    GraphQL.Engine.InputObject UpdateBranchProtectionRuleInput_
+
+
+type UpdateBranchProtectionRuleInput_
+    = UpdateBranchProtectionRuleInput_
+
+
+type alias UpdateCheckRunInput =
+    GraphQL.Engine.InputObject UpdateCheckRunInput_
+
+
+type UpdateCheckRunInput_
+    = UpdateCheckRunInput_
+
+
+type alias UpdateCheckSuitePreferencesInput =
+    GraphQL.Engine.InputObject UpdateCheckSuitePreferencesInput_
+
+
+type UpdateCheckSuitePreferencesInput_
+    = UpdateCheckSuitePreferencesInput_
+
+
+type alias UpdateDiscussionCommentInput =
+    GraphQL.Engine.InputObject UpdateDiscussionCommentInput_
+
+
+type UpdateDiscussionCommentInput_
+    = UpdateDiscussionCommentInput_
+
+
+type alias UpdateDiscussionInput =
+    GraphQL.Engine.InputObject UpdateDiscussionInput_
+
+
+type UpdateDiscussionInput_
+    = UpdateDiscussionInput_
+
+
+type alias UpdateEnterpriseAdministratorRoleInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseAdministratorRoleInput_
+
+
+type UpdateEnterpriseAdministratorRoleInput_
+    = UpdateEnterpriseAdministratorRoleInput_
+
+
+type alias UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput_
+
+
+type UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput_
+    = UpdateEnterpriseAllowPrivateRepositoryForkingSettingInput_
+
+
+type alias UpdateEnterpriseDefaultRepositoryPermissionSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseDefaultRepositoryPermissionSettingInput_
+
+
+type UpdateEnterpriseDefaultRepositoryPermissionSettingInput_
+    = UpdateEnterpriseDefaultRepositoryPermissionSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput_
+
+
+type UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput_
+    = UpdateEnterpriseMembersCanChangeRepositoryVisibilitySettingInput_
+
+
+type alias UpdateEnterpriseMembersCanCreateRepositoriesSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanCreateRepositoriesSettingInput_
+
+
+type UpdateEnterpriseMembersCanCreateRepositoriesSettingInput_
+    = UpdateEnterpriseMembersCanCreateRepositoriesSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanDeleteIssuesSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanDeleteIssuesSettingInput_
+
+
+type UpdateEnterpriseMembersCanDeleteIssuesSettingInput_
+    = UpdateEnterpriseMembersCanDeleteIssuesSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput_
+
+
+type UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput_
+    = UpdateEnterpriseMembersCanDeleteRepositoriesSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput_
+
+
+type UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput_
+    = UpdateEnterpriseMembersCanInviteCollaboratorsSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanMakePurchasesSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanMakePurchasesSettingInput_
+
+
+type UpdateEnterpriseMembersCanMakePurchasesSettingInput_
+    = UpdateEnterpriseMembersCanMakePurchasesSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput_
+
+
+type UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput_
+    = UpdateEnterpriseMembersCanUpdateProtectedBranchesSettingInput_
+
+
+type alias UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput_
+
+
+type UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput_
+    = UpdateEnterpriseMembersCanViewDependencyInsightsSettingInput_
+
+
+type alias UpdateEnterpriseOrganizationProjectsSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseOrganizationProjectsSettingInput_
+
+
+type UpdateEnterpriseOrganizationProjectsSettingInput_
+    = UpdateEnterpriseOrganizationProjectsSettingInput_
+
+
+type alias UpdateEnterpriseOwnerOrganizationRoleInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseOwnerOrganizationRoleInput_
+
+
+type UpdateEnterpriseOwnerOrganizationRoleInput_
+    = UpdateEnterpriseOwnerOrganizationRoleInput_
+
+
+type alias UpdateEnterpriseProfileInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseProfileInput_
+
+
+type UpdateEnterpriseProfileInput_
+    = UpdateEnterpriseProfileInput_
+
+
+type alias UpdateEnterpriseRepositoryProjectsSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseRepositoryProjectsSettingInput_
+
+
+type UpdateEnterpriseRepositoryProjectsSettingInput_
+    = UpdateEnterpriseRepositoryProjectsSettingInput_
+
+
+type alias UpdateEnterpriseTeamDiscussionsSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseTeamDiscussionsSettingInput_
+
+
+type UpdateEnterpriseTeamDiscussionsSettingInput_
+    = UpdateEnterpriseTeamDiscussionsSettingInput_
+
+
+type alias UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput =
+    GraphQL.Engine.InputObject UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput_
+
+
+type UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput_
+    = UpdateEnterpriseTwoFactorAuthenticationRequiredSettingInput_
+
+
+type alias UpdateEnvironmentInput =
+    GraphQL.Engine.InputObject UpdateEnvironmentInput_
+
+
+type UpdateEnvironmentInput_
+    = UpdateEnvironmentInput_
+
+
+type alias UpdateIpAllowListEnabledSettingInput =
+    GraphQL.Engine.InputObject UpdateIpAllowListEnabledSettingInput_
+
+
+type UpdateIpAllowListEnabledSettingInput_
+    = UpdateIpAllowListEnabledSettingInput_
+
+
+type alias UpdateIpAllowListEntryInput =
+    GraphQL.Engine.InputObject UpdateIpAllowListEntryInput_
+
+
+type UpdateIpAllowListEntryInput_
+    = UpdateIpAllowListEntryInput_
+
+
+type alias UpdateIpAllowListForInstalledAppsEnabledSettingInput =
+    GraphQL.Engine.InputObject UpdateIpAllowListForInstalledAppsEnabledSettingInput_
+
+
+type UpdateIpAllowListForInstalledAppsEnabledSettingInput_
+    = UpdateIpAllowListForInstalledAppsEnabledSettingInput_
+
+
+type alias UpdateIssueCommentInput =
+    GraphQL.Engine.InputObject UpdateIssueCommentInput_
+
+
+type UpdateIssueCommentInput_
+    = UpdateIssueCommentInput_
+
+
+type alias UpdateIssueInput =
+    GraphQL.Engine.InputObject UpdateIssueInput_
+
+
+type UpdateIssueInput_
+    = UpdateIssueInput_
+
+
+type alias UpdateNotificationRestrictionSettingInput =
+    GraphQL.Engine.InputObject UpdateNotificationRestrictionSettingInput_
+
+
+type UpdateNotificationRestrictionSettingInput_
+    = UpdateNotificationRestrictionSettingInput_
+
+
+type alias UpdateOrganizationAllowPrivateRepositoryForkingSettingInput =
+    GraphQL.Engine.InputObject UpdateOrganizationAllowPrivateRepositoryForkingSettingInput_
+
+
+type UpdateOrganizationAllowPrivateRepositoryForkingSettingInput_
+    = UpdateOrganizationAllowPrivateRepositoryForkingSettingInput_
+
+
+type alias UpdateOrganizationWebCommitSignoffSettingInput =
+    GraphQL.Engine.InputObject UpdateOrganizationWebCommitSignoffSettingInput_
+
+
+type UpdateOrganizationWebCommitSignoffSettingInput_
+    = UpdateOrganizationWebCommitSignoffSettingInput_
+
+
+type alias UpdateProjectCardInput =
+    GraphQL.Engine.InputObject UpdateProjectCardInput_
+
+
+type UpdateProjectCardInput_
+    = UpdateProjectCardInput_
+
+
+type alias UpdateProjectColumnInput =
+    GraphQL.Engine.InputObject UpdateProjectColumnInput_
+
+
+type UpdateProjectColumnInput_
+    = UpdateProjectColumnInput_
+
+
+type alias UpdateProjectDraftIssueInput =
+    GraphQL.Engine.InputObject UpdateProjectDraftIssueInput_
+
+
+type UpdateProjectDraftIssueInput_
+    = UpdateProjectDraftIssueInput_
+
+
+type alias UpdateProjectInput =
+    GraphQL.Engine.InputObject UpdateProjectInput_
+
+
+type UpdateProjectInput_
+    = UpdateProjectInput_
+
+
+type alias UpdateProjectNextInput =
+    GraphQL.Engine.InputObject UpdateProjectNextInput_
+
+
+type UpdateProjectNextInput_
+    = UpdateProjectNextInput_
+
+
+type alias UpdateProjectNextItemFieldInput =
+    GraphQL.Engine.InputObject UpdateProjectNextItemFieldInput_
+
+
+type UpdateProjectNextItemFieldInput_
+    = UpdateProjectNextItemFieldInput_
+
+
+type alias UpdateProjectV2DraftIssueInput =
+    GraphQL.Engine.InputObject UpdateProjectV2DraftIssueInput_
+
+
+type UpdateProjectV2DraftIssueInput_
+    = UpdateProjectV2DraftIssueInput_
+
+
+type alias UpdateProjectV2Input =
+    GraphQL.Engine.InputObject UpdateProjectV2Input_
+
+
+type UpdateProjectV2Input_
+    = UpdateProjectV2Input_
+
+
+type alias UpdateProjectV2ItemFieldValueInput =
+    GraphQL.Engine.InputObject UpdateProjectV2ItemFieldValueInput_
+
+
+type UpdateProjectV2ItemFieldValueInput_
+    = UpdateProjectV2ItemFieldValueInput_
+
+
+type alias UpdateProjectV2ItemPositionInput =
+    GraphQL.Engine.InputObject UpdateProjectV2ItemPositionInput_
+
+
+type UpdateProjectV2ItemPositionInput_
+    = UpdateProjectV2ItemPositionInput_
+
+
+type alias UpdatePullRequestBranchInput =
+    GraphQL.Engine.InputObject UpdatePullRequestBranchInput_
+
+
+type UpdatePullRequestBranchInput_
+    = UpdatePullRequestBranchInput_
+
+
+type alias UpdatePullRequestInput =
+    GraphQL.Engine.InputObject UpdatePullRequestInput_
+
+
+type UpdatePullRequestInput_
+    = UpdatePullRequestInput_
+
+
+type alias UpdatePullRequestReviewCommentInput =
+    GraphQL.Engine.InputObject UpdatePullRequestReviewCommentInput_
+
+
+type UpdatePullRequestReviewCommentInput_
+    = UpdatePullRequestReviewCommentInput_
+
+
+type alias UpdatePullRequestReviewInput =
+    GraphQL.Engine.InputObject UpdatePullRequestReviewInput_
+
+
+type UpdatePullRequestReviewInput_
+    = UpdatePullRequestReviewInput_
+
+
+type alias UpdateRefInput =
+    GraphQL.Engine.InputObject UpdateRefInput_
+
+
+type UpdateRefInput_
+    = UpdateRefInput_
+
+
+type alias UpdateRepositoryInput =
+    GraphQL.Engine.InputObject UpdateRepositoryInput_
+
+
+type UpdateRepositoryInput_
+    = UpdateRepositoryInput_
+
+
+type alias UpdateRepositoryWebCommitSignoffSettingInput =
+    GraphQL.Engine.InputObject UpdateRepositoryWebCommitSignoffSettingInput_
+
+
+type UpdateRepositoryWebCommitSignoffSettingInput_
+    = UpdateRepositoryWebCommitSignoffSettingInput_
+
+
+type alias UpdateSponsorshipPreferencesInput =
+    GraphQL.Engine.InputObject UpdateSponsorshipPreferencesInput_
+
+
+type UpdateSponsorshipPreferencesInput_
+    = UpdateSponsorshipPreferencesInput_
+
+
+type alias UpdateSubscriptionInput =
+    GraphQL.Engine.InputObject UpdateSubscriptionInput_
+
+
+type UpdateSubscriptionInput_
+    = UpdateSubscriptionInput_
+
+
+type alias UpdateTeamDiscussionCommentInput =
+    GraphQL.Engine.InputObject UpdateTeamDiscussionCommentInput_
+
+
+type UpdateTeamDiscussionCommentInput_
+    = UpdateTeamDiscussionCommentInput_
+
+
+type alias UpdateTeamDiscussionInput =
+    GraphQL.Engine.InputObject UpdateTeamDiscussionInput_
+
+
+type UpdateTeamDiscussionInput_
+    = UpdateTeamDiscussionInput_
+
+
+type alias UpdateTeamsRepositoryInput =
+    GraphQL.Engine.InputObject UpdateTeamsRepositoryInput_
+
+
+type UpdateTeamsRepositoryInput_
+    = UpdateTeamsRepositoryInput_
+
+
+type alias UpdateTopicsInput =
+    GraphQL.Engine.InputObject UpdateTopicsInput_
+
+
+type UpdateTopicsInput_
+    = UpdateTopicsInput_
+
+
+type alias UserStatusOrder =
+    GraphQL.Engine.InputObject UserStatusOrder_
+
+
+type UserStatusOrder_
+    = UserStatusOrder_
+
+
+type alias VerifiableDomainOrder =
+    GraphQL.Engine.InputObject VerifiableDomainOrder_
+
+
+type VerifiableDomainOrder_
+    = VerifiableDomainOrder_
+
+
+type alias VerifyVerifiableDomainInput =
+    GraphQL.Engine.InputObject VerifyVerifiableDomainInput_
+
+
+type VerifyVerifiableDomainInput_
+    = VerifyVerifiableDomainInput_
+
+
+type alias WorkflowRunOrder =
+    GraphQL.Engine.InputObject WorkflowRunOrder_
+
+
+type WorkflowRunOrder_
+    = WorkflowRunOrder_
+
+
