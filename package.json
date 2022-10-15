@@ -4,7 +4,6 @@
   "description": "An example repo for elm-gql that uses the Github GraphQL API",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "api:init": "scripts/api-init.sh",
     "api:refresh": "scripts/api-full-refresh.sh",
     "api": "scripts/api-refresh.sh"
