@@ -1,0 +1,25 @@
+{
+  "name": "elm-gql-github-example",
+  "version": "1.0.0",
+  "description": "An example repo for elm-gql that uses the Github GraphQL API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "api:init": "scripts/api-init.sh",
+    "api:refresh": "scripts/api-full-refresh.sh",
+    "api": "scripts/api-refresh.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mdgriffith/elm-gql-github-example.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mdgriffith/elm-gql-github-example/issues"
+  },
+  "homepage": "https://github.com/mdgriffith/elm-gql-github-example#readme",
+  "devDependencies": {
+    "elm-gql": "^0.2.0"
+  }
+}
