@@ -1,0 +1,49 @@
+query RepoList($numberOfRepos: Int!) {
+  viewer {
+    name
+    repositories(last: $numberOfRepos) {
+      nodes {
+        name
+      }
+    }
+  }
+}
+
+query RepoDetails($owner: String!, $name: String!) {
+  repository(owner: $owner, name: $name) {
+    name
+    description
+    homepageUrl
+    diskUsageKB: diskUsage
+  }
+}
+
+query RepoIssues(
+  $repoOwner: String!
+  $repoName: String!
+  $issueCount: Int!
+  $states: [IssueState!]!
+) {
+  repository(owner: $repoOwner, name: $repoName) {
+    issues(last: $issueCount, states: $states) {
+      edges {
+        node {
+          ...Issue
+        }
+      }
+    }
+  }
+}
+
+fragment Issue on Issue {
+  title
+  url
+  activeLockReason
+  labels(first: 5) {
+    edges {
+      label: node {
+        name
+      }
+    }
+  }
+}
