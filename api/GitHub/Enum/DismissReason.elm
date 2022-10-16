@@ -1,7 +1,7 @@
-module GitHub.Enum.DismissReason exposing (DismissReason(..), decoder, encode, list)
+module GitHub.Enum.DismissReason exposing (DismissReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DismissReason
+@docs encode, decoder, all, DismissReason
 -}
 
 
@@ -17,8 +17,8 @@ type DismissReason
     | NOT_USED
 
 
-list : List DismissReason
-list =
+all : List DismissReason
+all =
     [ FIX_STARTED, NO_BANDWIDTH, TOLERABLE_RISK, INACCURATE, NOT_USED ]
 
 

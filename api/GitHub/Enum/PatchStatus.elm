@@ -1,7 +1,7 @@
-module GitHub.Enum.PatchStatus exposing (PatchStatus(..), decoder, encode, list)
+module GitHub.Enum.PatchStatus exposing (PatchStatus(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PatchStatus
+@docs encode, decoder, all, PatchStatus
 -}
 
 
@@ -18,8 +18,8 @@ type PatchStatus
     | CHANGED
 
 
-list : List PatchStatus
-list =
+all : List PatchStatus
+all =
     [ ADDED, DELETED, RENAMED, COPIED, MODIFIED, CHANGED ]
 
 

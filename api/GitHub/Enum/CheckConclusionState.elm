@@ -1,7 +1,7 @@
-module GitHub.Enum.CheckConclusionState exposing (CheckConclusionState(..), decoder, encode, list)
+module GitHub.Enum.CheckConclusionState exposing (CheckConclusionState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CheckConclusionState
+@docs encode, decoder, all, CheckConclusionState
 -}
 
 
@@ -21,8 +21,8 @@ type CheckConclusionState
     | STALE
 
 
-list : List CheckConclusionState
-list =
+all : List CheckConclusionState
+all =
     [ ACTION_REQUIRED
     , TIMED_OUT
     , CANCELLED

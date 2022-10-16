@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectV2FieldType exposing (ProjectV2FieldType(..), decoder, encode, list)
+module GitHub.Enum.ProjectV2FieldType exposing (ProjectV2FieldType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectV2FieldType
+@docs encode, decoder, all, ProjectV2FieldType
 -}
 
 
@@ -25,8 +25,8 @@ type ProjectV2FieldType
     | TRACKS
 
 
-list : List ProjectV2FieldType
-list =
+all : List ProjectV2FieldType
+all =
     [ ASSIGNEES
     , LINKED_PULL_REQUESTS
     , REVIEWERS

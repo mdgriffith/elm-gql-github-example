@@ -1,7 +1,7 @@
-module GitHub.Enum.PinnedDiscussionGradient exposing (PinnedDiscussionGradient(..), decoder, encode, list)
+module GitHub.Enum.PinnedDiscussionGradient exposing (PinnedDiscussionGradient(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PinnedDiscussionGradient
+@docs encode, decoder, all, PinnedDiscussionGradient
 -}
 
 
@@ -17,8 +17,8 @@ type PinnedDiscussionGradient
     | PURPLE_CORAL
 
 
-list : List PinnedDiscussionGradient
-list =
+all : List PinnedDiscussionGradient
+all =
     [ RED_ORANGE, BLUE_MINT, BLUE_PURPLE, PINK_BLUE, PURPLE_CORAL ]
 
 

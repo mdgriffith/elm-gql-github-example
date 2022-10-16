@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgRemoveOutsideCollaboratorAuditEntryMembershipType exposing (OrgRemoveOutsideCollaboratorAuditEntryMembershipType(..), decoder, encode, list)
+module GitHub.Enum.OrgRemoveOutsideCollaboratorAuditEntryMembershipType exposing (OrgRemoveOutsideCollaboratorAuditEntryMembershipType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgRemoveOutsideCollaboratorAuditEntryMembershipType
+@docs encode, decoder, all, OrgRemoveOutsideCollaboratorAuditEntryMembershipType
 -}
 
 
@@ -15,8 +15,8 @@ type OrgRemoveOutsideCollaboratorAuditEntryMembershipType
     | BILLING_MANAGER
 
 
-list : List OrgRemoveOutsideCollaboratorAuditEntryMembershipType
-list =
+all : List OrgRemoveOutsideCollaboratorAuditEntryMembershipType
+all =
     [ OUTSIDE_COLLABORATOR, UNAFFILIATED, BILLING_MANAGER ]
 
 

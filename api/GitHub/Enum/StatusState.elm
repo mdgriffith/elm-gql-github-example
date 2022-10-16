@@ -1,7 +1,7 @@
-module GitHub.Enum.StatusState exposing (StatusState(..), decoder, encode, list)
+module GitHub.Enum.StatusState exposing (StatusState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, StatusState
+@docs encode, decoder, all, StatusState
 -}
 
 
@@ -17,8 +17,8 @@ type StatusState
     | SUCCESS
 
 
-list : List StatusState
-list =
+all : List StatusState
+all =
     [ EXPECTED, ERROR, FAILURE, PENDING, SUCCESS ]
 
 

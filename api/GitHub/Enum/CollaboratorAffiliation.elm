@@ -1,7 +1,7 @@
-module GitHub.Enum.CollaboratorAffiliation exposing (CollaboratorAffiliation(..), decoder, encode, list)
+module GitHub.Enum.CollaboratorAffiliation exposing (CollaboratorAffiliation(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CollaboratorAffiliation
+@docs encode, decoder, all, CollaboratorAffiliation
 -}
 
 
@@ -15,8 +15,8 @@ type CollaboratorAffiliation
     | ALL
 
 
-list : List CollaboratorAffiliation
-list =
+all : List CollaboratorAffiliation
+all =
     [ OUTSIDE, DIRECT, ALL ]
 
 

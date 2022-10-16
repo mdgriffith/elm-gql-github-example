@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectCardArchivedState exposing (ProjectCardArchivedState(..), decoder, encode, list)
+module GitHub.Enum.ProjectCardArchivedState exposing (ProjectCardArchivedState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectCardArchivedState
+@docs encode, decoder, all, ProjectCardArchivedState
 -}
 
 
@@ -14,8 +14,8 @@ type ProjectCardArchivedState
     | NOT_ARCHIVED
 
 
-list : List ProjectCardArchivedState
-list =
+all : List ProjectCardArchivedState
+all =
     [ ARCHIVED, NOT_ARCHIVED ]
 
 

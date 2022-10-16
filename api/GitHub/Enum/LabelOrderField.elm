@@ -1,7 +1,7 @@
-module GitHub.Enum.LabelOrderField exposing (LabelOrderField(..), decoder, encode, list)
+module GitHub.Enum.LabelOrderField exposing (LabelOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, LabelOrderField
+@docs encode, decoder, all, LabelOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type LabelOrderField
     | CREATED_AT
 
 
-list : List LabelOrderField
-list =
+all : List LabelOrderField
+all =
     [ NAME, CREATED_AT ]
 
 

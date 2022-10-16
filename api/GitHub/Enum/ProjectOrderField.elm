@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectOrderField exposing (ProjectOrderField(..), decoder, encode, list)
+module GitHub.Enum.ProjectOrderField exposing (ProjectOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectOrderField
+@docs encode, decoder, all, ProjectOrderField
 -}
 
 
@@ -15,8 +15,8 @@ type ProjectOrderField
     | NAME
 
 
-list : List ProjectOrderField
-list =
+all : List ProjectOrderField
+all =
     [ CREATED_AT, UPDATED_AT, NAME ]
 
 

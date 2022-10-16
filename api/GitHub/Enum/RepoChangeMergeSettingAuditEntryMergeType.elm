@@ -1,7 +1,7 @@
-module GitHub.Enum.RepoChangeMergeSettingAuditEntryMergeType exposing (RepoChangeMergeSettingAuditEntryMergeType(..), decoder, encode, list)
+module GitHub.Enum.RepoChangeMergeSettingAuditEntryMergeType exposing (RepoChangeMergeSettingAuditEntryMergeType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepoChangeMergeSettingAuditEntryMergeType
+@docs encode, decoder, all, RepoChangeMergeSettingAuditEntryMergeType
 -}
 
 
@@ -15,8 +15,8 @@ type RepoChangeMergeSettingAuditEntryMergeType
     | SQUASH
 
 
-list : List RepoChangeMergeSettingAuditEntryMergeType
-list =
+all : List RepoChangeMergeSettingAuditEntryMergeType
+all =
     [ MERGE, REBASE, SQUASH ]
 
 

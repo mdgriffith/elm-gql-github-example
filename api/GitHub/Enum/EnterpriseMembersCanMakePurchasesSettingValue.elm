@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseMembersCanMakePurchasesSettingValue exposing (EnterpriseMembersCanMakePurchasesSettingValue(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseMembersCanMakePurchasesSettingValue exposing (EnterpriseMembersCanMakePurchasesSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseMembersCanMakePurchasesSettingValue
+@docs encode, decoder, all, EnterpriseMembersCanMakePurchasesSettingValue
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseMembersCanMakePurchasesSettingValue
     | DISABLED
 
 
-list : List EnterpriseMembersCanMakePurchasesSettingValue
-list =
+all : List EnterpriseMembersCanMakePurchasesSettingValue
+all =
     [ ENABLED, DISABLED ]
 
 

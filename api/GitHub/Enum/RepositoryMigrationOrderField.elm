@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryMigrationOrderField exposing (RepositoryMigrationOrderField(..), decoder, encode, list)
+module GitHub.Enum.RepositoryMigrationOrderField exposing (RepositoryMigrationOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryMigrationOrderField
+@docs encode, decoder, all, RepositoryMigrationOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type RepositoryMigrationOrderField
     = CREATED_AT
 
 
-list : List RepositoryMigrationOrderField
-list =
+all : List RepositoryMigrationOrderField
+all =
     [ CREATED_AT ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.TrackedIssueStates exposing (TrackedIssueStates(..), decoder, encode, list)
+module GitHub.Enum.TrackedIssueStates exposing (TrackedIssueStates(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TrackedIssueStates
+@docs encode, decoder, all, TrackedIssueStates
 -}
 
 
@@ -14,8 +14,8 @@ type TrackedIssueStates
     | CLOSED
 
 
-list : List TrackedIssueStates
-list =
+all : List TrackedIssueStates
+all =
     [ OPEN, CLOSED ]
 
 

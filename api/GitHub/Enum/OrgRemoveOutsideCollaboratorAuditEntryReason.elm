@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgRemoveOutsideCollaboratorAuditEntryReason exposing (OrgRemoveOutsideCollaboratorAuditEntryReason(..), decoder, encode, list)
+module GitHub.Enum.OrgRemoveOutsideCollaboratorAuditEntryReason exposing (OrgRemoveOutsideCollaboratorAuditEntryReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgRemoveOutsideCollaboratorAuditEntryReason
+@docs encode, decoder, all, OrgRemoveOutsideCollaboratorAuditEntryReason
 -}
 
 
@@ -14,8 +14,8 @@ type OrgRemoveOutsideCollaboratorAuditEntryReason
     | SAML_EXTERNAL_IDENTITY_MISSING
 
 
-list : List OrgRemoveOutsideCollaboratorAuditEntryReason
-list =
+all : List OrgRemoveOutsideCollaboratorAuditEntryReason
+all =
     [ TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE, SAML_EXTERNAL_IDENTITY_MISSING ]
 
 

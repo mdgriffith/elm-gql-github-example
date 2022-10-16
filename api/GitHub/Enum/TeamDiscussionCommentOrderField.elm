@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamDiscussionCommentOrderField exposing (TeamDiscussionCommentOrderField(..), decoder, encode, list)
+module GitHub.Enum.TeamDiscussionCommentOrderField exposing (TeamDiscussionCommentOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamDiscussionCommentOrderField
+@docs encode, decoder, all, TeamDiscussionCommentOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type TeamDiscussionCommentOrderField
     = NUMBER
 
 
-list : List TeamDiscussionCommentOrderField
-list =
+all : List TeamDiscussionCommentOrderField
+all =
     [ NUMBER ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.GistPrivacy exposing (GistPrivacy(..), decoder, encode, list)
+module GitHub.Enum.GistPrivacy exposing (GistPrivacy(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, GistPrivacy
+@docs encode, decoder, all, GistPrivacy
 -}
 
 
@@ -15,8 +15,8 @@ type GistPrivacy
     | ALL
 
 
-list : List GistPrivacy
-list =
+all : List GistPrivacy
+all =
     [ PUBLIC, SECRET, ALL ]
 
 

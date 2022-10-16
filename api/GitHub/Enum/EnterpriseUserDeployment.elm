@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseUserDeployment exposing (EnterpriseUserDeployment(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseUserDeployment exposing (EnterpriseUserDeployment(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseUserDeployment
+@docs encode, decoder, all, EnterpriseUserDeployment
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseUserDeployment
     | SERVER
 
 
-list : List EnterpriseUserDeployment
-list =
+all : List EnterpriseUserDeployment
+all =
     [ CLOUD, SERVER ]
 
 

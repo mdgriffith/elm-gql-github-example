@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseServerUserAccountsUploadSyncState exposing (EnterpriseServerUserAccountsUploadSyncState(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseServerUserAccountsUploadSyncState exposing (EnterpriseServerUserAccountsUploadSyncState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseServerUserAccountsUploadSyncState
+@docs encode, decoder, all, EnterpriseServerUserAccountsUploadSyncState
 -}
 
 
@@ -15,8 +15,8 @@ type EnterpriseServerUserAccountsUploadSyncState
     | FAILURE
 
 
-list : List EnterpriseServerUserAccountsUploadSyncState
-list =
+all : List EnterpriseServerUserAccountsUploadSyncState
+all =
     [ PENDING, SUCCESS, FAILURE ]
 
 

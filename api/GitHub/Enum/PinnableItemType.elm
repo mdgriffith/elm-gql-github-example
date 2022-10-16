@@ -1,7 +1,7 @@
-module GitHub.Enum.PinnableItemType exposing (PinnableItemType(..), decoder, encode, list)
+module GitHub.Enum.PinnableItemType exposing (PinnableItemType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PinnableItemType
+@docs encode, decoder, all, PinnableItemType
 -}
 
 
@@ -20,8 +20,8 @@ type PinnableItemType
     | TEAM
 
 
-list : List PinnableItemType
-list =
+all : List PinnableItemType
+all =
     [ REPOSITORY, GIST, ISSUE, PROJECT, PULL_REQUEST, USER, ORGANIZATION, TEAM ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryInteractionLimitOrigin exposing (RepositoryInteractionLimitOrigin(..), decoder, encode, list)
+module GitHub.Enum.RepositoryInteractionLimitOrigin exposing (RepositoryInteractionLimitOrigin(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryInteractionLimitOrigin
+@docs encode, decoder, all, RepositoryInteractionLimitOrigin
 -}
 
 
@@ -15,8 +15,8 @@ type RepositoryInteractionLimitOrigin
     | USER
 
 
-list : List RepositoryInteractionLimitOrigin
-list =
+all : List RepositoryInteractionLimitOrigin
+all =
     [ REPOSITORY, ORGANIZATION, USER ]
 
 

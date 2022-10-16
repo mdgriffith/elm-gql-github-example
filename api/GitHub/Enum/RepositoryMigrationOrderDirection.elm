@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryMigrationOrderDirection exposing (RepositoryMigrationOrderDirection(..), decoder, encode, list)
+module GitHub.Enum.RepositoryMigrationOrderDirection exposing (RepositoryMigrationOrderDirection(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryMigrationOrderDirection
+@docs encode, decoder, all, RepositoryMigrationOrderDirection
 -}
 
 
@@ -14,8 +14,8 @@ type RepositoryMigrationOrderDirection
     | DESC
 
 
-list : List RepositoryMigrationOrderDirection
-list =
+all : List RepositoryMigrationOrderDirection
+all =
     [ ASC, DESC ]
 
 

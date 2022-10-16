@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestMergeMethod exposing (PullRequestMergeMethod(..), decoder, encode, list)
+module GitHub.Enum.PullRequestMergeMethod exposing (PullRequestMergeMethod(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestMergeMethod
+@docs encode, decoder, all, PullRequestMergeMethod
 -}
 
 
@@ -15,8 +15,8 @@ type PullRequestMergeMethod
     | REBASE
 
 
-list : List PullRequestMergeMethod
-list =
+all : List PullRequestMergeMethod
+all =
     [ MERGE, SQUASH, REBASE ]
 
 

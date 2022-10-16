@@ -1,7 +1,7 @@
-module GitHub.Enum.PackageOrderField exposing (PackageOrderField(..), decoder, encode, list)
+module GitHub.Enum.PackageOrderField exposing (PackageOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PackageOrderField
+@docs encode, decoder, all, PackageOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type PackageOrderField
     = CREATED_AT
 
 
-list : List PackageOrderField
-list =
+all : List PackageOrderField
+all =
     [ CREATED_AT ]
 
 

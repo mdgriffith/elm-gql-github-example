@@ -1,7 +1,7 @@
-module GitHub.Enum.IssueOrderField exposing (IssueOrderField(..), decoder, encode, list)
+module GitHub.Enum.IssueOrderField exposing (IssueOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IssueOrderField
+@docs encode, decoder, all, IssueOrderField
 -}
 
 
@@ -15,8 +15,8 @@ type IssueOrderField
     | COMMENTS
 
 
-list : List IssueOrderField
-list =
+all : List IssueOrderField
+all =
     [ CREATED_AT, UPDATED_AT, COMMENTS ]
 
 

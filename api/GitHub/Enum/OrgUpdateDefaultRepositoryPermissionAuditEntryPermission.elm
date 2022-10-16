@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgUpdateDefaultRepositoryPermissionAuditEntryPermission exposing (OrgUpdateDefaultRepositoryPermissionAuditEntryPermission(..), decoder, encode, list)
+module GitHub.Enum.OrgUpdateDefaultRepositoryPermissionAuditEntryPermission exposing (OrgUpdateDefaultRepositoryPermissionAuditEntryPermission(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
+@docs encode, decoder, all, OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
 -}
 
 
@@ -16,8 +16,8 @@ type OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
     | NONE
 
 
-list : List OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
-list =
+all : List OrgUpdateDefaultRepositoryPermissionAuditEntryPermission
+all =
     [ READ, WRITE, ADMIN, NONE ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectNextFieldType exposing (ProjectNextFieldType(..), decoder, encode, list)
+module GitHub.Enum.ProjectNextFieldType exposing (ProjectNextFieldType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectNextFieldType
+@docs encode, decoder, all, ProjectNextFieldType
 -}
 
 
@@ -25,8 +25,8 @@ type ProjectNextFieldType
     | TRACKS
 
 
-list : List ProjectNextFieldType
-list =
+all : List ProjectNextFieldType
+all =
     [ ASSIGNEES
     , LINKED_PULL_REQUESTS
     , REVIEWERS

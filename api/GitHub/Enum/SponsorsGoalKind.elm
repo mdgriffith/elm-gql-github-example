@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorsGoalKind exposing (SponsorsGoalKind(..), decoder, encode, list)
+module GitHub.Enum.SponsorsGoalKind exposing (SponsorsGoalKind(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorsGoalKind
+@docs encode, decoder, all, SponsorsGoalKind
 -}
 
 
@@ -14,8 +14,8 @@ type SponsorsGoalKind
     | MONTHLY_SPONSORSHIP_AMOUNT
 
 
-list : List SponsorsGoalKind
-list =
+all : List SponsorsGoalKind
+all =
     [ TOTAL_SPONSORS_COUNT, MONTHLY_SPONSORSHIP_AMOUNT ]
 
 

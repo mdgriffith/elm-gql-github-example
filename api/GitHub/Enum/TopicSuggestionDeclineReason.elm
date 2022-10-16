@@ -1,7 +1,7 @@
-module GitHub.Enum.TopicSuggestionDeclineReason exposing (TopicSuggestionDeclineReason(..), decoder, encode, list)
+module GitHub.Enum.TopicSuggestionDeclineReason exposing (TopicSuggestionDeclineReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TopicSuggestionDeclineReason
+@docs encode, decoder, all, TopicSuggestionDeclineReason
 -}
 
 
@@ -16,8 +16,8 @@ type TopicSuggestionDeclineReason
     | TOO_GENERAL
 
 
-list : List TopicSuggestionDeclineReason
-list =
+all : List TopicSuggestionDeclineReason
+all =
     [ NOT_RELEVANT, TOO_SPECIFIC, PERSONAL_PREFERENCE, TOO_GENERAL ]
 
 

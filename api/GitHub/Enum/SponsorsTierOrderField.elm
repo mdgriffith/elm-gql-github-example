@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorsTierOrderField exposing (SponsorsTierOrderField(..), decoder, encode, list)
+module GitHub.Enum.SponsorsTierOrderField exposing (SponsorsTierOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorsTierOrderField
+@docs encode, decoder, all, SponsorsTierOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type SponsorsTierOrderField
     | MONTHLY_PRICE_IN_CENTS
 
 
-list : List SponsorsTierOrderField
-list =
+all : List SponsorsTierOrderField
+all =
     [ CREATED_AT, MONTHLY_PRICE_IN_CENTS ]
 
 

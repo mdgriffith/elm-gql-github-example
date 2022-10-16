@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgRemoveMemberAuditEntryMembershipType exposing (OrgRemoveMemberAuditEntryMembershipType(..), decoder, encode, list)
+module GitHub.Enum.OrgRemoveMemberAuditEntryMembershipType exposing (OrgRemoveMemberAuditEntryMembershipType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgRemoveMemberAuditEntryMembershipType
+@docs encode, decoder, all, OrgRemoveMemberAuditEntryMembershipType
 -}
 
 
@@ -18,8 +18,8 @@ type OrgRemoveMemberAuditEntryMembershipType
     | OUTSIDE_COLLABORATOR
 
 
-list : List OrgRemoveMemberAuditEntryMembershipType
-list =
+all : List OrgRemoveMemberAuditEntryMembershipType
+all =
     [ SUSPENDED
     , DIRECT_MEMBER
     , ADMIN

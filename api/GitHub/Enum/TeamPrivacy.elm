@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamPrivacy exposing (TeamPrivacy(..), decoder, encode, list)
+module GitHub.Enum.TeamPrivacy exposing (TeamPrivacy(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamPrivacy
+@docs encode, decoder, all, TeamPrivacy
 -}
 
 
@@ -14,8 +14,8 @@ type TeamPrivacy
     | VISIBLE
 
 
-list : List TeamPrivacy
-list =
+all : List TeamPrivacy
+all =
     [ SECRET, VISIBLE ]
 
 

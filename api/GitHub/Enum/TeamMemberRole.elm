@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamMemberRole exposing (TeamMemberRole(..), decoder, encode, list)
+module GitHub.Enum.TeamMemberRole exposing (TeamMemberRole(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamMemberRole
+@docs encode, decoder, all, TeamMemberRole
 -}
 
 
@@ -14,8 +14,8 @@ type TeamMemberRole
     | MEMBER
 
 
-list : List TeamMemberRole
-list =
+all : List TeamMemberRole
+all =
     [ MAINTAINER, MEMBER ]
 
 

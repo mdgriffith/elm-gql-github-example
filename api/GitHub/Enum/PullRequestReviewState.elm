@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestReviewState exposing (PullRequestReviewState(..), decoder, encode, list)
+module GitHub.Enum.PullRequestReviewState exposing (PullRequestReviewState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestReviewState
+@docs encode, decoder, all, PullRequestReviewState
 -}
 
 
@@ -17,8 +17,8 @@ type PullRequestReviewState
     | DISMISSED
 
 
-list : List PullRequestReviewState
-list =
+all : List PullRequestReviewState
+all =
     [ PENDING, COMMENTED, APPROVED, CHANGES_REQUESTED, DISMISSED ]
 
 

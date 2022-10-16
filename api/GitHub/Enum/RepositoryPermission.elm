@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryPermission exposing (RepositoryPermission(..), decoder, encode, list)
+module GitHub.Enum.RepositoryPermission exposing (RepositoryPermission(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryPermission
+@docs encode, decoder, all, RepositoryPermission
 -}
 
 
@@ -17,8 +17,8 @@ type RepositoryPermission
     | READ
 
 
-list : List RepositoryPermission
-list =
+all : List RepositoryPermission
+all =
     [ ADMIN, MAINTAIN, WRITE, TRIAGE, READ ]
 
 

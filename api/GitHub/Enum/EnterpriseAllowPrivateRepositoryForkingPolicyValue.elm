@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseAllowPrivateRepositoryForkingPolicyValue exposing (EnterpriseAllowPrivateRepositoryForkingPolicyValue(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseAllowPrivateRepositoryForkingPolicyValue exposing (EnterpriseAllowPrivateRepositoryForkingPolicyValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseAllowPrivateRepositoryForkingPolicyValue
+@docs encode, decoder, all, EnterpriseAllowPrivateRepositoryForkingPolicyValue
 -}
 
 
@@ -18,8 +18,8 @@ type EnterpriseAllowPrivateRepositoryForkingPolicyValue
     | EVERYWHERE
 
 
-list : List EnterpriseAllowPrivateRepositoryForkingPolicyValue
-list =
+all : List EnterpriseAllowPrivateRepositoryForkingPolicyValue
+all =
     [ ENTERPRISE_ORGANIZATIONS
     , SAME_ORGANIZATION
     , SAME_ORGANIZATION_USER_ACCOUNTS

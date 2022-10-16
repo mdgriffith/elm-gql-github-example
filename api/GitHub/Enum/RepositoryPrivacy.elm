@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryPrivacy exposing (RepositoryPrivacy(..), decoder, encode, list)
+module GitHub.Enum.RepositoryPrivacy exposing (RepositoryPrivacy(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryPrivacy
+@docs encode, decoder, all, RepositoryPrivacy
 -}
 
 
@@ -14,8 +14,8 @@ type RepositoryPrivacy
     | PRIVATE
 
 
-list : List RepositoryPrivacy
-list =
+all : List RepositoryPrivacy
+all =
     [ PUBLIC, PRIVATE ]
 
 

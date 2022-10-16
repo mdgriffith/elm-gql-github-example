@@ -1,7 +1,7 @@
-module GitHub.Enum.ActorType exposing (ActorType(..), decoder, encode, list)
+module GitHub.Enum.ActorType exposing (ActorType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ActorType
+@docs encode, decoder, all, ActorType
 -}
 
 
@@ -14,8 +14,8 @@ type ActorType
     | TEAM
 
 
-list : List ActorType
-list =
+all : List ActorType
+all =
     [ USER, TEAM ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.ReactionContent exposing (ReactionContent(..), decoder, encode, list)
+module GitHub.Enum.ReactionContent exposing (ReactionContent(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ReactionContent
+@docs encode, decoder, all, ReactionContent
 -}
 
 
@@ -20,8 +20,8 @@ type ReactionContent
     | EYES
 
 
-list : List ReactionContent
-list =
+all : List ReactionContent
+all =
     [ THUMBS_UP, THUMBS_DOWN, LAUGH, HOORAY, CONFUSED, HEART, ROCKET, EYES ]
 
 

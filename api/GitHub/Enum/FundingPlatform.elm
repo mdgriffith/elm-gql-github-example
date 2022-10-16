@@ -1,7 +1,7 @@
-module GitHub.Enum.FundingPlatform exposing (FundingPlatform(..), decoder, encode, list)
+module GitHub.Enum.FundingPlatform exposing (FundingPlatform(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, FundingPlatform
+@docs encode, decoder, all, FundingPlatform
 -}
 
 
@@ -23,8 +23,8 @@ type FundingPlatform
     | CUSTOM
 
 
-list : List FundingPlatform
-list =
+all : List FundingPlatform
+all =
     [ GITHUB
     , PATREON
     , OPEN_COLLECTIVE

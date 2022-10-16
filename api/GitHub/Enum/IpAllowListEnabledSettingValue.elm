@@ -1,7 +1,7 @@
-module GitHub.Enum.IpAllowListEnabledSettingValue exposing (IpAllowListEnabledSettingValue(..), decoder, encode, list)
+module GitHub.Enum.IpAllowListEnabledSettingValue exposing (IpAllowListEnabledSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IpAllowListEnabledSettingValue
+@docs encode, decoder, all, IpAllowListEnabledSettingValue
 -}
 
 
@@ -14,8 +14,8 @@ type IpAllowListEnabledSettingValue
     | DISABLED
 
 
-list : List IpAllowListEnabledSettingValue
-list =
+all : List IpAllowListEnabledSettingValue
+all =
     [ ENABLED, DISABLED ]
 
 

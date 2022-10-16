@@ -1,7 +1,7 @@
-module GitHub.Enum.SavedReplyOrderField exposing (SavedReplyOrderField(..), decoder, encode, list)
+module GitHub.Enum.SavedReplyOrderField exposing (SavedReplyOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SavedReplyOrderField
+@docs encode, decoder, all, SavedReplyOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type SavedReplyOrderField
     = UPDATED_AT
 
 
-list : List SavedReplyOrderField
-list =
+all : List SavedReplyOrderField
+all =
     [ UPDATED_AT ]
 
 

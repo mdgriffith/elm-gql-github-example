@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamOrderField exposing (TeamOrderField(..), decoder, encode, list)
+module GitHub.Enum.TeamOrderField exposing (TeamOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamOrderField
+@docs encode, decoder, all, TeamOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type TeamOrderField
     = NAME
 
 
-list : List TeamOrderField
-list =
+all : List TeamOrderField
+all =
     [ NAME ]
 
 

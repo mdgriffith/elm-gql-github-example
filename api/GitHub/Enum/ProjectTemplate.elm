@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectTemplate exposing (ProjectTemplate(..), decoder, encode, list)
+module GitHub.Enum.ProjectTemplate exposing (ProjectTemplate(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectTemplate
+@docs encode, decoder, all, ProjectTemplate
 -}
 
 
@@ -16,8 +16,8 @@ type ProjectTemplate
     | BUG_TRIAGE
 
 
-list : List ProjectTemplate
-list =
+all : List ProjectTemplate
+all =
     [ BASIC_KANBAN, AUTOMATED_KANBAN_V2, AUTOMATED_REVIEWS_KANBAN, BUG_TRIAGE ]
 
 

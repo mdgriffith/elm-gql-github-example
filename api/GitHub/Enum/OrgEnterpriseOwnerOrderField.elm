@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgEnterpriseOwnerOrderField exposing (OrgEnterpriseOwnerOrderField(..), decoder, encode, list)
+module GitHub.Enum.OrgEnterpriseOwnerOrderField exposing (OrgEnterpriseOwnerOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgEnterpriseOwnerOrderField
+@docs encode, decoder, all, OrgEnterpriseOwnerOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type OrgEnterpriseOwnerOrderField
     = LOGIN
 
 
-list : List OrgEnterpriseOwnerOrderField
-list =
+all : List OrgEnterpriseOwnerOrderField
+all =
     [ LOGIN ]
 
 

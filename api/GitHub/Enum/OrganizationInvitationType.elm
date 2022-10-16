@@ -1,7 +1,7 @@
-module GitHub.Enum.OrganizationInvitationType exposing (OrganizationInvitationType(..), decoder, encode, list)
+module GitHub.Enum.OrganizationInvitationType exposing (OrganizationInvitationType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrganizationInvitationType
+@docs encode, decoder, all, OrganizationInvitationType
 -}
 
 
@@ -14,8 +14,8 @@ type OrganizationInvitationType
     | EMAIL
 
 
-list : List OrganizationInvitationType
-list =
+all : List OrganizationInvitationType
+all =
     [ USER, EMAIL ]
 
 

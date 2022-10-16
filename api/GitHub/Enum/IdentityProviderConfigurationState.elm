@@ -1,7 +1,7 @@
-module GitHub.Enum.IdentityProviderConfigurationState exposing (IdentityProviderConfigurationState(..), decoder, encode, list)
+module GitHub.Enum.IdentityProviderConfigurationState exposing (IdentityProviderConfigurationState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IdentityProviderConfigurationState
+@docs encode, decoder, all, IdentityProviderConfigurationState
 -}
 
 
@@ -15,8 +15,8 @@ type IdentityProviderConfigurationState
     | UNCONFIGURED
 
 
-list : List IdentityProviderConfigurationState
-list =
+all : List IdentityProviderConfigurationState
+all =
     [ ENFORCED, CONFIGURED, UNCONFIGURED ]
 
 

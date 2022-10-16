@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryVisibility exposing (RepositoryVisibility(..), decoder, encode, list)
+module GitHub.Enum.RepositoryVisibility exposing (RepositoryVisibility(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryVisibility
+@docs encode, decoder, all, RepositoryVisibility
 -}
 
 
@@ -15,8 +15,8 @@ type RepositoryVisibility
     | INTERNAL
 
 
-list : List RepositoryVisibility
-list =
+all : List RepositoryVisibility
+all =
     [ PRIVATE, PUBLIC, INTERNAL ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.IssueState exposing (IssueState(..), decoder, encode, list)
+module GitHub.Enum.IssueState exposing (IssueState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IssueState
+@docs encode, decoder, all, IssueState
 -}
 
 
@@ -14,8 +14,8 @@ type IssueState
     | CLOSED
 
 
-list : List IssueState
-list =
+all : List IssueState
+all =
     [ OPEN, CLOSED ]
 
 

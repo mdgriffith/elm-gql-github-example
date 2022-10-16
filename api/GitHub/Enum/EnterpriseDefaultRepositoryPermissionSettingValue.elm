@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseDefaultRepositoryPermissionSettingValue exposing (EnterpriseDefaultRepositoryPermissionSettingValue(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseDefaultRepositoryPermissionSettingValue exposing (EnterpriseDefaultRepositoryPermissionSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseDefaultRepositoryPermissionSettingValue
+@docs encode, decoder, all, EnterpriseDefaultRepositoryPermissionSettingValue
 -}
 
 
@@ -17,8 +17,8 @@ type EnterpriseDefaultRepositoryPermissionSettingValue
     | NONE
 
 
-list : List EnterpriseDefaultRepositoryPermissionSettingValue
-list =
+all : List EnterpriseDefaultRepositoryPermissionSettingValue
+all =
     [ NO_POLICY, ADMIN, WRITE, READ, NONE ]
 
 

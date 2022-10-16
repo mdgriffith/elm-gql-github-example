@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility exposing (OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility(..), decoder, encode, list)
+module GitHub.Enum.OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility exposing (OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
+@docs encode, decoder, all, OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
 -}
 
 
@@ -20,8 +20,8 @@ type OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
     | PUBLIC_PRIVATE
 
 
-list : List OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
-list =
+all : List OrgUpdateMemberRepositoryCreationPermissionAuditEntryVisibility
+all =
     [ ALL
     , PUBLIC
     , NONE

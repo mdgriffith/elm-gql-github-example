@@ -1,7 +1,7 @@
-module GitHub.Enum.CheckRunType exposing (CheckRunType(..), decoder, encode, list)
+module GitHub.Enum.CheckRunType exposing (CheckRunType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CheckRunType
+@docs encode, decoder, all, CheckRunType
 -}
 
 
@@ -14,8 +14,8 @@ type CheckRunType
     | LATEST
 
 
-list : List CheckRunType
-list =
+all : List CheckRunType
+all =
     [ ALL, LATEST ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryAffiliation exposing (RepositoryAffiliation(..), decoder, encode, list)
+module GitHub.Enum.RepositoryAffiliation exposing (RepositoryAffiliation(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryAffiliation
+@docs encode, decoder, all, RepositoryAffiliation
 -}
 
 
@@ -15,8 +15,8 @@ type RepositoryAffiliation
     | ORGANIZATION_MEMBER
 
 
-list : List RepositoryAffiliation
-list =
+all : List RepositoryAffiliation
+all =
     [ OWNER, COLLABORATOR, ORGANIZATION_MEMBER ]
 
 

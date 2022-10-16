@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectViewLayout exposing (ProjectViewLayout(..), decoder, encode, list)
+module GitHub.Enum.ProjectViewLayout exposing (ProjectViewLayout(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectViewLayout
+@docs encode, decoder, all, ProjectViewLayout
 -}
 
 
@@ -14,8 +14,8 @@ type ProjectViewLayout
     | TABLE_LAYOUT
 
 
-list : List ProjectViewLayout
-list =
+all : List ProjectViewLayout
+all =
     [ BOARD_LAYOUT, TABLE_LAYOUT ]
 
 

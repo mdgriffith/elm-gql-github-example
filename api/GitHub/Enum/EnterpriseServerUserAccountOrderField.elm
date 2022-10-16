@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseServerUserAccountOrderField exposing (EnterpriseServerUserAccountOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseServerUserAccountOrderField exposing (EnterpriseServerUserAccountOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseServerUserAccountOrderField
+@docs encode, decoder, all, EnterpriseServerUserAccountOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseServerUserAccountOrderField
     | REMOTE_CREATED_AT
 
 
-list : List EnterpriseServerUserAccountOrderField
-list =
+all : List EnterpriseServerUserAccountOrderField
+all =
     [ LOGIN, REMOTE_CREATED_AT ]
 
 

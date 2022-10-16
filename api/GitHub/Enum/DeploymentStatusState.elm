@@ -1,7 +1,7 @@
-module GitHub.Enum.DeploymentStatusState exposing (DeploymentStatusState(..), decoder, encode, list)
+module GitHub.Enum.DeploymentStatusState exposing (DeploymentStatusState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DeploymentStatusState
+@docs encode, decoder, all, DeploymentStatusState
 -}
 
 
@@ -20,8 +20,8 @@ type DeploymentStatusState
     | WAITING
 
 
-list : List DeploymentStatusState
-list =
+all : List DeploymentStatusState
+all =
     [ PENDING, SUCCESS, FAILURE, INACTIVE, ERROR, QUEUED, IN_PROGRESS, WAITING ]
 
 

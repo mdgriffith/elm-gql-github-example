@@ -1,7 +1,7 @@
-module GitHub.Enum.OperationType exposing (OperationType(..), decoder, encode, list)
+module GitHub.Enum.OperationType exposing (OperationType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OperationType
+@docs encode, decoder, all, OperationType
 -}
 
 
@@ -19,8 +19,8 @@ type OperationType
     | TRANSFER
 
 
-list : List OperationType
-list =
+all : List OperationType
+all =
     [ ACCESS, AUTHENTICATION, CREATE, MODIFY, REMOVE, RESTORE, TRANSFER ]
 
 

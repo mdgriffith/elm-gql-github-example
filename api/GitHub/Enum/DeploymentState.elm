@@ -1,7 +1,7 @@
-module GitHub.Enum.DeploymentState exposing (DeploymentState(..), decoder, encode, list)
+module GitHub.Enum.DeploymentState exposing (DeploymentState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DeploymentState
+@docs encode, decoder, all, DeploymentState
 -}
 
 
@@ -22,8 +22,8 @@ type DeploymentState
     | WAITING
 
 
-list : List DeploymentState
-list =
+all : List DeploymentState
+all =
     [ ABANDONED
     , ACTIVE
     , DESTROYED

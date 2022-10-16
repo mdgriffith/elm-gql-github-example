@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryContributionType exposing (RepositoryContributionType(..), decoder, encode, list)
+module GitHub.Enum.RepositoryContributionType exposing (RepositoryContributionType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryContributionType
+@docs encode, decoder, all, RepositoryContributionType
 -}
 
 
@@ -17,8 +17,8 @@ type RepositoryContributionType
     | PULL_REQUEST_REVIEW
 
 
-list : List RepositoryContributionType
-list =
+all : List RepositoryContributionType
+all =
     [ COMMIT, ISSUE, PULL_REQUEST, REPOSITORY, PULL_REQUEST_REVIEW ]
 
 

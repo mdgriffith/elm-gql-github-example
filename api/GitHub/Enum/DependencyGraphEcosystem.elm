@@ -1,7 +1,7 @@
-module GitHub.Enum.DependencyGraphEcosystem exposing (DependencyGraphEcosystem(..), decoder, encode, list)
+module GitHub.Enum.DependencyGraphEcosystem exposing (DependencyGraphEcosystem(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DependencyGraphEcosystem
+@docs encode, decoder, all, DependencyGraphEcosystem
 -}
 
 
@@ -22,8 +22,8 @@ type DependencyGraphEcosystem
     | PUB
 
 
-list : List DependencyGraphEcosystem
-list =
+all : List DependencyGraphEcosystem
+all =
     [ RUBYGEMS, NPM, PIP, MAVEN, NUGET, COMPOSER, GO, ACTIONS, RUST, PUB ]
 
 

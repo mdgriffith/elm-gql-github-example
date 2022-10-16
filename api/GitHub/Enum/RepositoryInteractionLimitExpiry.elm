@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryInteractionLimitExpiry exposing (RepositoryInteractionLimitExpiry(..), decoder, encode, list)
+module GitHub.Enum.RepositoryInteractionLimitExpiry exposing (RepositoryInteractionLimitExpiry(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryInteractionLimitExpiry
+@docs encode, decoder, all, RepositoryInteractionLimitExpiry
 -}
 
 
@@ -17,8 +17,8 @@ type RepositoryInteractionLimitExpiry
     | SIX_MONTHS
 
 
-list : List RepositoryInteractionLimitExpiry
-list =
+all : List RepositoryInteractionLimitExpiry
+all =
     [ ONE_DAY, THREE_DAYS, ONE_WEEK, ONE_MONTH, SIX_MONTHS ]
 
 

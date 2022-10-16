@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestReviewCommentState exposing (PullRequestReviewCommentState(..), decoder, encode, list)
+module GitHub.Enum.PullRequestReviewCommentState exposing (PullRequestReviewCommentState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestReviewCommentState
+@docs encode, decoder, all, PullRequestReviewCommentState
 -}
 
 
@@ -14,8 +14,8 @@ type PullRequestReviewCommentState
     | SUBMITTED
 
 
-list : List PullRequestReviewCommentState
-list =
+all : List PullRequestReviewCommentState
+all =
     [ PENDING, SUBMITTED ]
 
 

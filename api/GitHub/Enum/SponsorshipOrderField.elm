@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorshipOrderField exposing (SponsorshipOrderField(..), decoder, encode, list)
+module GitHub.Enum.SponsorshipOrderField exposing (SponsorshipOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorshipOrderField
+@docs encode, decoder, all, SponsorshipOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type SponsorshipOrderField
     = CREATED_AT
 
 
-list : List SponsorshipOrderField
-list =
+all : List SponsorshipOrderField
+all =
     [ CREATED_AT ]
 
 

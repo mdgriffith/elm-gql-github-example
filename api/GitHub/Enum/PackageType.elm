@@ -1,7 +1,7 @@
-module GitHub.Enum.PackageType exposing (PackageType(..), decoder, encode, list)
+module GitHub.Enum.PackageType exposing (PackageType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PackageType
+@docs encode, decoder, all, PackageType
 -}
 
 
@@ -19,8 +19,8 @@ type PackageType
     | PYPI
 
 
-list : List PackageType
-list =
+all : List PackageType
+all =
     [ NPM, RUBYGEMS, MAVEN, DOCKER, DEBIAN, NUGET, PYPI ]
 
 

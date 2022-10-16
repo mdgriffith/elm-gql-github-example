@@ -1,7 +1,7 @@
-module GitHub.Enum.RefOrderField exposing (RefOrderField(..), decoder, encode, list)
+module GitHub.Enum.RefOrderField exposing (RefOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RefOrderField
+@docs encode, decoder, all, RefOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type RefOrderField
     | ALPHABETICAL
 
 
-list : List RefOrderField
-list =
+all : List RefOrderField
+all =
     [ TAG_COMMIT_DATE, ALPHABETICAL ]
 
 

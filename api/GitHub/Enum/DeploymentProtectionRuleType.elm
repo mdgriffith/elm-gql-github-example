@@ -1,7 +1,7 @@
-module GitHub.Enum.DeploymentProtectionRuleType exposing (DeploymentProtectionRuleType(..), decoder, encode, list)
+module GitHub.Enum.DeploymentProtectionRuleType exposing (DeploymentProtectionRuleType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DeploymentProtectionRuleType
+@docs encode, decoder, all, DeploymentProtectionRuleType
 -}
 
 
@@ -14,8 +14,8 @@ type DeploymentProtectionRuleType
     | WAIT_TIMER
 
 
-list : List DeploymentProtectionRuleType
-list =
+all : List DeploymentProtectionRuleType
+all =
     [ REQUIRED_REVIEWERS, WAIT_TIMER ]
 
 

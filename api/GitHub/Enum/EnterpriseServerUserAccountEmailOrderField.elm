@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseServerUserAccountEmailOrderField exposing (EnterpriseServerUserAccountEmailOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseServerUserAccountEmailOrderField exposing (EnterpriseServerUserAccountEmailOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseServerUserAccountEmailOrderField
+@docs encode, decoder, all, EnterpriseServerUserAccountEmailOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type EnterpriseServerUserAccountEmailOrderField
     = EMAIL
 
 
-list : List EnterpriseServerUserAccountEmailOrderField
-list =
+all : List EnterpriseServerUserAccountEmailOrderField
+all =
     [ EMAIL ]
 
 

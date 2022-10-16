@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamDiscussionOrderField exposing (TeamDiscussionOrderField(..), decoder, encode, list)
+module GitHub.Enum.TeamDiscussionOrderField exposing (TeamDiscussionOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamDiscussionOrderField
+@docs encode, decoder, all, TeamDiscussionOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type TeamDiscussionOrderField
     = CREATED_AT
 
 
-list : List TeamDiscussionOrderField
-list =
+all : List TeamDiscussionOrderField
+all =
     [ CREATED_AT ]
 
 

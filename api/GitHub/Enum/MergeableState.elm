@@ -1,7 +1,7 @@
-module GitHub.Enum.MergeableState exposing (MergeableState(..), decoder, encode, list)
+module GitHub.Enum.MergeableState exposing (MergeableState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MergeableState
+@docs encode, decoder, all, MergeableState
 -}
 
 
@@ -15,8 +15,8 @@ type MergeableState
     | UNKNOWN
 
 
-list : List MergeableState
-list =
+all : List MergeableState
+all =
     [ MERGEABLE, CONFLICTING, UNKNOWN ]
 
 

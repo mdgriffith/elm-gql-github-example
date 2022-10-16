@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgCreateAuditEntryBillingPlan exposing (OrgCreateAuditEntryBillingPlan(..), decoder, encode, list)
+module GitHub.Enum.OrgCreateAuditEntryBillingPlan exposing (OrgCreateAuditEntryBillingPlan(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgCreateAuditEntryBillingPlan
+@docs encode, decoder, all, OrgCreateAuditEntryBillingPlan
 -}
 
 
@@ -17,8 +17,8 @@ type OrgCreateAuditEntryBillingPlan
     | TIERED_PER_SEAT
 
 
-list : List OrgCreateAuditEntryBillingPlan
-list =
+all : List OrgCreateAuditEntryBillingPlan
+all =
     [ FREE, BUSINESS, BUSINESS_PLUS, UNLIMITED, TIERED_PER_SEAT ]
 
 

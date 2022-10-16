@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectV2ItemType exposing (ProjectV2ItemType(..), decoder, encode, list)
+module GitHub.Enum.ProjectV2ItemType exposing (ProjectV2ItemType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectV2ItemType
+@docs encode, decoder, all, ProjectV2ItemType
 -}
 
 
@@ -16,8 +16,8 @@ type ProjectV2ItemType
     | REDACTED
 
 
-list : List ProjectV2ItemType
-list =
+all : List ProjectV2ItemType
+all =
     [ ISSUE, PULL_REQUEST, DRAFT_ISSUE, REDACTED ]
 
 

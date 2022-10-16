@@ -1,7 +1,7 @@
-module GitHub.Enum.IssueStateReason exposing (IssueStateReason(..), decoder, encode, list)
+module GitHub.Enum.IssueStateReason exposing (IssueStateReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IssueStateReason
+@docs encode, decoder, all, IssueStateReason
 -}
 
 
@@ -15,8 +15,8 @@ type IssueStateReason
     | COMPLETED
 
 
-list : List IssueStateReason
-list =
+all : List IssueStateReason
+all =
     [ REOPENED, NOT_PLANNED, COMPLETED ]
 
 

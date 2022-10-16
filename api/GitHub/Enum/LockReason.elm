@@ -1,7 +1,7 @@
-module GitHub.Enum.LockReason exposing (LockReason(..), decoder, encode, list)
+module GitHub.Enum.LockReason exposing (LockReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, LockReason
+@docs encode, decoder, all, LockReason
 -}
 
 
@@ -16,8 +16,8 @@ type LockReason
     | SPAM
 
 
-list : List LockReason
-list =
+all : List LockReason
+all =
     [ OFF_TOPIC, TOO_HEATED, RESOLVED, SPAM ]
 
 

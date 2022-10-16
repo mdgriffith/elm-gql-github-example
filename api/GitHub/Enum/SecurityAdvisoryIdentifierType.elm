@@ -1,7 +1,7 @@
-module GitHub.Enum.SecurityAdvisoryIdentifierType exposing (SecurityAdvisoryIdentifierType(..), decoder, encode, list)
+module GitHub.Enum.SecurityAdvisoryIdentifierType exposing (SecurityAdvisoryIdentifierType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SecurityAdvisoryIdentifierType
+@docs encode, decoder, all, SecurityAdvisoryIdentifierType
 -}
 
 
@@ -14,8 +14,8 @@ type SecurityAdvisoryIdentifierType
     | GHSA
 
 
-list : List SecurityAdvisoryIdentifierType
-list =
+all : List SecurityAdvisoryIdentifierType
+all =
     [ CVE, GHSA ]
 
 

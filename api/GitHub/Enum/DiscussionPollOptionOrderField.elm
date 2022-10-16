@@ -1,7 +1,7 @@
-module GitHub.Enum.DiscussionPollOptionOrderField exposing (DiscussionPollOptionOrderField(..), decoder, encode, list)
+module GitHub.Enum.DiscussionPollOptionOrderField exposing (DiscussionPollOptionOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DiscussionPollOptionOrderField
+@docs encode, decoder, all, DiscussionPollOptionOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type DiscussionPollOptionOrderField
     | VOTE_COUNT
 
 
-list : List DiscussionPollOptionOrderField
-list =
+all : List DiscussionPollOptionOrderField
+all =
     [ AUTHORED_ORDER, VOTE_COUNT ]
 
 

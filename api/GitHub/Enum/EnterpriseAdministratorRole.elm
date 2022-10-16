@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseAdministratorRole exposing (EnterpriseAdministratorRole(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseAdministratorRole exposing (EnterpriseAdministratorRole(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseAdministratorRole
+@docs encode, decoder, all, EnterpriseAdministratorRole
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseAdministratorRole
     | BILLING_MANAGER
 
 
-list : List EnterpriseAdministratorRole
-list =
+all : List EnterpriseAdministratorRole
+all =
     [ OWNER, BILLING_MANAGER ]
 
 

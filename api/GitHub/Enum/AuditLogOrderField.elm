@@ -1,7 +1,7 @@
-module GitHub.Enum.AuditLogOrderField exposing (AuditLogOrderField(..), decoder, encode, list)
+module GitHub.Enum.AuditLogOrderField exposing (AuditLogOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, AuditLogOrderField
+@docs encode, decoder, all, AuditLogOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type AuditLogOrderField
     = CREATED_AT
 
 
-list : List AuditLogOrderField
-list =
+all : List AuditLogOrderField
+all =
     [ CREATED_AT ]
 
 

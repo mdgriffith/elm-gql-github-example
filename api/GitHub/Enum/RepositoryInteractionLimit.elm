@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryInteractionLimit exposing (RepositoryInteractionLimit(..), decoder, encode, list)
+module GitHub.Enum.RepositoryInteractionLimit exposing (RepositoryInteractionLimit(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryInteractionLimit
+@docs encode, decoder, all, RepositoryInteractionLimit
 -}
 
 
@@ -16,8 +16,8 @@ type RepositoryInteractionLimit
     | NO_LIMIT
 
 
-list : List RepositoryInteractionLimit
-list =
+all : List RepositoryInteractionLimit
+all =
     [ EXISTING_USERS, CONTRIBUTORS_ONLY, COLLABORATORS_ONLY, NO_LIMIT ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseServerUserAccountsUploadOrderField exposing (EnterpriseServerUserAccountsUploadOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseServerUserAccountsUploadOrderField exposing (EnterpriseServerUserAccountsUploadOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseServerUserAccountsUploadOrderField
+@docs encode, decoder, all, EnterpriseServerUserAccountsUploadOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type EnterpriseServerUserAccountsUploadOrderField
     = CREATED_AT
 
 
-list : List EnterpriseServerUserAccountsUploadOrderField
-list =
+all : List EnterpriseServerUserAccountsUploadOrderField
+all =
     [ CREATED_AT ]
 
 

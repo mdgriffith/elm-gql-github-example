@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectV2ViewOrderField exposing (ProjectV2ViewOrderField(..), decoder, encode, list)
+module GitHub.Enum.ProjectV2ViewOrderField exposing (ProjectV2ViewOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectV2ViewOrderField
+@docs encode, decoder, all, ProjectV2ViewOrderField
 -}
 
 
@@ -15,8 +15,8 @@ type ProjectV2ViewOrderField
     | NAME
 
 
-list : List ProjectV2ViewOrderField
-list =
+all : List ProjectV2ViewOrderField
+all =
     [ POSITION, CREATED_AT, NAME ]
 
 

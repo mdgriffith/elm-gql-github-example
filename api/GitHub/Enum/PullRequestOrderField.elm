@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestOrderField exposing (PullRequestOrderField(..), decoder, encode, list)
+module GitHub.Enum.PullRequestOrderField exposing (PullRequestOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestOrderField
+@docs encode, decoder, all, PullRequestOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type PullRequestOrderField
     | UPDATED_AT
 
 
-list : List PullRequestOrderField
-list =
+all : List PullRequestOrderField
+all =
     [ CREATED_AT, UPDATED_AT ]
 
 

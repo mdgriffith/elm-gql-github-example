@@ -1,7 +1,7 @@
-module GitHub.Enum.MigrationState exposing (MigrationState(..), decoder, encode, list)
+module GitHub.Enum.MigrationState exposing (MigrationState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MigrationState
+@docs encode, decoder, all, MigrationState
 -}
 
 
@@ -19,8 +19,8 @@ type MigrationState
     | FAILED_VALIDATION
 
 
-list : List MigrationState
-list =
+all : List MigrationState
+all =
     [ NOT_STARTED
     , QUEUED
     , IN_PROGRESS

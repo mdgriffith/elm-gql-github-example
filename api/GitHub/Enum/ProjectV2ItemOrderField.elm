@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectV2ItemOrderField exposing (ProjectV2ItemOrderField(..), decoder, encode, list)
+module GitHub.Enum.ProjectV2ItemOrderField exposing (ProjectV2ItemOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectV2ItemOrderField
+@docs encode, decoder, all, ProjectV2ItemOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type ProjectV2ItemOrderField
     = POSITION
 
 
-list : List ProjectV2ItemOrderField
-list =
+all : List ProjectV2ItemOrderField
+all =
     [ POSITION ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.OrganizationInvitationRole exposing (OrganizationInvitationRole(..), decoder, encode, list)
+module GitHub.Enum.OrganizationInvitationRole exposing (OrganizationInvitationRole(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrganizationInvitationRole
+@docs encode, decoder, all, OrganizationInvitationRole
 -}
 
 
@@ -16,8 +16,8 @@ type OrganizationInvitationRole
     | REINSTATE
 
 
-list : List OrganizationInvitationRole
-list =
+all : List OrganizationInvitationRole
+all =
     [ DIRECT_MEMBER, ADMIN, BILLING_MANAGER, REINSTATE ]
 
 

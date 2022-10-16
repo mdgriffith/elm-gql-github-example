@@ -1,7 +1,7 @@
-module GitHub.Enum.MergeCommitMessage exposing (MergeCommitMessage(..), decoder, encode, list)
+module GitHub.Enum.MergeCommitMessage exposing (MergeCommitMessage(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MergeCommitMessage
+@docs encode, decoder, all, MergeCommitMessage
 -}
 
 
@@ -15,8 +15,8 @@ type MergeCommitMessage
     | BLANK
 
 
-list : List MergeCommitMessage
-list =
+all : List MergeCommitMessage
+all =
     [ PR_TITLE, PR_BODY, BLANK ]
 
 

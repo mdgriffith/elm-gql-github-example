@@ -1,7 +1,7 @@
-module GitHub.Enum.CheckStatusState exposing (CheckStatusState(..), decoder, encode, list)
+module GitHub.Enum.CheckStatusState exposing (CheckStatusState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CheckStatusState
+@docs encode, decoder, all, CheckStatusState
 -}
 
 
@@ -18,8 +18,8 @@ type CheckStatusState
     | REQUESTED
 
 
-list : List CheckStatusState
-list =
+all : List CheckStatusState
+all =
     [ QUEUED, IN_PROGRESS, COMPLETED, WAITING, PENDING, REQUESTED ]
 
 

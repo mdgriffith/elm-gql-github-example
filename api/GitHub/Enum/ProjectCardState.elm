@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectCardState exposing (ProjectCardState(..), decoder, encode, list)
+module GitHub.Enum.ProjectCardState exposing (ProjectCardState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectCardState
+@docs encode, decoder, all, ProjectCardState
 -}
 
 
@@ -15,8 +15,8 @@ type ProjectCardState
     | REDACTED
 
 
-list : List ProjectCardState
-list =
+all : List ProjectCardState
+all =
     [ CONTENT_ONLY, NOTE_ONLY, REDACTED ]
 
 

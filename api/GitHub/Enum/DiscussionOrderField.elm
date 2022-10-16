@@ -1,7 +1,7 @@
-module GitHub.Enum.DiscussionOrderField exposing (DiscussionOrderField(..), decoder, encode, list)
+module GitHub.Enum.DiscussionOrderField exposing (DiscussionOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DiscussionOrderField
+@docs encode, decoder, all, DiscussionOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type DiscussionOrderField
     | UPDATED_AT
 
 
-list : List DiscussionOrderField
-list =
+all : List DiscussionOrderField
+all =
     [ CREATED_AT, UPDATED_AT ]
 
 

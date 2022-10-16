@@ -1,7 +1,7 @@
-module GitHub.Enum.NotificationRestrictionSettingValue exposing (NotificationRestrictionSettingValue(..), decoder, encode, list)
+module GitHub.Enum.NotificationRestrictionSettingValue exposing (NotificationRestrictionSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, NotificationRestrictionSettingValue
+@docs encode, decoder, all, NotificationRestrictionSettingValue
 -}
 
 
@@ -14,8 +14,8 @@ type NotificationRestrictionSettingValue
     | DISABLED
 
 
-list : List NotificationRestrictionSettingValue
-list =
+all : List NotificationRestrictionSettingValue
+all =
     [ ENABLED, DISABLED ]
 
 

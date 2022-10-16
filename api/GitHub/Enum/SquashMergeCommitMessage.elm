@@ -1,7 +1,7 @@
-module GitHub.Enum.SquashMergeCommitMessage exposing (SquashMergeCommitMessage(..), decoder, encode, list)
+module GitHub.Enum.SquashMergeCommitMessage exposing (SquashMergeCommitMessage(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SquashMergeCommitMessage
+@docs encode, decoder, all, SquashMergeCommitMessage
 -}
 
 
@@ -15,8 +15,8 @@ type SquashMergeCommitMessage
     | BLANK
 
 
-list : List SquashMergeCommitMessage
-list =
+all : List SquashMergeCommitMessage
+all =
     [ PR_BODY, COMMIT_MESSAGES, BLANK ]
 
 

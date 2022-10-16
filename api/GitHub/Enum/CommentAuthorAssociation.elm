@@ -1,7 +1,7 @@
-module GitHub.Enum.CommentAuthorAssociation exposing (CommentAuthorAssociation(..), decoder, encode, list)
+module GitHub.Enum.CommentAuthorAssociation exposing (CommentAuthorAssociation(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CommentAuthorAssociation
+@docs encode, decoder, all, CommentAuthorAssociation
 -}
 
 
@@ -20,8 +20,8 @@ type CommentAuthorAssociation
     | NONE
 
 
-list : List CommentAuthorAssociation
-list =
+all : List CommentAuthorAssociation
+all =
     [ MEMBER
     , OWNER
     , MANNEQUIN

@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorOrderField exposing (SponsorOrderField(..), decoder, encode, list)
+module GitHub.Enum.SponsorOrderField exposing (SponsorOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorOrderField
+@docs encode, decoder, all, SponsorOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type SponsorOrderField
     | RELEVANCE
 
 
-list : List SponsorOrderField
-list =
+all : List SponsorOrderField
+all =
     [ LOGIN, RELEVANCE ]
 
 

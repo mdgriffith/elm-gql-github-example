@@ -1,7 +1,7 @@
-module GitHub.Enum.SamlSignatureAlgorithm exposing (SamlSignatureAlgorithm(..), decoder, encode, list)
+module GitHub.Enum.SamlSignatureAlgorithm exposing (SamlSignatureAlgorithm(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SamlSignatureAlgorithm
+@docs encode, decoder, all, SamlSignatureAlgorithm
 -}
 
 
@@ -16,8 +16,8 @@ type SamlSignatureAlgorithm
     | RSA_SHA512
 
 
-list : List SamlSignatureAlgorithm
-list =
+all : List SamlSignatureAlgorithm
+all =
     [ RSA_SHA1, RSA_SHA256, RSA_SHA384, RSA_SHA512 ]
 
 

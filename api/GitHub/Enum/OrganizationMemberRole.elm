@@ -1,7 +1,7 @@
-module GitHub.Enum.OrganizationMemberRole exposing (OrganizationMemberRole(..), decoder, encode, list)
+module GitHub.Enum.OrganizationMemberRole exposing (OrganizationMemberRole(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrganizationMemberRole
+@docs encode, decoder, all, OrganizationMemberRole
 -}
 
 
@@ -14,8 +14,8 @@ type OrganizationMemberRole
     | ADMIN
 
 
-list : List OrganizationMemberRole
-list =
+all : List OrganizationMemberRole
+all =
     [ MEMBER, ADMIN ]
 
 

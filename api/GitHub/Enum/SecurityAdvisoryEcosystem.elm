@@ -1,7 +1,7 @@
-module GitHub.Enum.SecurityAdvisoryEcosystem exposing (SecurityAdvisoryEcosystem(..), decoder, encode, list)
+module GitHub.Enum.SecurityAdvisoryEcosystem exposing (SecurityAdvisoryEcosystem(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SecurityAdvisoryEcosystem
+@docs encode, decoder, all, SecurityAdvisoryEcosystem
 -}
 
 
@@ -23,8 +23,8 @@ type SecurityAdvisoryEcosystem
     | RUST
 
 
-list : List SecurityAdvisoryEcosystem
-list =
+all : List SecurityAdvisoryEcosystem
+all =
     [ COMPOSER
     , ERLANG
     , ACTIONS

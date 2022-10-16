@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestTimelineItemsItemType exposing (PullRequestTimelineItemsItemType(..), decoder, encode, list)
+module GitHub.Enum.PullRequestTimelineItemsItemType exposing (PullRequestTimelineItemsItemType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestTimelineItemsItemType
+@docs encode, decoder, all, PullRequestTimelineItemsItemType
 -}
 
 
@@ -70,8 +70,8 @@ type PullRequestTimelineItemsItemType
     | UNSUBSCRIBED_EVENT
 
 
-list : List PullRequestTimelineItemsItemType
-list =
+all : List PullRequestTimelineItemsItemType
+all =
     [ PULL_REQUEST_COMMIT
     , PULL_REQUEST_COMMIT_COMMENT_THREAD
     , PULL_REQUEST_REVIEW

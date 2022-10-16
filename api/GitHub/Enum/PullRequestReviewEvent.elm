@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestReviewEvent exposing (PullRequestReviewEvent(..), decoder, encode, list)
+module GitHub.Enum.PullRequestReviewEvent exposing (PullRequestReviewEvent(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestReviewEvent
+@docs encode, decoder, all, PullRequestReviewEvent
 -}
 
 
@@ -16,8 +16,8 @@ type PullRequestReviewEvent
     | DISMISS
 
 
-list : List PullRequestReviewEvent
-list =
+all : List PullRequestReviewEvent
+all =
     [ COMMENT, APPROVE, REQUEST_CHANGES, DISMISS ]
 
 

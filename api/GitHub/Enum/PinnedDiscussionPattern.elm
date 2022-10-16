@@ -1,7 +1,7 @@
-module GitHub.Enum.PinnedDiscussionPattern exposing (PinnedDiscussionPattern(..), decoder, encode, list)
+module GitHub.Enum.PinnedDiscussionPattern exposing (PinnedDiscussionPattern(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PinnedDiscussionPattern
+@docs encode, decoder, all, PinnedDiscussionPattern
 -}
 
 
@@ -18,8 +18,8 @@ type PinnedDiscussionPattern
     | HEART_FILL
 
 
-list : List PinnedDiscussionPattern
-list =
+all : List PinnedDiscussionPattern
+all =
     [ DOT_FILL, PLUS, ZAP, CHEVRON_UP, DOT, HEART_FILL ]
 
 

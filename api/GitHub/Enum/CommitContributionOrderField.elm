@@ -1,7 +1,7 @@
-module GitHub.Enum.CommitContributionOrderField exposing (CommitContributionOrderField(..), decoder, encode, list)
+module GitHub.Enum.CommitContributionOrderField exposing (CommitContributionOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CommitContributionOrderField
+@docs encode, decoder, all, CommitContributionOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type CommitContributionOrderField
     | COMMIT_COUNT
 
 
-list : List CommitContributionOrderField
-list =
+all : List CommitContributionOrderField
+all =
     [ OCCURRED_AT, COMMIT_COUNT ]
 
 

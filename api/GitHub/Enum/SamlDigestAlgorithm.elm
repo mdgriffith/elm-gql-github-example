@@ -1,7 +1,7 @@
-module GitHub.Enum.SamlDigestAlgorithm exposing (SamlDigestAlgorithm(..), decoder, encode, list)
+module GitHub.Enum.SamlDigestAlgorithm exposing (SamlDigestAlgorithm(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SamlDigestAlgorithm
+@docs encode, decoder, all, SamlDigestAlgorithm
 -}
 
 
@@ -16,8 +16,8 @@ type SamlDigestAlgorithm
     | SHA512
 
 
-list : List SamlDigestAlgorithm
-list =
+all : List SamlDigestAlgorithm
+all =
     [ SHA1, SHA256, SHA384, SHA512 ]
 
 

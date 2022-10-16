@@ -1,7 +1,7 @@
-module GitHub.Enum.IpAllowListEntryOrderField exposing (IpAllowListEntryOrderField(..), decoder, encode, list)
+module GitHub.Enum.IpAllowListEntryOrderField exposing (IpAllowListEntryOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IpAllowListEntryOrderField
+@docs encode, decoder, all, IpAllowListEntryOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type IpAllowListEntryOrderField
     | ALLOW_LIST_VALUE
 
 
-list : List IpAllowListEntryOrderField
-list =
+all : List IpAllowListEntryOrderField
+all =
     [ CREATED_AT, ALLOW_LIST_VALUE ]
 
 

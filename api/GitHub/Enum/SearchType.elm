@@ -1,7 +1,7 @@
-module GitHub.Enum.SearchType exposing (SearchType(..), decoder, encode, list)
+module GitHub.Enum.SearchType exposing (SearchType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SearchType
+@docs encode, decoder, all, SearchType
 -}
 
 
@@ -16,8 +16,8 @@ type SearchType
     | DISCUSSION
 
 
-list : List SearchType
-list =
+all : List SearchType
+all =
     [ ISSUE, REPOSITORY, USER, DISCUSSION ]
 
 

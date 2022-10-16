@@ -1,7 +1,7 @@
-module GitHub.Enum.MilestoneOrderField exposing (MilestoneOrderField(..), decoder, encode, list)
+module GitHub.Enum.MilestoneOrderField exposing (MilestoneOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MilestoneOrderField
+@docs encode, decoder, all, MilestoneOrderField
 -}
 
 
@@ -16,8 +16,8 @@ type MilestoneOrderField
     | NUMBER
 
 
-list : List MilestoneOrderField
-list =
+all : List MilestoneOrderField
+all =
     [ DUE_DATE, CREATED_AT, UPDATED_AT, NUMBER ]
 
 

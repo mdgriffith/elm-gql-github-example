@@ -1,7 +1,7 @@
-module GitHub.Enum.FileViewedState exposing (FileViewedState(..), decoder, encode, list)
+module GitHub.Enum.FileViewedState exposing (FileViewedState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, FileViewedState
+@docs encode, decoder, all, FileViewedState
 -}
 
 
@@ -15,8 +15,8 @@ type FileViewedState
     | UNVIEWED
 
 
-list : List FileViewedState
-list =
+all : List FileViewedState
+all =
     [ DISMISSED, VIEWED, UNVIEWED ]
 
 

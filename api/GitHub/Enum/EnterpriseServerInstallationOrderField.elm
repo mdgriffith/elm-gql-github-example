@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseServerInstallationOrderField exposing (EnterpriseServerInstallationOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseServerInstallationOrderField exposing (EnterpriseServerInstallationOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseServerInstallationOrderField
+@docs encode, decoder, all, EnterpriseServerInstallationOrderField
 -}
 
 
@@ -15,8 +15,8 @@ type EnterpriseServerInstallationOrderField
     | CREATED_AT
 
 
-list : List EnterpriseServerInstallationOrderField
-list =
+all : List EnterpriseServerInstallationOrderField
+all =
     [ HOST_NAME, CUSTOMER_NAME, CREATED_AT ]
 
 

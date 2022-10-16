@@ -1,7 +1,7 @@
-module GitHub.Enum.SecurityAdvisorySeverity exposing (SecurityAdvisorySeverity(..), decoder, encode, list)
+module GitHub.Enum.SecurityAdvisorySeverity exposing (SecurityAdvisorySeverity(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SecurityAdvisorySeverity
+@docs encode, decoder, all, SecurityAdvisorySeverity
 -}
 
 
@@ -16,8 +16,8 @@ type SecurityAdvisorySeverity
     | CRITICAL
 
 
-list : List SecurityAdvisorySeverity
-list =
+all : List SecurityAdvisorySeverity
+all =
     [ LOW, MODERATE, HIGH, CRITICAL ]
 
 

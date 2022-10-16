@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgUpdateMemberAuditEntryPermission exposing (OrgUpdateMemberAuditEntryPermission(..), decoder, encode, list)
+module GitHub.Enum.OrgUpdateMemberAuditEntryPermission exposing (OrgUpdateMemberAuditEntryPermission(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgUpdateMemberAuditEntryPermission
+@docs encode, decoder, all, OrgUpdateMemberAuditEntryPermission
 -}
 
 
@@ -14,8 +14,8 @@ type OrgUpdateMemberAuditEntryPermission
     | ADMIN
 
 
-list : List OrgUpdateMemberAuditEntryPermission
-list =
+all : List OrgUpdateMemberAuditEntryPermission
+all =
     [ READ, ADMIN ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.SecurityAdvisoryOrderField exposing (SecurityAdvisoryOrderField(..), decoder, encode, list)
+module GitHub.Enum.SecurityAdvisoryOrderField exposing (SecurityAdvisoryOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SecurityAdvisoryOrderField
+@docs encode, decoder, all, SecurityAdvisoryOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type SecurityAdvisoryOrderField
     | UPDATED_AT
 
 
-list : List SecurityAdvisoryOrderField
-list =
+all : List SecurityAdvisoryOrderField
+all =
     [ PUBLISHED_AT, UPDATED_AT ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.RepoCreateAuditEntryVisibility exposing (RepoCreateAuditEntryVisibility(..), decoder, encode, list)
+module GitHub.Enum.RepoCreateAuditEntryVisibility exposing (RepoCreateAuditEntryVisibility(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepoCreateAuditEntryVisibility
+@docs encode, decoder, all, RepoCreateAuditEntryVisibility
 -}
 
 
@@ -15,8 +15,8 @@ type RepoCreateAuditEntryVisibility
     | PUBLIC
 
 
-list : List RepoCreateAuditEntryVisibility
-list =
+all : List RepoCreateAuditEntryVisibility
+all =
     [ INTERNAL, PRIVATE, PUBLIC ]
 
 

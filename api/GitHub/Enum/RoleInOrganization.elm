@@ -1,7 +1,7 @@
-module GitHub.Enum.RoleInOrganization exposing (RoleInOrganization(..), decoder, encode, list)
+module GitHub.Enum.RoleInOrganization exposing (RoleInOrganization(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RoleInOrganization
+@docs encode, decoder, all, RoleInOrganization
 -}
 
 
@@ -15,8 +15,8 @@ type RoleInOrganization
     | UNAFFILIATED
 
 
-list : List RoleInOrganization
-list =
+all : List RoleInOrganization
+all =
     [ OWNER, DIRECT_MEMBER, UNAFFILIATED ]
 
 

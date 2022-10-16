@@ -1,7 +1,7 @@
-module GitHub.Enum.ContributionLevel exposing (ContributionLevel(..), decoder, encode, list)
+module GitHub.Enum.ContributionLevel exposing (ContributionLevel(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ContributionLevel
+@docs encode, decoder, all, ContributionLevel
 -}
 
 
@@ -17,8 +17,8 @@ type ContributionLevel
     | FOURTH_QUARTILE
 
 
-list : List ContributionLevel
-list =
+all : List ContributionLevel
+all =
     [ NONE, FIRST_QUARTILE, SECOND_QUARTILE, THIRD_QUARTILE, FOURTH_QUARTILE ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.ReportedContentClassifiers exposing (ReportedContentClassifiers(..), decoder, encode, list)
+module GitHub.Enum.ReportedContentClassifiers exposing (ReportedContentClassifiers(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ReportedContentClassifiers
+@docs encode, decoder, all, ReportedContentClassifiers
 -}
 
 
@@ -18,8 +18,8 @@ type ReportedContentClassifiers
     | RESOLVED
 
 
-list : List ReportedContentClassifiers
-list =
+all : List ReportedContentClassifiers
+all =
     [ SPAM, ABUSE, OFF_TOPIC, OUTDATED, DUPLICATE, RESOLVED ]
 
 

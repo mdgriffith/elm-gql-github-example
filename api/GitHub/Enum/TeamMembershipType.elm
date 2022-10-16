@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamMembershipType exposing (TeamMembershipType(..), decoder, encode, list)
+module GitHub.Enum.TeamMembershipType exposing (TeamMembershipType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamMembershipType
+@docs encode, decoder, all, TeamMembershipType
 -}
 
 
@@ -15,8 +15,8 @@ type TeamMembershipType
     | ALL
 
 
-list : List TeamMembershipType
-list =
+all : List TeamMembershipType
+all =
     [ IMMEDIATE, CHILD_TEAM, ALL ]
 
 

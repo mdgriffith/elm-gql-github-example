@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgRemoveBillingManagerAuditEntryReason exposing (OrgRemoveBillingManagerAuditEntryReason(..), decoder, encode, list)
+module GitHub.Enum.OrgRemoveBillingManagerAuditEntryReason exposing (OrgRemoveBillingManagerAuditEntryReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgRemoveBillingManagerAuditEntryReason
+@docs encode, decoder, all, OrgRemoveBillingManagerAuditEntryReason
 -}
 
 
@@ -15,8 +15,8 @@ type OrgRemoveBillingManagerAuditEntryReason
     | SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
 
 
-list : List OrgRemoveBillingManagerAuditEntryReason
-list =
+all : List OrgRemoveBillingManagerAuditEntryReason
+all =
     [ TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
     , SAML_EXTERNAL_IDENTITY_MISSING
     , SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY

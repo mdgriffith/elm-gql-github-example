@@ -1,7 +1,7 @@
-module GitHub.Enum.OrganizationMembersCanCreateRepositoriesSettingValue exposing (OrganizationMembersCanCreateRepositoriesSettingValue(..), decoder, encode, list)
+module GitHub.Enum.OrganizationMembersCanCreateRepositoriesSettingValue exposing (OrganizationMembersCanCreateRepositoriesSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrganizationMembersCanCreateRepositoriesSettingValue
+@docs encode, decoder, all, OrganizationMembersCanCreateRepositoriesSettingValue
 -}
 
 
@@ -16,8 +16,8 @@ type OrganizationMembersCanCreateRepositoriesSettingValue
     | DISABLED
 
 
-list : List OrganizationMembersCanCreateRepositoriesSettingValue
-list =
+all : List OrganizationMembersCanCreateRepositoriesSettingValue
+all =
     [ ALL, PRIVATE, INTERNAL, DISABLED ]
 
 

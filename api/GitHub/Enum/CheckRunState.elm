@@ -1,7 +1,7 @@
-module GitHub.Enum.CheckRunState exposing (CheckRunState(..), decoder, encode, list)
+module GitHub.Enum.CheckRunState exposing (CheckRunState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CheckRunState
+@docs encode, decoder, all, CheckRunState
 -}
 
 
@@ -26,8 +26,8 @@ type CheckRunState
     | WAITING
 
 
-list : List CheckRunState
-list =
+all : List CheckRunState
+all =
     [ ACTION_REQUIRED
     , CANCELLED
     , COMPLETED

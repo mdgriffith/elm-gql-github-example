@@ -1,7 +1,7 @@
-module GitHub.Enum.DeploymentOrderField exposing (DeploymentOrderField(..), decoder, encode, list)
+module GitHub.Enum.DeploymentOrderField exposing (DeploymentOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DeploymentOrderField
+@docs encode, decoder, all, DeploymentOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type DeploymentOrderField
     = CREATED_AT
 
 
-list : List DeploymentOrderField
-list =
+all : List DeploymentOrderField
+all =
     [ CREATED_AT ]
 
 

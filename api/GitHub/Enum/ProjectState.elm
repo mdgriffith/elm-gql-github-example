@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectState exposing (ProjectState(..), decoder, encode, list)
+module GitHub.Enum.ProjectState exposing (ProjectState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectState
+@docs encode, decoder, all, ProjectState
 -}
 
 
@@ -14,8 +14,8 @@ type ProjectState
     | CLOSED
 
 
-list : List ProjectState
-list =
+all : List ProjectState
+all =
     [ OPEN, CLOSED ]
 
 

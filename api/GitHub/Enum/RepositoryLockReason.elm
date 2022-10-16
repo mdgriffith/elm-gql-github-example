@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryLockReason exposing (RepositoryLockReason(..), decoder, encode, list)
+module GitHub.Enum.RepositoryLockReason exposing (RepositoryLockReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryLockReason
+@docs encode, decoder, all, RepositoryLockReason
 -}
 
 
@@ -16,8 +16,8 @@ type RepositoryLockReason
     | MIGRATING
 
 
-list : List RepositoryLockReason
-list =
+all : List RepositoryLockReason
+all =
     [ MOVING, BILLING, RENAME, MIGRATING ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseUserAccountMembershipRole exposing (EnterpriseUserAccountMembershipRole(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseUserAccountMembershipRole exposing (EnterpriseUserAccountMembershipRole(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseUserAccountMembershipRole
+@docs encode, decoder, all, EnterpriseUserAccountMembershipRole
 -}
 
 
@@ -15,8 +15,8 @@ type EnterpriseUserAccountMembershipRole
     | UNAFFILIATED
 
 
-list : List EnterpriseUserAccountMembershipRole
-list =
+all : List EnterpriseUserAccountMembershipRole
+all =
     [ MEMBER, OWNER, UNAFFILIATED ]
 
 

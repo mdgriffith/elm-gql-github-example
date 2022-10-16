@@ -1,7 +1,7 @@
-module GitHub.Enum.DiffSide exposing (DiffSide(..), decoder, encode, list)
+module GitHub.Enum.DiffSide exposing (DiffSide(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DiffSide
+@docs encode, decoder, all, DiffSide
 -}
 
 
@@ -14,8 +14,8 @@ type DiffSide
     | RIGHT
 
 
-list : List DiffSide
-list =
+all : List DiffSide
+all =
     [ LEFT, RIGHT ]
 
 

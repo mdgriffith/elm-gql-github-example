@@ -1,7 +1,7 @@
-module GitHub.Enum.MilestoneState exposing (MilestoneState(..), decoder, encode, list)
+module GitHub.Enum.MilestoneState exposing (MilestoneState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MilestoneState
+@docs encode, decoder, all, MilestoneState
 -}
 
 
@@ -14,8 +14,8 @@ type MilestoneState
     | CLOSED
 
 
-list : List MilestoneState
-list =
+all : List MilestoneState
+all =
     [ OPEN, CLOSED ]
 
 

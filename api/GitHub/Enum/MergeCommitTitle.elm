@@ -1,7 +1,7 @@
-module GitHub.Enum.MergeCommitTitle exposing (MergeCommitTitle(..), decoder, encode, list)
+module GitHub.Enum.MergeCommitTitle exposing (MergeCommitTitle(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MergeCommitTitle
+@docs encode, decoder, all, MergeCommitTitle
 -}
 
 
@@ -14,8 +14,8 @@ type MergeCommitTitle
     | MERGE_MESSAGE
 
 
-list : List MergeCommitTitle
-list =
+all : List MergeCommitTitle
+all =
     [ PR_TITLE, MERGE_MESSAGE ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.IssueTimelineItemsItemType exposing (IssueTimelineItemsItemType(..), decoder, encode, list)
+module GitHub.Enum.IssueTimelineItemsItemType exposing (IssueTimelineItemsItemType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IssueTimelineItemsItemType
+@docs encode, decoder, all, IssueTimelineItemsItemType
 -}
 
 
@@ -43,8 +43,8 @@ type IssueTimelineItemsItemType
     | UNSUBSCRIBED_EVENT
 
 
-list : List IssueTimelineItemsItemType
-list =
+all : List IssueTimelineItemsItemType
+all =
     [ ISSUE_COMMENT
     , CROSS_REFERENCED_EVENT
     , ADDED_TO_PROJECT_EVENT

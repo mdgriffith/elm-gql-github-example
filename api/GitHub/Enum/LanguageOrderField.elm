@@ -1,7 +1,7 @@
-module GitHub.Enum.LanguageOrderField exposing (LanguageOrderField(..), decoder, encode, list)
+module GitHub.Enum.LanguageOrderField exposing (LanguageOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, LanguageOrderField
+@docs encode, decoder, all, LanguageOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type LanguageOrderField
     = SIZE
 
 
-list : List LanguageOrderField
-list =
+all : List LanguageOrderField
+all =
     [ SIZE ]
 
 

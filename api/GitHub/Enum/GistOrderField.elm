@@ -1,7 +1,7 @@
-module GitHub.Enum.GistOrderField exposing (GistOrderField(..), decoder, encode, list)
+module GitHub.Enum.GistOrderField exposing (GistOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, GistOrderField
+@docs encode, decoder, all, GistOrderField
 -}
 
 
@@ -15,8 +15,8 @@ type GistOrderField
     | PUSHED_AT
 
 
-list : List GistOrderField
-list =
+all : List GistOrderField
+all =
     [ CREATED_AT, UPDATED_AT, PUSHED_AT ]
 
 

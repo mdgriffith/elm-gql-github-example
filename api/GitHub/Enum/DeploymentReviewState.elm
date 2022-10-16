@@ -1,7 +1,7 @@
-module GitHub.Enum.DeploymentReviewState exposing (DeploymentReviewState(..), decoder, encode, list)
+module GitHub.Enum.DeploymentReviewState exposing (DeploymentReviewState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DeploymentReviewState
+@docs encode, decoder, all, DeploymentReviewState
 -}
 
 
@@ -14,8 +14,8 @@ type DeploymentReviewState
     | REJECTED
 
 
-list : List DeploymentReviewState
-list =
+all : List DeploymentReviewState
+all =
     [ APPROVED, REJECTED ]
 
 

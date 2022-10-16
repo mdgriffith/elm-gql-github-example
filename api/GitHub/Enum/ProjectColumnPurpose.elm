@@ -1,7 +1,7 @@
-module GitHub.Enum.ProjectColumnPurpose exposing (ProjectColumnPurpose(..), decoder, encode, list)
+module GitHub.Enum.ProjectColumnPurpose exposing (ProjectColumnPurpose(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ProjectColumnPurpose
+@docs encode, decoder, all, ProjectColumnPurpose
 -}
 
 
@@ -15,8 +15,8 @@ type ProjectColumnPurpose
     | DONE
 
 
-list : List ProjectColumnPurpose
-list =
+all : List ProjectColumnPurpose
+all =
     [ TODO, IN_PROGRESS, DONE ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.IpAllowListForInstalledAppsEnabledSettingValue exposing (IpAllowListForInstalledAppsEnabledSettingValue(..), decoder, encode, list)
+module GitHub.Enum.IpAllowListForInstalledAppsEnabledSettingValue exposing (IpAllowListForInstalledAppsEnabledSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IpAllowListForInstalledAppsEnabledSettingValue
+@docs encode, decoder, all, IpAllowListForInstalledAppsEnabledSettingValue
 -}
 
 
@@ -14,8 +14,8 @@ type IpAllowListForInstalledAppsEnabledSettingValue
     | DISABLED
 
 
-list : List IpAllowListForInstalledAppsEnabledSettingValue
-list =
+all : List IpAllowListForInstalledAppsEnabledSettingValue
+all =
     [ ENABLED, DISABLED ]
 
 

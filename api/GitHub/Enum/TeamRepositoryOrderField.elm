@@ -1,7 +1,7 @@
-module GitHub.Enum.TeamRepositoryOrderField exposing (TeamRepositoryOrderField(..), decoder, encode, list)
+module GitHub.Enum.TeamRepositoryOrderField exposing (TeamRepositoryOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, TeamRepositoryOrderField
+@docs encode, decoder, all, TeamRepositoryOrderField
 -}
 
 
@@ -18,8 +18,8 @@ type TeamRepositoryOrderField
     | STARGAZERS
 
 
-list : List TeamRepositoryOrderField
-list =
+all : List TeamRepositoryOrderField
+all =
     [ CREATED_AT, UPDATED_AT, PUSHED_AT, NAME, PERMISSION, STARGAZERS ]
 
 

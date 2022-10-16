@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorsActivityOrderField exposing (SponsorsActivityOrderField(..), decoder, encode, list)
+module GitHub.Enum.SponsorsActivityOrderField exposing (SponsorsActivityOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorsActivityOrderField
+@docs encode, decoder, all, SponsorsActivityOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type SponsorsActivityOrderField
     = TIMESTAMP
 
 
-list : List SponsorsActivityOrderField
-list =
+all : List SponsorsActivityOrderField
+all =
     [ TIMESTAMP ]
 
 

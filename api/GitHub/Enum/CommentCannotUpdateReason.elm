@@ -1,7 +1,7 @@
-module GitHub.Enum.CommentCannotUpdateReason exposing (CommentCannotUpdateReason(..), decoder, encode, list)
+module GitHub.Enum.CommentCannotUpdateReason exposing (CommentCannotUpdateReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CommentCannotUpdateReason
+@docs encode, decoder, all, CommentCannotUpdateReason
 -}
 
 
@@ -19,8 +19,8 @@ type CommentCannotUpdateReason
     | DENIED
 
 
-list : List CommentCannotUpdateReason
-list =
+all : List CommentCannotUpdateReason
+all =
     [ ARCHIVED
     , INSUFFICIENT_ACCESS
     , LOCKED

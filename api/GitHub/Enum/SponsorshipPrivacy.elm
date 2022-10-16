@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorshipPrivacy exposing (SponsorshipPrivacy(..), decoder, encode, list)
+module GitHub.Enum.SponsorshipPrivacy exposing (SponsorshipPrivacy(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorshipPrivacy
+@docs encode, decoder, all, SponsorshipPrivacy
 -}
 
 
@@ -14,8 +14,8 @@ type SponsorshipPrivacy
     | PRIVATE
 
 
-list : List SponsorshipPrivacy
-list =
+all : List SponsorshipPrivacy
+all =
     [ PUBLIC, PRIVATE ]
 
 

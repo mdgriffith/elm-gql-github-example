@@ -1,7 +1,7 @@
-module GitHub.Enum.OrderDirection exposing (OrderDirection(..), decoder, encode, list)
+module GitHub.Enum.OrderDirection exposing (OrderDirection(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrderDirection
+@docs encode, decoder, all, OrderDirection
 -}
 
 
@@ -14,8 +14,8 @@ type OrderDirection
     | DESC
 
 
-list : List OrderDirection
-list =
+all : List OrderDirection
+all =
     [ ASC, DESC ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseEnabledSettingValue exposing (EnterpriseEnabledSettingValue(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseEnabledSettingValue exposing (EnterpriseEnabledSettingValue(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseEnabledSettingValue
+@docs encode, decoder, all, EnterpriseEnabledSettingValue
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseEnabledSettingValue
     | NO_POLICY
 
 
-list : List EnterpriseEnabledSettingValue
-list =
+all : List EnterpriseEnabledSettingValue
+all =
     [ ENABLED, NO_POLICY ]
 
 

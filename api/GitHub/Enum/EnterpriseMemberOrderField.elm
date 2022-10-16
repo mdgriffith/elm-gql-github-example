@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseMemberOrderField exposing (EnterpriseMemberOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseMemberOrderField exposing (EnterpriseMemberOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseMemberOrderField
+@docs encode, decoder, all, EnterpriseMemberOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type EnterpriseMemberOrderField
     | CREATED_AT
 
 
-list : List EnterpriseMemberOrderField
-list =
+all : List EnterpriseMemberOrderField
+all =
     [ LOGIN, CREATED_AT ]
 
 

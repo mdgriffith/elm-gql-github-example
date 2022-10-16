@@ -1,7 +1,7 @@
-module GitHub.Enum.DefaultRepositoryPermissionField exposing (DefaultRepositoryPermissionField(..), decoder, encode, list)
+module GitHub.Enum.DefaultRepositoryPermissionField exposing (DefaultRepositoryPermissionField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, DefaultRepositoryPermissionField
+@docs encode, decoder, all, DefaultRepositoryPermissionField
 -}
 
 
@@ -16,8 +16,8 @@ type DefaultRepositoryPermissionField
     | ADMIN
 
 
-list : List DefaultRepositoryPermissionField
-list =
+all : List DefaultRepositoryPermissionField
+all =
     [ NONE, READ, WRITE, ADMIN ]
 
 

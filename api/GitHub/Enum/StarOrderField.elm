@@ -1,7 +1,7 @@
-module GitHub.Enum.StarOrderField exposing (StarOrderField(..), decoder, encode, list)
+module GitHub.Enum.StarOrderField exposing (StarOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, StarOrderField
+@docs encode, decoder, all, StarOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type StarOrderField
     = STARRED_AT
 
 
-list : List StarOrderField
-list =
+all : List StarOrderField
+all =
     [ STARRED_AT ]
 
 

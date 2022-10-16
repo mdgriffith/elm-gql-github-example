@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestState exposing (PullRequestState(..), decoder, encode, list)
+module GitHub.Enum.PullRequestState exposing (PullRequestState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestState
+@docs encode, decoder, all, PullRequestState
 -}
 
 
@@ -15,8 +15,8 @@ type PullRequestState
     | MERGED
 
 
-list : List PullRequestState
-list =
+all : List PullRequestState
+all =
     [ OPEN, CLOSED, MERGED ]
 
 

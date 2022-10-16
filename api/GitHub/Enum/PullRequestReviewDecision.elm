@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestReviewDecision exposing (PullRequestReviewDecision(..), decoder, encode, list)
+module GitHub.Enum.PullRequestReviewDecision exposing (PullRequestReviewDecision(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestReviewDecision
+@docs encode, decoder, all, PullRequestReviewDecision
 -}
 
 
@@ -15,8 +15,8 @@ type PullRequestReviewDecision
     | REVIEW_REQUIRED
 
 
-list : List PullRequestReviewDecision
-list =
+all : List PullRequestReviewDecision
+all =
     [ CHANGES_REQUESTED, APPROVED, REVIEW_REQUIRED ]
 
 

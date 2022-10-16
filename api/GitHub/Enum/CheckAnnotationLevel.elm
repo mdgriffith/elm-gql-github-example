@@ -1,7 +1,7 @@
-module GitHub.Enum.CheckAnnotationLevel exposing (CheckAnnotationLevel(..), decoder, encode, list)
+module GitHub.Enum.CheckAnnotationLevel exposing (CheckAnnotationLevel(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, CheckAnnotationLevel
+@docs encode, decoder, all, CheckAnnotationLevel
 -}
 
 
@@ -15,8 +15,8 @@ type CheckAnnotationLevel
     | WARNING
 
 
-list : List CheckAnnotationLevel
-list =
+all : List CheckAnnotationLevel
+all =
     [ FAILURE, NOTICE, WARNING ]
 
 

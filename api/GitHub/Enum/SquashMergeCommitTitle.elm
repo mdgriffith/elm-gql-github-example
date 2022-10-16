@@ -1,7 +1,7 @@
-module GitHub.Enum.SquashMergeCommitTitle exposing (SquashMergeCommitTitle(..), decoder, encode, list)
+module GitHub.Enum.SquashMergeCommitTitle exposing (SquashMergeCommitTitle(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SquashMergeCommitTitle
+@docs encode, decoder, all, SquashMergeCommitTitle
 -}
 
 
@@ -14,8 +14,8 @@ type SquashMergeCommitTitle
     | COMMIT_OR_PR_TITLE
 
 
-list : List SquashMergeCommitTitle
-list =
+all : List SquashMergeCommitTitle
+all =
     [ PR_TITLE, COMMIT_OR_PR_TITLE ]
 
 

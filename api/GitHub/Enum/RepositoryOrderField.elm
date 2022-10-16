@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryOrderField exposing (RepositoryOrderField(..), decoder, encode, list)
+module GitHub.Enum.RepositoryOrderField exposing (RepositoryOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryOrderField
+@docs encode, decoder, all, RepositoryOrderField
 -}
 
 
@@ -17,8 +17,8 @@ type RepositoryOrderField
     | STARGAZERS
 
 
-list : List RepositoryOrderField
-list =
+all : List RepositoryOrderField
+all =
     [ CREATED_AT, UPDATED_AT, PUSHED_AT, NAME, STARGAZERS ]
 
 

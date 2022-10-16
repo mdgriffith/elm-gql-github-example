@@ -1,7 +1,7 @@
-module GitHub.Enum.ReactionOrderField exposing (ReactionOrderField(..), decoder, encode, list)
+module GitHub.Enum.ReactionOrderField exposing (ReactionOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ReactionOrderField
+@docs encode, decoder, all, ReactionOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type ReactionOrderField
     = CREATED_AT
 
 
-list : List ReactionOrderField
-list =
+all : List ReactionOrderField
+all =
     [ CREATED_AT ]
 
 

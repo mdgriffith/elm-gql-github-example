@@ -1,7 +1,7 @@
-module GitHub.Enum.OrgRemoveMemberAuditEntryReason exposing (OrgRemoveMemberAuditEntryReason(..), decoder, encode, list)
+module GitHub.Enum.OrgRemoveMemberAuditEntryReason exposing (OrgRemoveMemberAuditEntryReason(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OrgRemoveMemberAuditEntryReason
+@docs encode, decoder, all, OrgRemoveMemberAuditEntryReason
 -}
 
 
@@ -17,8 +17,8 @@ type OrgRemoveMemberAuditEntryReason
     | TWO_FACTOR_ACCOUNT_RECOVERY
 
 
-list : List OrgRemoveMemberAuditEntryReason
-list =
+all : List OrgRemoveMemberAuditEntryReason
+all =
     [ TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
     , SAML_EXTERNAL_IDENTITY_MISSING
     , SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY

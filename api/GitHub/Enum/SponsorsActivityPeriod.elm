@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorsActivityPeriod exposing (SponsorsActivityPeriod(..), decoder, encode, list)
+module GitHub.Enum.SponsorsActivityPeriod exposing (SponsorsActivityPeriod(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorsActivityPeriod
+@docs encode, decoder, all, SponsorsActivityPeriod
 -}
 
 
@@ -16,8 +16,8 @@ type SponsorsActivityPeriod
     | ALL
 
 
-list : List SponsorsActivityPeriod
-list =
+all : List SponsorsActivityPeriod
+all =
     [ DAY, WEEK, MONTH, ALL ]
 
 

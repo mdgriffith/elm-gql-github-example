@@ -1,7 +1,7 @@
-module GitHub.Enum.SponsorsActivityAction exposing (SponsorsActivityAction(..), decoder, encode, list)
+module GitHub.Enum.SponsorsActivityAction exposing (SponsorsActivityAction(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SponsorsActivityAction
+@docs encode, decoder, all, SponsorsActivityAction
 -}
 
 
@@ -18,8 +18,8 @@ type SponsorsActivityAction
     | SPONSOR_MATCH_DISABLED
 
 
-list : List SponsorsActivityAction
-list =
+all : List SponsorsActivityAction
+all =
     [ NEW_SPONSORSHIP
     , CANCELLED_SPONSORSHIP
     , TIER_CHANGE

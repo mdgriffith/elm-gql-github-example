@@ -1,7 +1,7 @@
-module GitHub.Enum.UserBlockDuration exposing (UserBlockDuration(..), decoder, encode, list)
+module GitHub.Enum.UserBlockDuration exposing (UserBlockDuration(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, UserBlockDuration
+@docs encode, decoder, all, UserBlockDuration
 -}
 
 
@@ -17,8 +17,8 @@ type UserBlockDuration
     | PERMANENT
 
 
-list : List UserBlockDuration
-list =
+all : List UserBlockDuration
+all =
     [ ONE_DAY, THREE_DAYS, ONE_WEEK, ONE_MONTH, PERMANENT ]
 
 

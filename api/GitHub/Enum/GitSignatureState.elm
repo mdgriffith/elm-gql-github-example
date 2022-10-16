@@ -1,7 +1,7 @@
-module GitHub.Enum.GitSignatureState exposing (GitSignatureState(..), decoder, encode, list)
+module GitHub.Enum.GitSignatureState exposing (GitSignatureState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, GitSignatureState
+@docs encode, decoder, all, GitSignatureState
 -}
 
 
@@ -29,8 +29,8 @@ type GitSignatureState
     | OCSP_REVOKED
 
 
-list : List GitSignatureState
-list =
+all : List GitSignatureState
+all =
     [ VALID
     , INVALID
     , MALFORMED_SIG

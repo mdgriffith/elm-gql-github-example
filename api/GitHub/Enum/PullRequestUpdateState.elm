@@ -1,7 +1,7 @@
-module GitHub.Enum.PullRequestUpdateState exposing (PullRequestUpdateState(..), decoder, encode, list)
+module GitHub.Enum.PullRequestUpdateState exposing (PullRequestUpdateState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, PullRequestUpdateState
+@docs encode, decoder, all, PullRequestUpdateState
 -}
 
 
@@ -14,8 +14,8 @@ type PullRequestUpdateState
     | CLOSED
 
 
-list : List PullRequestUpdateState
-list =
+all : List PullRequestUpdateState
+all =
     [ OPEN, CLOSED ]
 
 

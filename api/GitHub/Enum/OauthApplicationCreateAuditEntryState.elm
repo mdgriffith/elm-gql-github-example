@@ -1,7 +1,7 @@
-module GitHub.Enum.OauthApplicationCreateAuditEntryState exposing (OauthApplicationCreateAuditEntryState(..), decoder, encode, list)
+module GitHub.Enum.OauthApplicationCreateAuditEntryState exposing (OauthApplicationCreateAuditEntryState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OauthApplicationCreateAuditEntryState
+@docs encode, decoder, all, OauthApplicationCreateAuditEntryState
 -}
 
 
@@ -15,8 +15,8 @@ type OauthApplicationCreateAuditEntryState
     | PENDING_DELETION
 
 
-list : List OauthApplicationCreateAuditEntryState
-list =
+all : List OauthApplicationCreateAuditEntryState
+all =
     [ ACTIVE, SUSPENDED, PENDING_DELETION ]
 
 

@@ -1,7 +1,7 @@
-module GitHub.Enum.MigrationSourceType exposing (MigrationSourceType(..), decoder, encode, list)
+module GitHub.Enum.MigrationSourceType exposing (MigrationSourceType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, MigrationSourceType
+@docs encode, decoder, all, MigrationSourceType
 -}
 
 
@@ -15,8 +15,8 @@ type MigrationSourceType
     | GITHUB_ARCHIVE
 
 
-list : List MigrationSourceType
-list =
+all : List MigrationSourceType
+all =
     [ AZURE_DEVOPS, BITBUCKET_SERVER, GITHUB_ARCHIVE ]
 
 

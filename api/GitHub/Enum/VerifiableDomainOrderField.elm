@@ -1,7 +1,7 @@
-module GitHub.Enum.VerifiableDomainOrderField exposing (VerifiableDomainOrderField(..), decoder, encode, list)
+module GitHub.Enum.VerifiableDomainOrderField exposing (VerifiableDomainOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, VerifiableDomainOrderField
+@docs encode, decoder, all, VerifiableDomainOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type VerifiableDomainOrderField
     | CREATED_AT
 
 
-list : List VerifiableDomainOrderField
-list =
+all : List VerifiableDomainOrderField
+all =
     [ DOMAIN, CREATED_AT ]
 
 

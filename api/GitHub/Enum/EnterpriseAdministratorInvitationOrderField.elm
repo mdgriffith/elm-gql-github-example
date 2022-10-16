@@ -1,7 +1,7 @@
-module GitHub.Enum.EnterpriseAdministratorInvitationOrderField exposing (EnterpriseAdministratorInvitationOrderField(..), decoder, encode, list)
+module GitHub.Enum.EnterpriseAdministratorInvitationOrderField exposing (EnterpriseAdministratorInvitationOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, EnterpriseAdministratorInvitationOrderField
+@docs encode, decoder, all, EnterpriseAdministratorInvitationOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type EnterpriseAdministratorInvitationOrderField
     = CREATED_AT
 
 
-list : List EnterpriseAdministratorInvitationOrderField
-list =
+all : List EnterpriseAdministratorInvitationOrderField
+all =
     [ CREATED_AT ]
 
 

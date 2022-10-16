@@ -1,7 +1,7 @@
-module GitHub.Enum.WorkflowRunOrderField exposing (WorkflowRunOrderField(..), decoder, encode, list)
+module GitHub.Enum.WorkflowRunOrderField exposing (WorkflowRunOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, WorkflowRunOrderField
+@docs encode, decoder, all, WorkflowRunOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type WorkflowRunOrderField
     = CREATED_AT
 
 
-list : List WorkflowRunOrderField
-list =
+all : List WorkflowRunOrderField
+all =
     [ CREATED_AT ]
 
 

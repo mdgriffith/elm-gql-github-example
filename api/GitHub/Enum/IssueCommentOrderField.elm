@@ -1,7 +1,7 @@
-module GitHub.Enum.IssueCommentOrderField exposing (IssueCommentOrderField(..), decoder, encode, list)
+module GitHub.Enum.IssueCommentOrderField exposing (IssueCommentOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, IssueCommentOrderField
+@docs encode, decoder, all, IssueCommentOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type IssueCommentOrderField
     = UPDATED_AT
 
 
-list : List IssueCommentOrderField
-list =
+all : List IssueCommentOrderField
+all =
     [ UPDATED_AT ]
 
 

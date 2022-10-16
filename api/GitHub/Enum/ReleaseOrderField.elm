@@ -1,7 +1,7 @@
-module GitHub.Enum.ReleaseOrderField exposing (ReleaseOrderField(..), decoder, encode, list)
+module GitHub.Enum.ReleaseOrderField exposing (ReleaseOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, ReleaseOrderField
+@docs encode, decoder, all, ReleaseOrderField
 -}
 
 
@@ -14,8 +14,8 @@ type ReleaseOrderField
     | NAME
 
 
-list : List ReleaseOrderField
-list =
+all : List ReleaseOrderField
+all =
     [ CREATED_AT, NAME ]
 
 

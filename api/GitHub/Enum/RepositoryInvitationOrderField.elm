@@ -1,7 +1,7 @@
-module GitHub.Enum.RepositoryInvitationOrderField exposing (RepositoryInvitationOrderField(..), decoder, encode, list)
+module GitHub.Enum.RepositoryInvitationOrderField exposing (RepositoryInvitationOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, RepositoryInvitationOrderField
+@docs encode, decoder, all, RepositoryInvitationOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type RepositoryInvitationOrderField
     = CREATED_AT
 
 
-list : List RepositoryInvitationOrderField
-list =
+all : List RepositoryInvitationOrderField
+all =
     [ CREATED_AT ]
 
 

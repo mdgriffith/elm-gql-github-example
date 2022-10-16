@@ -1,7 +1,7 @@
-module GitHub.Enum.OIDCProviderType exposing (OIDCProviderType(..), decoder, encode, list)
+module GitHub.Enum.OIDCProviderType exposing (OIDCProviderType(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, OIDCProviderType
+@docs encode, decoder, all, OIDCProviderType
 -}
 
 
@@ -13,8 +13,8 @@ type OIDCProviderType
     = AAD
 
 
-list : List OIDCProviderType
-list =
+all : List OIDCProviderType
+all =
     [ AAD ]
 
 

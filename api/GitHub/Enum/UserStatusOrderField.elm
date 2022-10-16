@@ -1,7 +1,7 @@
-module GitHub.Enum.UserStatusOrderField exposing (UserStatusOrderField(..), decoder, encode, list)
+module GitHub.Enum.UserStatusOrderField exposing (UserStatusOrderField(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, UserStatusOrderField
+@docs encode, decoder, all, UserStatusOrderField
 -}
 
 
@@ -13,8 +13,8 @@ type UserStatusOrderField
     = UPDATED_AT
 
 
-list : List UserStatusOrderField
-list =
+all : List UserStatusOrderField
+all =
     [ UPDATED_AT ]
 
 

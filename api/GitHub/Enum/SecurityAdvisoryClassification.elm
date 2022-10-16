@@ -1,7 +1,7 @@
-module GitHub.Enum.SecurityAdvisoryClassification exposing (SecurityAdvisoryClassification(..), decoder, encode, list)
+module GitHub.Enum.SecurityAdvisoryClassification exposing (SecurityAdvisoryClassification(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SecurityAdvisoryClassification
+@docs encode, decoder, all, SecurityAdvisoryClassification
 -}
 
 
@@ -14,8 +14,8 @@ type SecurityAdvisoryClassification
     | MALWARE
 
 
-list : List SecurityAdvisoryClassification
-list =
+all : List SecurityAdvisoryClassification
+all =
     [ GENERAL, MALWARE ]
 
 

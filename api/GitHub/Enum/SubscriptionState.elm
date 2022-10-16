@@ -1,7 +1,7 @@
-module GitHub.Enum.SubscriptionState exposing (SubscriptionState(..), decoder, encode, list)
+module GitHub.Enum.SubscriptionState exposing (SubscriptionState(..), all, decoder, encode)
 
 {-| 
-@docs encode, decoder, list, SubscriptionState
+@docs encode, decoder, all, SubscriptionState
 -}
 
 
@@ -15,8 +15,8 @@ type SubscriptionState
     | IGNORED
 
 
-list : List SubscriptionState
-list =
+all : List SubscriptionState
+all =
     [ UNSUBSCRIBED, SUBSCRIBED, IGNORED ]
 
 
