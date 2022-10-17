@@ -1,0 +1,34 @@
+query PRTimeline($owner: String!, $name: String!, $pullRequestCount: Int!) {
+  repository(owner: $owner, name: $name) {
+    pullRequests(first: $pullRequestCount) {
+      pullRequestDetails: nodes {
+        timelineItems(first: 100) {
+          event: nodes {
+            __typename
+            # If you want more specific information on other events
+            # They're all described here: https://docs.github.com/en/graphql/reference/unions#pullrequesttimelineitems
+            ... on PullRequestReview {
+              author {
+                ...Actor
+              }
+              body
+            }
+
+            ... on IssueComment {
+              author {
+                ...Actor
+              }
+              body
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment Actor on Actor {
+  login
+  avatarUrl
+  resourcePath
+}
