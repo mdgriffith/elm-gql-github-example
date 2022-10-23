@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder IssueStateReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "REOPENED" ->
-                        Json.Decode.succeed REOPENED
+            case andThenUnpack of
+                "REOPENED" ->
+                    Json.Decode.succeed REOPENED
 
-                    "NOT_PLANNED" ->
-                        Json.Decode.succeed NOT_PLANNED
+                "NOT_PLANNED" ->
+                    Json.Decode.succeed NOT_PLANNED
 
-                    "COMPLETED" ->
-                        Json.Decode.succeed COMPLETED
+                "COMPLETED" ->
+                    Json.Decode.succeed COMPLETED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -27,28 +27,27 @@ decoder : Json.Decode.Decoder PatchStatus
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ADDED" ->
-                        Json.Decode.succeed ADDED
+            case andThenUnpack of
+                "ADDED" ->
+                    Json.Decode.succeed ADDED
 
-                    "DELETED" ->
-                        Json.Decode.succeed DELETED
+                "DELETED" ->
+                    Json.Decode.succeed DELETED
 
-                    "RENAMED" ->
-                        Json.Decode.succeed RENAMED
+                "RENAMED" ->
+                    Json.Decode.succeed RENAMED
 
-                    "COPIED" ->
-                        Json.Decode.succeed COPIED
+                "COPIED" ->
+                    Json.Decode.succeed COPIED
 
-                    "MODIFIED" ->
-                        Json.Decode.succeed MODIFIED
+                "MODIFIED" ->
+                    Json.Decode.succeed MODIFIED
 
-                    "CHANGED" ->
-                        Json.Decode.succeed CHANGED
+                "CHANGED" ->
+                    Json.Decode.succeed CHANGED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

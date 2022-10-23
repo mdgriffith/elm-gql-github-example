@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder PinnedDiscussionGradient
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "RED_ORANGE" ->
-                        Json.Decode.succeed RED_ORANGE
+            case andThenUnpack of
+                "RED_ORANGE" ->
+                    Json.Decode.succeed RED_ORANGE
 
-                    "BLUE_MINT" ->
-                        Json.Decode.succeed BLUE_MINT
+                "BLUE_MINT" ->
+                    Json.Decode.succeed BLUE_MINT
 
-                    "BLUE_PURPLE" ->
-                        Json.Decode.succeed BLUE_PURPLE
+                "BLUE_PURPLE" ->
+                    Json.Decode.succeed BLUE_PURPLE
 
-                    "PINK_BLUE" ->
-                        Json.Decode.succeed PINK_BLUE
+                "PINK_BLUE" ->
+                    Json.Decode.succeed PINK_BLUE
 
-                    "PURPLE_CORAL" ->
-                        Json.Decode.succeed PURPLE_CORAL
+                "PURPLE_CORAL" ->
+                    Json.Decode.succeed PURPLE_CORAL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

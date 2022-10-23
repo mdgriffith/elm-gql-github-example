@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder OauthApplicationCreateAuditEntryState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ACTIVE" ->
-                        Json.Decode.succeed ACTIVE
+            case andThenUnpack of
+                "ACTIVE" ->
+                    Json.Decode.succeed ACTIVE
 
-                    "SUSPENDED" ->
-                        Json.Decode.succeed SUSPENDED
+                "SUSPENDED" ->
+                    Json.Decode.succeed SUSPENDED
 
-                    "PENDING_DELETION" ->
-                        Json.Decode.succeed PENDING_DELETION
+                "PENDING_DELETION" ->
+                    Json.Decode.succeed PENDING_DELETION
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

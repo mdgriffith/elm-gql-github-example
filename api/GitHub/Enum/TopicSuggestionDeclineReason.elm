@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder TopicSuggestionDeclineReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NOT_RELEVANT" ->
-                        Json.Decode.succeed NOT_RELEVANT
+            case andThenUnpack of
+                "NOT_RELEVANT" ->
+                    Json.Decode.succeed NOT_RELEVANT
 
-                    "TOO_SPECIFIC" ->
-                        Json.Decode.succeed TOO_SPECIFIC
+                "TOO_SPECIFIC" ->
+                    Json.Decode.succeed TOO_SPECIFIC
 
-                    "PERSONAL_PREFERENCE" ->
-                        Json.Decode.succeed PERSONAL_PREFERENCE
+                "PERSONAL_PREFERENCE" ->
+                    Json.Decode.succeed PERSONAL_PREFERENCE
 
-                    "TOO_GENERAL" ->
-                        Json.Decode.succeed TOO_GENERAL
+                "TOO_GENERAL" ->
+                    Json.Decode.succeed TOO_GENERAL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

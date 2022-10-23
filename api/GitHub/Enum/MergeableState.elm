@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder MergeableState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MERGEABLE" ->
-                        Json.Decode.succeed MERGEABLE
+            case andThenUnpack of
+                "MERGEABLE" ->
+                    Json.Decode.succeed MERGEABLE
 
-                    "CONFLICTING" ->
-                        Json.Decode.succeed CONFLICTING
+                "CONFLICTING" ->
+                    Json.Decode.succeed CONFLICTING
 
-                    "UNKNOWN" ->
-                        Json.Decode.succeed UNKNOWN
+                "UNKNOWN" ->
+                    Json.Decode.succeed UNKNOWN
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

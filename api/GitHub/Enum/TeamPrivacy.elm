@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder TeamPrivacy
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "SECRET" ->
-                        Json.Decode.succeed SECRET
+            case andThenUnpack of
+                "SECRET" ->
+                    Json.Decode.succeed SECRET
 
-                    "VISIBLE" ->
-                        Json.Decode.succeed VISIBLE
+                "VISIBLE" ->
+                    Json.Decode.succeed VISIBLE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

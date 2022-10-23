@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder IssueClosedStateReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "COMPLETED" ->
-                        Json.Decode.succeed COMPLETED
+            case andThenUnpack of
+                "COMPLETED" ->
+                    Json.Decode.succeed COMPLETED
 
-                    "NOT_PLANNED" ->
-                        Json.Decode.succeed NOT_PLANNED
+                "NOT_PLANNED" ->
+                    Json.Decode.succeed NOT_PLANNED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

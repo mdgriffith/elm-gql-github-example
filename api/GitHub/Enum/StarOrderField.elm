@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder StarOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "STARRED_AT" ->
-                        Json.Decode.succeed STARRED_AT
+            case andThenUnpack of
+                "STARRED_AT" ->
+                    Json.Decode.succeed STARRED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

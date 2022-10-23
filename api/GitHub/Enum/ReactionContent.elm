@@ -29,34 +29,33 @@ decoder : Json.Decode.Decoder ReactionContent
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "THUMBS_UP" ->
-                        Json.Decode.succeed THUMBS_UP
+            case andThenUnpack of
+                "THUMBS_UP" ->
+                    Json.Decode.succeed THUMBS_UP
 
-                    "THUMBS_DOWN" ->
-                        Json.Decode.succeed THUMBS_DOWN
+                "THUMBS_DOWN" ->
+                    Json.Decode.succeed THUMBS_DOWN
 
-                    "LAUGH" ->
-                        Json.Decode.succeed LAUGH
+                "LAUGH" ->
+                    Json.Decode.succeed LAUGH
 
-                    "HOORAY" ->
-                        Json.Decode.succeed HOORAY
+                "HOORAY" ->
+                    Json.Decode.succeed HOORAY
 
-                    "CONFUSED" ->
-                        Json.Decode.succeed CONFUSED
+                "CONFUSED" ->
+                    Json.Decode.succeed CONFUSED
 
-                    "HEART" ->
-                        Json.Decode.succeed HEART
+                "HEART" ->
+                    Json.Decode.succeed HEART
 
-                    "ROCKET" ->
-                        Json.Decode.succeed ROCKET
+                "ROCKET" ->
+                    Json.Decode.succeed ROCKET
 
-                    "EYES" ->
-                        Json.Decode.succeed EYES
+                "EYES" ->
+                    Json.Decode.succeed EYES
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

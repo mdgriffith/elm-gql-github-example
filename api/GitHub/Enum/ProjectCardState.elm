@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder ProjectCardState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CONTENT_ONLY" ->
-                        Json.Decode.succeed CONTENT_ONLY
+            case andThenUnpack of
+                "CONTENT_ONLY" ->
+                    Json.Decode.succeed CONTENT_ONLY
 
-                    "NOTE_ONLY" ->
-                        Json.Decode.succeed NOTE_ONLY
+                "NOTE_ONLY" ->
+                    Json.Decode.succeed NOTE_ONLY
 
-                    "REDACTED" ->
-                        Json.Decode.succeed REDACTED
+                "REDACTED" ->
+                    Json.Decode.succeed REDACTED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

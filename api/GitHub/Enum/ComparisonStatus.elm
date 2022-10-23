@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder ComparisonStatus
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DIVERGED" ->
-                        Json.Decode.succeed DIVERGED
+            case andThenUnpack of
+                "DIVERGED" ->
+                    Json.Decode.succeed DIVERGED
 
-                    "AHEAD" ->
-                        Json.Decode.succeed AHEAD
+                "AHEAD" ->
+                    Json.Decode.succeed AHEAD
 
-                    "BEHIND" ->
-                        Json.Decode.succeed BEHIND
+                "BEHIND" ->
+                    Json.Decode.succeed BEHIND
 
-                    "IDENTICAL" ->
-                        Json.Decode.succeed IDENTICAL
+                "IDENTICAL" ->
+                    Json.Decode.succeed IDENTICAL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

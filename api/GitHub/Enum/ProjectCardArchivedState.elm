@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder ProjectCardArchivedState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ARCHIVED" ->
-                        Json.Decode.succeed ARCHIVED
+            case andThenUnpack of
+                "ARCHIVED" ->
+                    Json.Decode.succeed ARCHIVED
 
-                    "NOT_ARCHIVED" ->
-                        Json.Decode.succeed NOT_ARCHIVED
+                "NOT_ARCHIVED" ->
+                    Json.Decode.succeed NOT_ARCHIVED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

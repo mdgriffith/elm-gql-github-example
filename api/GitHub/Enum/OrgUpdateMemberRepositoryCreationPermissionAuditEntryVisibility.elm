@@ -38,34 +38,33 @@ decoder :
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+            case andThenUnpack of
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    "PRIVATE" ->
-                        Json.Decode.succeed PRIVATE
+                "PRIVATE" ->
+                    Json.Decode.succeed PRIVATE
 
-                    "INTERNAL" ->
-                        Json.Decode.succeed INTERNAL
+                "INTERNAL" ->
+                    Json.Decode.succeed INTERNAL
 
-                    "PUBLIC_INTERNAL" ->
-                        Json.Decode.succeed PUBLIC_INTERNAL
+                "PUBLIC_INTERNAL" ->
+                    Json.Decode.succeed PUBLIC_INTERNAL
 
-                    "PRIVATE_INTERNAL" ->
-                        Json.Decode.succeed PRIVATE_INTERNAL
+                "PRIVATE_INTERNAL" ->
+                    Json.Decode.succeed PRIVATE_INTERNAL
 
-                    "PUBLIC_PRIVATE" ->
-                        Json.Decode.succeed PUBLIC_PRIVATE
+                "PUBLIC_PRIVATE" ->
+                    Json.Decode.succeed PUBLIC_PRIVATE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

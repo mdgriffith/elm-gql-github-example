@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder RepositoryPermission
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+            case andThenUnpack of
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "MAINTAIN" ->
-                        Json.Decode.succeed MAINTAIN
+                "MAINTAIN" ->
+                    Json.Decode.succeed MAINTAIN
 
-                    "WRITE" ->
-                        Json.Decode.succeed WRITE
+                "WRITE" ->
+                    Json.Decode.succeed WRITE
 
-                    "TRIAGE" ->
-                        Json.Decode.succeed TRIAGE
+                "TRIAGE" ->
+                    Json.Decode.succeed TRIAGE
 
-                    "READ" ->
-                        Json.Decode.succeed READ
+                "READ" ->
+                    Json.Decode.succeed READ
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

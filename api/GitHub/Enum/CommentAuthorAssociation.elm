@@ -37,34 +37,33 @@ decoder : Json.Decode.Decoder CommentAuthorAssociation
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MEMBER" ->
-                        Json.Decode.succeed MEMBER
+            case andThenUnpack of
+                "MEMBER" ->
+                    Json.Decode.succeed MEMBER
 
-                    "OWNER" ->
-                        Json.Decode.succeed OWNER
+                "OWNER" ->
+                    Json.Decode.succeed OWNER
 
-                    "MANNEQUIN" ->
-                        Json.Decode.succeed MANNEQUIN
+                "MANNEQUIN" ->
+                    Json.Decode.succeed MANNEQUIN
 
-                    "COLLABORATOR" ->
-                        Json.Decode.succeed COLLABORATOR
+                "COLLABORATOR" ->
+                    Json.Decode.succeed COLLABORATOR
 
-                    "CONTRIBUTOR" ->
-                        Json.Decode.succeed CONTRIBUTOR
+                "CONTRIBUTOR" ->
+                    Json.Decode.succeed CONTRIBUTOR
 
-                    "FIRST_TIME_CONTRIBUTOR" ->
-                        Json.Decode.succeed FIRST_TIME_CONTRIBUTOR
+                "FIRST_TIME_CONTRIBUTOR" ->
+                    Json.Decode.succeed FIRST_TIME_CONTRIBUTOR
 
-                    "FIRST_TIMER" ->
-                        Json.Decode.succeed FIRST_TIMER
+                "FIRST_TIMER" ->
+                    Json.Decode.succeed FIRST_TIMER
 
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

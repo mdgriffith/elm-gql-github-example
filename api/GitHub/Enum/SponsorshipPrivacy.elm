@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SponsorshipPrivacy
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+            case andThenUnpack of
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    "PRIVATE" ->
-                        Json.Decode.succeed PRIVATE
+                "PRIVATE" ->
+                    Json.Decode.succeed PRIVATE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

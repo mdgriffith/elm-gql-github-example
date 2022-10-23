@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder PullRequestReviewEvent
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "COMMENT" ->
-                        Json.Decode.succeed COMMENT
+            case andThenUnpack of
+                "COMMENT" ->
+                    Json.Decode.succeed COMMENT
 
-                    "APPROVE" ->
-                        Json.Decode.succeed APPROVE
+                "APPROVE" ->
+                    Json.Decode.succeed APPROVE
 
-                    "REQUEST_CHANGES" ->
-                        Json.Decode.succeed REQUEST_CHANGES
+                "REQUEST_CHANGES" ->
+                    Json.Decode.succeed REQUEST_CHANGES
 
-                    "DISMISS" ->
-                        Json.Decode.succeed DISMISS
+                "DISMISS" ->
+                    Json.Decode.succeed DISMISS
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

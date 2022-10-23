@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder PullRequestReviewState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+            case andThenUnpack of
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    "COMMENTED" ->
-                        Json.Decode.succeed COMMENTED
+                "COMMENTED" ->
+                    Json.Decode.succeed COMMENTED
 
-                    "APPROVED" ->
-                        Json.Decode.succeed APPROVED
+                "APPROVED" ->
+                    Json.Decode.succeed APPROVED
 
-                    "CHANGES_REQUESTED" ->
-                        Json.Decode.succeed CHANGES_REQUESTED
+                "CHANGES_REQUESTED" ->
+                    Json.Decode.succeed CHANGES_REQUESTED
 
-                    "DISMISSED" ->
-                        Json.Decode.succeed DISMISSED
+                "DISMISSED" ->
+                    Json.Decode.succeed DISMISSED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder DiscussionPollOptionOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "AUTHORED_ORDER" ->
-                        Json.Decode.succeed AUTHORED_ORDER
+            case andThenUnpack of
+                "AUTHORED_ORDER" ->
+                    Json.Decode.succeed AUTHORED_ORDER
 
-                    "VOTE_COUNT" ->
-                        Json.Decode.succeed VOTE_COUNT
+                "VOTE_COUNT" ->
+                    Json.Decode.succeed VOTE_COUNT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

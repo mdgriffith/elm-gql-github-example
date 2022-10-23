@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder EnterpriseServerUserAccountEmailOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "EMAIL" ->
-                        Json.Decode.succeed EMAIL
+            case andThenUnpack of
+                "EMAIL" ->
+                    Json.Decode.succeed EMAIL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

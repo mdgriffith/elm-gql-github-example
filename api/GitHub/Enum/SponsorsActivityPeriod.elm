@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder SponsorsActivityPeriod
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DAY" ->
-                        Json.Decode.succeed DAY
+            case andThenUnpack of
+                "DAY" ->
+                    Json.Decode.succeed DAY
 
-                    "WEEK" ->
-                        Json.Decode.succeed WEEK
+                "WEEK" ->
+                    Json.Decode.succeed WEEK
 
-                    "MONTH" ->
-                        Json.Decode.succeed MONTH
+                "MONTH" ->
+                    Json.Decode.succeed MONTH
 
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

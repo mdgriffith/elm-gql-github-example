@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder SamlDigestAlgorithm
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "SHA1" ->
-                        Json.Decode.succeed SHA1
+            case andThenUnpack of
+                "SHA1" ->
+                    Json.Decode.succeed SHA1
 
-                    "SHA256" ->
-                        Json.Decode.succeed SHA256
+                "SHA256" ->
+                    Json.Decode.succeed SHA256
 
-                    "SHA384" ->
-                        Json.Decode.succeed SHA384
+                "SHA384" ->
+                    Json.Decode.succeed SHA384
 
-                    "SHA512" ->
-                        Json.Decode.succeed SHA512
+                "SHA512" ->
+                    Json.Decode.succeed SHA512
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

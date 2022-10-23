@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder VerifiableDomainOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DOMAIN" ->
-                        Json.Decode.succeed DOMAIN
+            case andThenUnpack of
+                "DOMAIN" ->
+                    Json.Decode.succeed DOMAIN
 
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

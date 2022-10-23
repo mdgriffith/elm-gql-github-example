@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder RepoChangeMergeSettingAuditEntryMergeType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MERGE" ->
-                        Json.Decode.succeed MERGE
+            case andThenUnpack of
+                "MERGE" ->
+                    Json.Decode.succeed MERGE
 
-                    "REBASE" ->
-                        Json.Decode.succeed REBASE
+                "REBASE" ->
+                    Json.Decode.succeed REBASE
 
-                    "SQUASH" ->
-                        Json.Decode.succeed SQUASH
+                "SQUASH" ->
+                    Json.Decode.succeed SQUASH
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

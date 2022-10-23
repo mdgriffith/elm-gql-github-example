@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder LabelOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NAME" ->
-                        Json.Decode.succeed NAME
+            case andThenUnpack of
+                "NAME" ->
+                    Json.Decode.succeed NAME
 
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

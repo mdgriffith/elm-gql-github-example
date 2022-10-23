@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder DeploymentProtectionRuleType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "REQUIRED_REVIEWERS" ->
-                        Json.Decode.succeed REQUIRED_REVIEWERS
+            case andThenUnpack of
+                "REQUIRED_REVIEWERS" ->
+                    Json.Decode.succeed REQUIRED_REVIEWERS
 
-                    "WAIT_TIMER" ->
-                        Json.Decode.succeed WAIT_TIMER
+                "WAIT_TIMER" ->
+                    Json.Decode.succeed WAIT_TIMER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder RepositoryContributionType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "COMMIT" ->
-                        Json.Decode.succeed COMMIT
+            case andThenUnpack of
+                "COMMIT" ->
+                    Json.Decode.succeed COMMIT
 
-                    "ISSUE" ->
-                        Json.Decode.succeed ISSUE
+                "ISSUE" ->
+                    Json.Decode.succeed ISSUE
 
-                    "PULL_REQUEST" ->
-                        Json.Decode.succeed PULL_REQUEST
+                "PULL_REQUEST" ->
+                    Json.Decode.succeed PULL_REQUEST
 
-                    "REPOSITORY" ->
-                        Json.Decode.succeed REPOSITORY
+                "REPOSITORY" ->
+                    Json.Decode.succeed REPOSITORY
 
-                    "PULL_REQUEST_REVIEW" ->
-                        Json.Decode.succeed PULL_REQUEST_REVIEW
+                "PULL_REQUEST_REVIEW" ->
+                    Json.Decode.succeed PULL_REQUEST_REVIEW
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

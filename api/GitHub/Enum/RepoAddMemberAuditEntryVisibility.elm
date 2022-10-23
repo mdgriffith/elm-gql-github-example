@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder RepoAddMemberAuditEntryVisibility
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "INTERNAL" ->
-                        Json.Decode.succeed INTERNAL
+            case andThenUnpack of
+                "INTERNAL" ->
+                    Json.Decode.succeed INTERNAL
 
-                    "PRIVATE" ->
-                        Json.Decode.succeed PRIVATE
+                "PRIVATE" ->
+                    Json.Decode.succeed PRIVATE
 
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

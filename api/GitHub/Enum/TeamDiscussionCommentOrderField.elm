@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder TeamDiscussionCommentOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NUMBER" ->
-                        Json.Decode.succeed NUMBER
+            case andThenUnpack of
+                "NUMBER" ->
+                    Json.Decode.succeed NUMBER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

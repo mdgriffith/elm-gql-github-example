@@ -28,31 +28,30 @@ decoder : Json.Decode.Decoder PackageType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NPM" ->
-                        Json.Decode.succeed NPM
+            case andThenUnpack of
+                "NPM" ->
+                    Json.Decode.succeed NPM
 
-                    "RUBYGEMS" ->
-                        Json.Decode.succeed RUBYGEMS
+                "RUBYGEMS" ->
+                    Json.Decode.succeed RUBYGEMS
 
-                    "MAVEN" ->
-                        Json.Decode.succeed MAVEN
+                "MAVEN" ->
+                    Json.Decode.succeed MAVEN
 
-                    "DOCKER" ->
-                        Json.Decode.succeed DOCKER
+                "DOCKER" ->
+                    Json.Decode.succeed DOCKER
 
-                    "DEBIAN" ->
-                        Json.Decode.succeed DEBIAN
+                "DEBIAN" ->
+                    Json.Decode.succeed DEBIAN
 
-                    "NUGET" ->
-                        Json.Decode.succeed NUGET
+                "NUGET" ->
+                    Json.Decode.succeed NUGET
 
-                    "PYPI" ->
-                        Json.Decode.succeed PYPI
+                "PYPI" ->
+                    Json.Decode.succeed PYPI
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

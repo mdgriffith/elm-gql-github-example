@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder OrgEnterpriseOwnerOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "LOGIN" ->
-                        Json.Decode.succeed LOGIN
+            case andThenUnpack of
+                "LOGIN" ->
+                    Json.Decode.succeed LOGIN
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

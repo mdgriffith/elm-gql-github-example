@@ -33,28 +33,27 @@ decoder : Json.Decode.Decoder OrgRemoveMemberAuditEntryMembershipType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "SUSPENDED" ->
-                        Json.Decode.succeed SUSPENDED
+            case andThenUnpack of
+                "SUSPENDED" ->
+                    Json.Decode.succeed SUSPENDED
 
-                    "DIRECT_MEMBER" ->
-                        Json.Decode.succeed DIRECT_MEMBER
+                "DIRECT_MEMBER" ->
+                    Json.Decode.succeed DIRECT_MEMBER
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "BILLING_MANAGER" ->
-                        Json.Decode.succeed BILLING_MANAGER
+                "BILLING_MANAGER" ->
+                    Json.Decode.succeed BILLING_MANAGER
 
-                    "UNAFFILIATED" ->
-                        Json.Decode.succeed UNAFFILIATED
+                "UNAFFILIATED" ->
+                    Json.Decode.succeed UNAFFILIATED
 
-                    "OUTSIDE_COLLABORATOR" ->
-                        Json.Decode.succeed OUTSIDE_COLLABORATOR
+                "OUTSIDE_COLLABORATOR" ->
+                    Json.Decode.succeed OUTSIDE_COLLABORATOR
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

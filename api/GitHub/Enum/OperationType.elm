@@ -28,31 +28,30 @@ decoder : Json.Decode.Decoder OperationType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ACCESS" ->
-                        Json.Decode.succeed ACCESS
+            case andThenUnpack of
+                "ACCESS" ->
+                    Json.Decode.succeed ACCESS
 
-                    "AUTHENTICATION" ->
-                        Json.Decode.succeed AUTHENTICATION
+                "AUTHENTICATION" ->
+                    Json.Decode.succeed AUTHENTICATION
 
-                    "CREATE" ->
-                        Json.Decode.succeed CREATE
+                "CREATE" ->
+                    Json.Decode.succeed CREATE
 
-                    "MODIFY" ->
-                        Json.Decode.succeed MODIFY
+                "MODIFY" ->
+                    Json.Decode.succeed MODIFY
 
-                    "REMOVE" ->
-                        Json.Decode.succeed REMOVE
+                "REMOVE" ->
+                    Json.Decode.succeed REMOVE
 
-                    "RESTORE" ->
-                        Json.Decode.succeed RESTORE
+                "RESTORE" ->
+                    Json.Decode.succeed RESTORE
 
-                    "TRANSFER" ->
-                        Json.Decode.succeed TRANSFER
+                "TRANSFER" ->
+                    Json.Decode.succeed TRANSFER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

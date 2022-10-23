@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder ProjectV2ViewLayout
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "BOARD_LAYOUT" ->
-                        Json.Decode.succeed BOARD_LAYOUT
+            case andThenUnpack of
+                "BOARD_LAYOUT" ->
+                    Json.Decode.succeed BOARD_LAYOUT
 
-                    "TABLE_LAYOUT" ->
-                        Json.Decode.succeed TABLE_LAYOUT
+                "TABLE_LAYOUT" ->
+                    Json.Decode.succeed TABLE_LAYOUT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

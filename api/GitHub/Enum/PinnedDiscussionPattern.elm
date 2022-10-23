@@ -27,28 +27,27 @@ decoder : Json.Decode.Decoder PinnedDiscussionPattern
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DOT_FILL" ->
-                        Json.Decode.succeed DOT_FILL
+            case andThenUnpack of
+                "DOT_FILL" ->
+                    Json.Decode.succeed DOT_FILL
 
-                    "PLUS" ->
-                        Json.Decode.succeed PLUS
+                "PLUS" ->
+                    Json.Decode.succeed PLUS
 
-                    "ZAP" ->
-                        Json.Decode.succeed ZAP
+                "ZAP" ->
+                    Json.Decode.succeed ZAP
 
-                    "CHEVRON_UP" ->
-                        Json.Decode.succeed CHEVRON_UP
+                "CHEVRON_UP" ->
+                    Json.Decode.succeed CHEVRON_UP
 
-                    "DOT" ->
-                        Json.Decode.succeed DOT
+                "DOT" ->
+                    Json.Decode.succeed DOT
 
-                    "HEART_FILL" ->
-                        Json.Decode.succeed HEART_FILL
+                "HEART_FILL" ->
+                    Json.Decode.succeed HEART_FILL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

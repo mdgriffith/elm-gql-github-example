@@ -35,31 +35,30 @@ decoder : Json.Decode.Decoder MigrationState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NOT_STARTED" ->
-                        Json.Decode.succeed NOT_STARTED
+            case andThenUnpack of
+                "NOT_STARTED" ->
+                    Json.Decode.succeed NOT_STARTED
 
-                    "QUEUED" ->
-                        Json.Decode.succeed QUEUED
+                "QUEUED" ->
+                    Json.Decode.succeed QUEUED
 
-                    "IN_PROGRESS" ->
-                        Json.Decode.succeed IN_PROGRESS
+                "IN_PROGRESS" ->
+                    Json.Decode.succeed IN_PROGRESS
 
-                    "SUCCEEDED" ->
-                        Json.Decode.succeed SUCCEEDED
+                "SUCCEEDED" ->
+                    Json.Decode.succeed SUCCEEDED
 
-                    "FAILED" ->
-                        Json.Decode.succeed FAILED
+                "FAILED" ->
+                    Json.Decode.succeed FAILED
 
-                    "PENDING_VALIDATION" ->
-                        Json.Decode.succeed PENDING_VALIDATION
+                "PENDING_VALIDATION" ->
+                    Json.Decode.succeed PENDING_VALIDATION
 
-                    "FAILED_VALIDATION" ->
-                        Json.Decode.succeed FAILED_VALIDATION
+                "FAILED_VALIDATION" ->
+                    Json.Decode.succeed FAILED_VALIDATION
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

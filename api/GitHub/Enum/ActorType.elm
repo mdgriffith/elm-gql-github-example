@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder ActorType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "USER" ->
-                        Json.Decode.succeed USER
+            case andThenUnpack of
+                "USER" ->
+                    Json.Decode.succeed USER
 
-                    "TEAM" ->
-                        Json.Decode.succeed TEAM
+                "TEAM" ->
+                    Json.Decode.succeed TEAM
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

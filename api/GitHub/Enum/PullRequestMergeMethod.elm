@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder PullRequestMergeMethod
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MERGE" ->
-                        Json.Decode.succeed MERGE
+            case andThenUnpack of
+                "MERGE" ->
+                    Json.Decode.succeed MERGE
 
-                    "SQUASH" ->
-                        Json.Decode.succeed SQUASH
+                "SQUASH" ->
+                    Json.Decode.succeed SQUASH
 
-                    "REBASE" ->
-                        Json.Decode.succeed REBASE
+                "REBASE" ->
+                    Json.Decode.succeed REBASE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

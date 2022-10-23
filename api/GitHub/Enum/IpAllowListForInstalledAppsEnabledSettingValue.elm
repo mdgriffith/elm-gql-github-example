@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder IpAllowListForInstalledAppsEnabledSettingValue
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ENABLED" ->
-                        Json.Decode.succeed ENABLED
+            case andThenUnpack of
+                "ENABLED" ->
+                    Json.Decode.succeed ENABLED
 
-                    "DISABLED" ->
-                        Json.Decode.succeed DISABLED
+                "DISABLED" ->
+                    Json.Decode.succeed DISABLED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

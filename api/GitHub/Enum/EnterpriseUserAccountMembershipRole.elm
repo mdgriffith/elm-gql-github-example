@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder EnterpriseUserAccountMembershipRole
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MEMBER" ->
-                        Json.Decode.succeed MEMBER
+            case andThenUnpack of
+                "MEMBER" ->
+                    Json.Decode.succeed MEMBER
 
-                    "OWNER" ->
-                        Json.Decode.succeed OWNER
+                "OWNER" ->
+                    Json.Decode.succeed OWNER
 
-                    "UNAFFILIATED" ->
-                        Json.Decode.succeed UNAFFILIATED
+                "UNAFFILIATED" ->
+                    Json.Decode.succeed UNAFFILIATED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

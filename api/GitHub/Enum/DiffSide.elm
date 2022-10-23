@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder DiffSide
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "LEFT" ->
-                        Json.Decode.succeed LEFT
+            case andThenUnpack of
+                "LEFT" ->
+                    Json.Decode.succeed LEFT
 
-                    "RIGHT" ->
-                        Json.Decode.succeed RIGHT
+                "RIGHT" ->
+                    Json.Decode.succeed RIGHT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

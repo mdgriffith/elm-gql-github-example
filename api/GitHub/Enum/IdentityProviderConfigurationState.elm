@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder IdentityProviderConfigurationState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ENFORCED" ->
-                        Json.Decode.succeed ENFORCED
+            case andThenUnpack of
+                "ENFORCED" ->
+                    Json.Decode.succeed ENFORCED
 
-                    "CONFIGURED" ->
-                        Json.Decode.succeed CONFIGURED
+                "CONFIGURED" ->
+                    Json.Decode.succeed CONFIGURED
 
-                    "UNCONFIGURED" ->
-                        Json.Decode.succeed UNCONFIGURED
+                "UNCONFIGURED" ->
+                    Json.Decode.succeed UNCONFIGURED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

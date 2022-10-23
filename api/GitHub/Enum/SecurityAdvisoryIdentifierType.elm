@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SecurityAdvisoryIdentifierType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CVE" ->
-                        Json.Decode.succeed CVE
+            case andThenUnpack of
+                "CVE" ->
+                    Json.Decode.succeed CVE
 
-                    "GHSA" ->
-                        Json.Decode.succeed GHSA
+                "GHSA" ->
+                    Json.Decode.succeed GHSA
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

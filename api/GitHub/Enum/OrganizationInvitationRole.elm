@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder OrganizationInvitationRole
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DIRECT_MEMBER" ->
-                        Json.Decode.succeed DIRECT_MEMBER
+            case andThenUnpack of
+                "DIRECT_MEMBER" ->
+                    Json.Decode.succeed DIRECT_MEMBER
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "BILLING_MANAGER" ->
-                        Json.Decode.succeed BILLING_MANAGER
+                "BILLING_MANAGER" ->
+                    Json.Decode.succeed BILLING_MANAGER
 
-                    "REINSTATE" ->
-                        Json.Decode.succeed REINSTATE
+                "REINSTATE" ->
+                    Json.Decode.succeed REINSTATE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

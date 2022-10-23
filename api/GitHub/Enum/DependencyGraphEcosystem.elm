@@ -31,40 +31,39 @@ decoder : Json.Decode.Decoder DependencyGraphEcosystem
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "RUBYGEMS" ->
-                        Json.Decode.succeed RUBYGEMS
+            case andThenUnpack of
+                "RUBYGEMS" ->
+                    Json.Decode.succeed RUBYGEMS
 
-                    "NPM" ->
-                        Json.Decode.succeed NPM
+                "NPM" ->
+                    Json.Decode.succeed NPM
 
-                    "PIP" ->
-                        Json.Decode.succeed PIP
+                "PIP" ->
+                    Json.Decode.succeed PIP
 
-                    "MAVEN" ->
-                        Json.Decode.succeed MAVEN
+                "MAVEN" ->
+                    Json.Decode.succeed MAVEN
 
-                    "NUGET" ->
-                        Json.Decode.succeed NUGET
+                "NUGET" ->
+                    Json.Decode.succeed NUGET
 
-                    "COMPOSER" ->
-                        Json.Decode.succeed COMPOSER
+                "COMPOSER" ->
+                    Json.Decode.succeed COMPOSER
 
-                    "GO" ->
-                        Json.Decode.succeed GO
+                "GO" ->
+                    Json.Decode.succeed GO
 
-                    "ACTIONS" ->
-                        Json.Decode.succeed ACTIONS
+                "ACTIONS" ->
+                    Json.Decode.succeed ACTIONS
 
-                    "RUST" ->
-                        Json.Decode.succeed RUST
+                "RUST" ->
+                    Json.Decode.succeed RUST
 
-                    "PUB" ->
-                        Json.Decode.succeed PUB
+                "PUB" ->
+                    Json.Decode.succeed PUB
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

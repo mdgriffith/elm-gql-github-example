@@ -43,43 +43,42 @@ decoder : Json.Decode.Decoder SecurityAdvisoryEcosystem
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "COMPOSER" ->
-                        Json.Decode.succeed COMPOSER
+            case andThenUnpack of
+                "COMPOSER" ->
+                    Json.Decode.succeed COMPOSER
 
-                    "ERLANG" ->
-                        Json.Decode.succeed ERLANG
+                "ERLANG" ->
+                    Json.Decode.succeed ERLANG
 
-                    "ACTIONS" ->
-                        Json.Decode.succeed ACTIONS
+                "ACTIONS" ->
+                    Json.Decode.succeed ACTIONS
 
-                    "GO" ->
-                        Json.Decode.succeed GO
+                "GO" ->
+                    Json.Decode.succeed GO
 
-                    "MAVEN" ->
-                        Json.Decode.succeed MAVEN
+                "MAVEN" ->
+                    Json.Decode.succeed MAVEN
 
-                    "NPM" ->
-                        Json.Decode.succeed NPM
+                "NPM" ->
+                    Json.Decode.succeed NPM
 
-                    "NUGET" ->
-                        Json.Decode.succeed NUGET
+                "NUGET" ->
+                    Json.Decode.succeed NUGET
 
-                    "PIP" ->
-                        Json.Decode.succeed PIP
+                "PIP" ->
+                    Json.Decode.succeed PIP
 
-                    "PUB" ->
-                        Json.Decode.succeed PUB
+                "PUB" ->
+                    Json.Decode.succeed PUB
 
-                    "RUBYGEMS" ->
-                        Json.Decode.succeed RUBYGEMS
+                "RUBYGEMS" ->
+                    Json.Decode.succeed RUBYGEMS
 
-                    "RUST" ->
-                        Json.Decode.succeed RUST
+                "RUST" ->
+                    Json.Decode.succeed RUST
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

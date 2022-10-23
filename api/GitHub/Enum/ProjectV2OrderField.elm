@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder ProjectV2OrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TITLE" ->
-                        Json.Decode.succeed TITLE
+            case andThenUnpack of
+                "TITLE" ->
+                    Json.Decode.succeed TITLE
 
-                    "NUMBER" ->
-                        Json.Decode.succeed NUMBER
+                "NUMBER" ->
+                    Json.Decode.succeed NUMBER
 
-                    "UPDATED_AT" ->
-                        Json.Decode.succeed UPDATED_AT
+                "UPDATED_AT" ->
+                    Json.Decode.succeed UPDATED_AT
 
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

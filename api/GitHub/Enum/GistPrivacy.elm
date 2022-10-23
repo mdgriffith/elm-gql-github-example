@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder GistPrivacy
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+            case andThenUnpack of
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    "SECRET" ->
-                        Json.Decode.succeed SECRET
+                "SECRET" ->
+                    Json.Decode.succeed SECRET
 
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

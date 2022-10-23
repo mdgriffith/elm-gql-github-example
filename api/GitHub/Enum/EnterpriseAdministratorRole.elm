@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder EnterpriseAdministratorRole
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OWNER" ->
-                        Json.Decode.succeed OWNER
+            case andThenUnpack of
+                "OWNER" ->
+                    Json.Decode.succeed OWNER
 
-                    "BILLING_MANAGER" ->
-                        Json.Decode.succeed BILLING_MANAGER
+                "BILLING_MANAGER" ->
+                    Json.Decode.succeed BILLING_MANAGER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SponsorsGoalKind
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TOTAL_SPONSORS_COUNT" ->
-                        Json.Decode.succeed TOTAL_SPONSORS_COUNT
+            case andThenUnpack of
+                "TOTAL_SPONSORS_COUNT" ->
+                    Json.Decode.succeed TOTAL_SPONSORS_COUNT
 
-                    "MONTHLY_SPONSORSHIP_AMOUNT" ->
-                        Json.Decode.succeed MONTHLY_SPONSORSHIP_AMOUNT
+                "MONTHLY_SPONSORSHIP_AMOUNT" ->
+                    Json.Decode.succeed MONTHLY_SPONSORSHIP_AMOUNT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

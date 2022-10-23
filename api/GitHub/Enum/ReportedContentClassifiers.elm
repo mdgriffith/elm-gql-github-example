@@ -27,28 +27,27 @@ decoder : Json.Decode.Decoder ReportedContentClassifiers
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "SPAM" ->
-                        Json.Decode.succeed SPAM
+            case andThenUnpack of
+                "SPAM" ->
+                    Json.Decode.succeed SPAM
 
-                    "ABUSE" ->
-                        Json.Decode.succeed ABUSE
+                "ABUSE" ->
+                    Json.Decode.succeed ABUSE
 
-                    "OFF_TOPIC" ->
-                        Json.Decode.succeed OFF_TOPIC
+                "OFF_TOPIC" ->
+                    Json.Decode.succeed OFF_TOPIC
 
-                    "OUTDATED" ->
-                        Json.Decode.succeed OUTDATED
+                "OUTDATED" ->
+                    Json.Decode.succeed OUTDATED
 
-                    "DUPLICATE" ->
-                        Json.Decode.succeed DUPLICATE
+                "DUPLICATE" ->
+                    Json.Decode.succeed DUPLICATE
 
-                    "RESOLVED" ->
-                        Json.Decode.succeed RESOLVED
+                "RESOLVED" ->
+                    Json.Decode.succeed RESOLVED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder MergeCommitTitle
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PR_TITLE" ->
-                        Json.Decode.succeed PR_TITLE
+            case andThenUnpack of
+                "PR_TITLE" ->
+                    Json.Decode.succeed PR_TITLE
 
-                    "MERGE_MESSAGE" ->
-                        Json.Decode.succeed MERGE_MESSAGE
+                "MERGE_MESSAGE" ->
+                    Json.Decode.succeed MERGE_MESSAGE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

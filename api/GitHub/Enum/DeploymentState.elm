@@ -41,40 +41,39 @@ decoder : Json.Decode.Decoder DeploymentState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ABANDONED" ->
-                        Json.Decode.succeed ABANDONED
+            case andThenUnpack of
+                "ABANDONED" ->
+                    Json.Decode.succeed ABANDONED
 
-                    "ACTIVE" ->
-                        Json.Decode.succeed ACTIVE
+                "ACTIVE" ->
+                    Json.Decode.succeed ACTIVE
 
-                    "DESTROYED" ->
-                        Json.Decode.succeed DESTROYED
+                "DESTROYED" ->
+                    Json.Decode.succeed DESTROYED
 
-                    "ERROR" ->
-                        Json.Decode.succeed ERROR
+                "ERROR" ->
+                    Json.Decode.succeed ERROR
 
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    "INACTIVE" ->
-                        Json.Decode.succeed INACTIVE
+                "INACTIVE" ->
+                    Json.Decode.succeed INACTIVE
 
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    "QUEUED" ->
-                        Json.Decode.succeed QUEUED
+                "QUEUED" ->
+                    Json.Decode.succeed QUEUED
 
-                    "IN_PROGRESS" ->
-                        Json.Decode.succeed IN_PROGRESS
+                "IN_PROGRESS" ->
+                    Json.Decode.succeed IN_PROGRESS
 
-                    "WAITING" ->
-                        Json.Decode.succeed WAITING
+                "WAITING" ->
+                    Json.Decode.succeed WAITING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

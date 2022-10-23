@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder MigrationSourceType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "AZURE_DEVOPS" ->
-                        Json.Decode.succeed AZURE_DEVOPS
+            case andThenUnpack of
+                "AZURE_DEVOPS" ->
+                    Json.Decode.succeed AZURE_DEVOPS
 
-                    "BITBUCKET_SERVER" ->
-                        Json.Decode.succeed BITBUCKET_SERVER
+                "BITBUCKET_SERVER" ->
+                    Json.Decode.succeed BITBUCKET_SERVER
 
-                    "GITHUB_ARCHIVE" ->
-                        Json.Decode.succeed GITHUB_ARCHIVE
+                "GITHUB_ARCHIVE" ->
+                    Json.Decode.succeed GITHUB_ARCHIVE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

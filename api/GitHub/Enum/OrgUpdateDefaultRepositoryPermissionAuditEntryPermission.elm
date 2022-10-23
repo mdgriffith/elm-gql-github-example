@@ -26,22 +26,21 @@ decoder :
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "READ" ->
-                        Json.Decode.succeed READ
+            case andThenUnpack of
+                "READ" ->
+                    Json.Decode.succeed READ
 
-                    "WRITE" ->
-                        Json.Decode.succeed WRITE
+                "WRITE" ->
+                    Json.Decode.succeed WRITE
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

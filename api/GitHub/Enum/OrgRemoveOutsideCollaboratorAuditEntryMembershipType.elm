@@ -25,19 +25,18 @@ decoder :
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OUTSIDE_COLLABORATOR" ->
-                        Json.Decode.succeed OUTSIDE_COLLABORATOR
+            case andThenUnpack of
+                "OUTSIDE_COLLABORATOR" ->
+                    Json.Decode.succeed OUTSIDE_COLLABORATOR
 
-                    "UNAFFILIATED" ->
-                        Json.Decode.succeed UNAFFILIATED
+                "UNAFFILIATED" ->
+                    Json.Decode.succeed UNAFFILIATED
 
-                    "BILLING_MANAGER" ->
-                        Json.Decode.succeed BILLING_MANAGER
+                "BILLING_MANAGER" ->
+                    Json.Decode.succeed BILLING_MANAGER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder RepositoryInteractionLimitExpiry
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ONE_DAY" ->
-                        Json.Decode.succeed ONE_DAY
+            case andThenUnpack of
+                "ONE_DAY" ->
+                    Json.Decode.succeed ONE_DAY
 
-                    "THREE_DAYS" ->
-                        Json.Decode.succeed THREE_DAYS
+                "THREE_DAYS" ->
+                    Json.Decode.succeed THREE_DAYS
 
-                    "ONE_WEEK" ->
-                        Json.Decode.succeed ONE_WEEK
+                "ONE_WEEK" ->
+                    Json.Decode.succeed ONE_WEEK
 
-                    "ONE_MONTH" ->
-                        Json.Decode.succeed ONE_MONTH
+                "ONE_MONTH" ->
+                    Json.Decode.succeed ONE_MONTH
 
-                    "SIX_MONTHS" ->
-                        Json.Decode.succeed SIX_MONTHS
+                "SIX_MONTHS" ->
+                    Json.Decode.succeed SIX_MONTHS
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder ProjectV2ItemOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "POSITION" ->
-                        Json.Decode.succeed POSITION
+            case andThenUnpack of
+                "POSITION" ->
+                    Json.Decode.succeed POSITION
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder PullRequestState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OPEN" ->
-                        Json.Decode.succeed OPEN
+            case andThenUnpack of
+                "OPEN" ->
+                    Json.Decode.succeed OPEN
 
-                    "CLOSED" ->
-                        Json.Decode.succeed CLOSED
+                "CLOSED" ->
+                    Json.Decode.succeed CLOSED
 
-                    "MERGED" ->
-                        Json.Decode.succeed MERGED
+                "MERGED" ->
+                    Json.Decode.succeed MERGED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

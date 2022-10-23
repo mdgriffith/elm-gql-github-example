@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder OIDCProviderType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "AAD" ->
-                        Json.Decode.succeed AAD
+            case andThenUnpack of
+                "AAD" ->
+                    Json.Decode.succeed AAD
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

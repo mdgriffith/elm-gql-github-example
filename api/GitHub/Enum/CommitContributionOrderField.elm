@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder CommitContributionOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OCCURRED_AT" ->
-                        Json.Decode.succeed OCCURRED_AT
+            case andThenUnpack of
+                "OCCURRED_AT" ->
+                    Json.Decode.succeed OCCURRED_AT
 
-                    "COMMIT_COUNT" ->
-                        Json.Decode.succeed COMMIT_COUNT
+                "COMMIT_COUNT" ->
+                    Json.Decode.succeed COMMIT_COUNT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

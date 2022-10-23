@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SponsorOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "LOGIN" ->
-                        Json.Decode.succeed LOGIN
+            case andThenUnpack of
+                "LOGIN" ->
+                    Json.Decode.succeed LOGIN
 
-                    "RELEVANCE" ->
-                        Json.Decode.succeed RELEVANCE
+                "RELEVANCE" ->
+                    Json.Decode.succeed RELEVANCE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

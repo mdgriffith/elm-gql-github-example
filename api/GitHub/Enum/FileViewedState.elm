@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder FileViewedState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DISMISSED" ->
-                        Json.Decode.succeed DISMISSED
+            case andThenUnpack of
+                "DISMISSED" ->
+                    Json.Decode.succeed DISMISSED
 
-                    "VIEWED" ->
-                        Json.Decode.succeed VIEWED
+                "VIEWED" ->
+                    Json.Decode.succeed VIEWED
 
-                    "UNVIEWED" ->
-                        Json.Decode.succeed UNVIEWED
+                "UNVIEWED" ->
+                    Json.Decode.succeed UNVIEWED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

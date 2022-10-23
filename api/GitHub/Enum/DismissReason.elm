@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder DismissReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "FIX_STARTED" ->
-                        Json.Decode.succeed FIX_STARTED
+            case andThenUnpack of
+                "FIX_STARTED" ->
+                    Json.Decode.succeed FIX_STARTED
 
-                    "NO_BANDWIDTH" ->
-                        Json.Decode.succeed NO_BANDWIDTH
+                "NO_BANDWIDTH" ->
+                    Json.Decode.succeed NO_BANDWIDTH
 
-                    "TOLERABLE_RISK" ->
-                        Json.Decode.succeed TOLERABLE_RISK
+                "TOLERABLE_RISK" ->
+                    Json.Decode.succeed TOLERABLE_RISK
 
-                    "INACCURATE" ->
-                        Json.Decode.succeed INACCURATE
+                "INACCURATE" ->
+                    Json.Decode.succeed INACCURATE
 
-                    "NOT_USED" ->
-                        Json.Decode.succeed NOT_USED
+                "NOT_USED" ->
+                    Json.Decode.succeed NOT_USED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

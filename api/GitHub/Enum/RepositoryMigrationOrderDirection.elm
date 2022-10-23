@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder RepositoryMigrationOrderDirection
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ASC" ->
-                        Json.Decode.succeed ASC
+            case andThenUnpack of
+                "ASC" ->
+                    Json.Decode.succeed ASC
 
-                    "DESC" ->
-                        Json.Decode.succeed DESC
+                "DESC" ->
+                    Json.Decode.succeed DESC
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

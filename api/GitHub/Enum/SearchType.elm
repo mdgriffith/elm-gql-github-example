@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder SearchType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ISSUE" ->
-                        Json.Decode.succeed ISSUE
+            case andThenUnpack of
+                "ISSUE" ->
+                    Json.Decode.succeed ISSUE
 
-                    "REPOSITORY" ->
-                        Json.Decode.succeed REPOSITORY
+                "REPOSITORY" ->
+                    Json.Decode.succeed REPOSITORY
 
-                    "USER" ->
-                        Json.Decode.succeed USER
+                "USER" ->
+                    Json.Decode.succeed USER
 
-                    "DISCUSSION" ->
-                        Json.Decode.succeed DISCUSSION
+                "DISCUSSION" ->
+                    Json.Decode.succeed DISCUSSION
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

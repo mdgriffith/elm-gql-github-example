@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SecurityAdvisoryClassification
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "GENERAL" ->
-                        Json.Decode.succeed GENERAL
+            case andThenUnpack of
+                "GENERAL" ->
+                    Json.Decode.succeed GENERAL
 
-                    "MALWARE" ->
-                        Json.Decode.succeed MALWARE
+                "MALWARE" ->
+                    Json.Decode.succeed MALWARE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

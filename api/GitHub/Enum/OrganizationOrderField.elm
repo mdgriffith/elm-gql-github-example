@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder OrganizationOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+            case andThenUnpack of
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    "LOGIN" ->
-                        Json.Decode.succeed LOGIN
+                "LOGIN" ->
+                    Json.Decode.succeed LOGIN
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

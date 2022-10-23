@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder SavedReplyOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "UPDATED_AT" ->
-                        Json.Decode.succeed UPDATED_AT
+            case andThenUnpack of
+                "UPDATED_AT" ->
+                    Json.Decode.succeed UPDATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder PullRequestReviewDecision
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CHANGES_REQUESTED" ->
-                        Json.Decode.succeed CHANGES_REQUESTED
+            case andThenUnpack of
+                "CHANGES_REQUESTED" ->
+                    Json.Decode.succeed CHANGES_REQUESTED
 
-                    "APPROVED" ->
-                        Json.Decode.succeed APPROVED
+                "APPROVED" ->
+                    Json.Decode.succeed APPROVED
 
-                    "REVIEW_REQUIRED" ->
-                        Json.Decode.succeed REVIEW_REQUIRED
+                "REVIEW_REQUIRED" ->
+                    Json.Decode.succeed REVIEW_REQUIRED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

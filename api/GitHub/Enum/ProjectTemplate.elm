@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder ProjectTemplate
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "BASIC_KANBAN" ->
-                        Json.Decode.succeed BASIC_KANBAN
+            case andThenUnpack of
+                "BASIC_KANBAN" ->
+                    Json.Decode.succeed BASIC_KANBAN
 
-                    "AUTOMATED_KANBAN_V2" ->
-                        Json.Decode.succeed AUTOMATED_KANBAN_V2
+                "AUTOMATED_KANBAN_V2" ->
+                    Json.Decode.succeed AUTOMATED_KANBAN_V2
 
-                    "AUTOMATED_REVIEWS_KANBAN" ->
-                        Json.Decode.succeed AUTOMATED_REVIEWS_KANBAN
+                "AUTOMATED_REVIEWS_KANBAN" ->
+                    Json.Decode.succeed AUTOMATED_REVIEWS_KANBAN
 
-                    "BUG_TRIAGE" ->
-                        Json.Decode.succeed BUG_TRIAGE
+                "BUG_TRIAGE" ->
+                    Json.Decode.succeed BUG_TRIAGE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

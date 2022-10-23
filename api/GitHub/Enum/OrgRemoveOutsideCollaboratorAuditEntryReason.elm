@@ -23,17 +23,15 @@ decoder : Json.Decode.Decoder OrgRemoveOutsideCollaboratorAuditEntryReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE" ->
-                        Json.Decode.succeed
-                            TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+            case andThenUnpack of
+                "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE" ->
+                    Json.Decode.succeed TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
 
-                    "SAML_EXTERNAL_IDENTITY_MISSING" ->
-                        Json.Decode.succeed SAML_EXTERNAL_IDENTITY_MISSING
+                "SAML_EXTERNAL_IDENTITY_MISSING" ->
+                    Json.Decode.succeed SAML_EXTERNAL_IDENTITY_MISSING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

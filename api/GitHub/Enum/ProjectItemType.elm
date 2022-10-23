@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder ProjectItemType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ISSUE" ->
-                        Json.Decode.succeed ISSUE
+            case andThenUnpack of
+                "ISSUE" ->
+                    Json.Decode.succeed ISSUE
 
-                    "PULL_REQUEST" ->
-                        Json.Decode.succeed PULL_REQUEST
+                "PULL_REQUEST" ->
+                    Json.Decode.succeed PULL_REQUEST
 
-                    "DRAFT_ISSUE" ->
-                        Json.Decode.succeed DRAFT_ISSUE
+                "DRAFT_ISSUE" ->
+                    Json.Decode.succeed DRAFT_ISSUE
 
-                    "REDACTED" ->
-                        Json.Decode.succeed REDACTED
+                "REDACTED" ->
+                    Json.Decode.succeed REDACTED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -39,37 +39,36 @@ decoder : Json.Decode.Decoder CheckConclusionState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ACTION_REQUIRED" ->
-                        Json.Decode.succeed ACTION_REQUIRED
+            case andThenUnpack of
+                "ACTION_REQUIRED" ->
+                    Json.Decode.succeed ACTION_REQUIRED
 
-                    "TIMED_OUT" ->
-                        Json.Decode.succeed TIMED_OUT
+                "TIMED_OUT" ->
+                    Json.Decode.succeed TIMED_OUT
 
-                    "CANCELLED" ->
-                        Json.Decode.succeed CANCELLED
+                "CANCELLED" ->
+                    Json.Decode.succeed CANCELLED
 
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    "SUCCESS" ->
-                        Json.Decode.succeed SUCCESS
+                "SUCCESS" ->
+                    Json.Decode.succeed SUCCESS
 
-                    "NEUTRAL" ->
-                        Json.Decode.succeed NEUTRAL
+                "NEUTRAL" ->
+                    Json.Decode.succeed NEUTRAL
 
-                    "SKIPPED" ->
-                        Json.Decode.succeed SKIPPED
+                "SKIPPED" ->
+                    Json.Decode.succeed SKIPPED
 
-                    "STARTUP_FAILURE" ->
-                        Json.Decode.succeed STARTUP_FAILURE
+                "STARTUP_FAILURE" ->
+                    Json.Decode.succeed STARTUP_FAILURE
 
-                    "STALE" ->
-                        Json.Decode.succeed STALE
+                "STALE" ->
+                    Json.Decode.succeed STALE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

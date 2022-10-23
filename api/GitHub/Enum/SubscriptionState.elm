@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder SubscriptionState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "UNSUBSCRIBED" ->
-                        Json.Decode.succeed UNSUBSCRIBED
+            case andThenUnpack of
+                "UNSUBSCRIBED" ->
+                    Json.Decode.succeed UNSUBSCRIBED
 
-                    "SUBSCRIBED" ->
-                        Json.Decode.succeed SUBSCRIBED
+                "SUBSCRIBED" ->
+                    Json.Decode.succeed SUBSCRIBED
 
-                    "IGNORED" ->
-                        Json.Decode.succeed IGNORED
+                "IGNORED" ->
+                    Json.Decode.succeed IGNORED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

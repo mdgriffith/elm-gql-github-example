@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder RepositoryInteractionLimit
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "EXISTING_USERS" ->
-                        Json.Decode.succeed EXISTING_USERS
+            case andThenUnpack of
+                "EXISTING_USERS" ->
+                    Json.Decode.succeed EXISTING_USERS
 
-                    "CONTRIBUTORS_ONLY" ->
-                        Json.Decode.succeed CONTRIBUTORS_ONLY
+                "CONTRIBUTORS_ONLY" ->
+                    Json.Decode.succeed CONTRIBUTORS_ONLY
 
-                    "COLLABORATORS_ONLY" ->
-                        Json.Decode.succeed COLLABORATORS_ONLY
+                "COLLABORATORS_ONLY" ->
+                    Json.Decode.succeed COLLABORATORS_ONLY
 
-                    "NO_LIMIT" ->
-                        Json.Decode.succeed NO_LIMIT
+                "NO_LIMIT" ->
+                    Json.Decode.succeed NO_LIMIT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -35,31 +35,30 @@ decoder : Json.Decode.Decoder CommentCannotUpdateReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ARCHIVED" ->
-                        Json.Decode.succeed ARCHIVED
+            case andThenUnpack of
+                "ARCHIVED" ->
+                    Json.Decode.succeed ARCHIVED
 
-                    "INSUFFICIENT_ACCESS" ->
-                        Json.Decode.succeed INSUFFICIENT_ACCESS
+                "INSUFFICIENT_ACCESS" ->
+                    Json.Decode.succeed INSUFFICIENT_ACCESS
 
-                    "LOCKED" ->
-                        Json.Decode.succeed LOCKED
+                "LOCKED" ->
+                    Json.Decode.succeed LOCKED
 
-                    "LOGIN_REQUIRED" ->
-                        Json.Decode.succeed LOGIN_REQUIRED
+                "LOGIN_REQUIRED" ->
+                    Json.Decode.succeed LOGIN_REQUIRED
 
-                    "MAINTENANCE" ->
-                        Json.Decode.succeed MAINTENANCE
+                "MAINTENANCE" ->
+                    Json.Decode.succeed MAINTENANCE
 
-                    "VERIFIED_EMAIL_REQUIRED" ->
-                        Json.Decode.succeed VERIFIED_EMAIL_REQUIRED
+                "VERIFIED_EMAIL_REQUIRED" ->
+                    Json.Decode.succeed VERIFIED_EMAIL_REQUIRED
 
-                    "DENIED" ->
-                        Json.Decode.succeed DENIED
+                "DENIED" ->
+                    Json.Decode.succeed DENIED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

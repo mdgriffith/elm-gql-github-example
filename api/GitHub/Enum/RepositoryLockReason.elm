@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder RepositoryLockReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "MOVING" ->
-                        Json.Decode.succeed MOVING
+            case andThenUnpack of
+                "MOVING" ->
+                    Json.Decode.succeed MOVING
 
-                    "BILLING" ->
-                        Json.Decode.succeed BILLING
+                "BILLING" ->
+                    Json.Decode.succeed BILLING
 
-                    "RENAME" ->
-                        Json.Decode.succeed RENAME
+                "RENAME" ->
+                    Json.Decode.succeed RENAME
 
-                    "MIGRATING" ->
-                        Json.Decode.succeed MIGRATING
+                "MIGRATING" ->
+                    Json.Decode.succeed MIGRATING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder EnterpriseServerInstallationOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "HOST_NAME" ->
-                        Json.Decode.succeed HOST_NAME
+            case andThenUnpack of
+                "HOST_NAME" ->
+                    Json.Decode.succeed HOST_NAME
 
-                    "CUSTOMER_NAME" ->
-                        Json.Decode.succeed CUSTOMER_NAME
+                "CUSTOMER_NAME" ->
+                    Json.Decode.succeed CUSTOMER_NAME
 
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

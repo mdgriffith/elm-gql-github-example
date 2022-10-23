@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder LockReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OFF_TOPIC" ->
-                        Json.Decode.succeed OFF_TOPIC
+            case andThenUnpack of
+                "OFF_TOPIC" ->
+                    Json.Decode.succeed OFF_TOPIC
 
-                    "TOO_HEATED" ->
-                        Json.Decode.succeed TOO_HEATED
+                "TOO_HEATED" ->
+                    Json.Decode.succeed TOO_HEATED
 
-                    "RESOLVED" ->
-                        Json.Decode.succeed RESOLVED
+                "RESOLVED" ->
+                    Json.Decode.succeed RESOLVED
 
-                    "SPAM" ->
-                        Json.Decode.succeed SPAM
+                "SPAM" ->
+                    Json.Decode.succeed SPAM
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

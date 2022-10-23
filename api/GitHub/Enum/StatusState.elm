@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder StatusState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "EXPECTED" ->
-                        Json.Decode.succeed EXPECTED
+            case andThenUnpack of
+                "EXPECTED" ->
+                    Json.Decode.succeed EXPECTED
 
-                    "ERROR" ->
-                        Json.Decode.succeed ERROR
+                "ERROR" ->
+                    Json.Decode.succeed ERROR
 
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    "SUCCESS" ->
-                        Json.Decode.succeed SUCCESS
+                "SUCCESS" ->
+                    Json.Decode.succeed SUCCESS
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

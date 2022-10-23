@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder CheckRunType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+            case andThenUnpack of
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    "LATEST" ->
-                        Json.Decode.succeed LATEST
+                "LATEST" ->
+                    Json.Decode.succeed LATEST
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

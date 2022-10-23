@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder SamlSignatureAlgorithm
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "RSA_SHA1" ->
-                        Json.Decode.succeed RSA_SHA1
+            case andThenUnpack of
+                "RSA_SHA1" ->
+                    Json.Decode.succeed RSA_SHA1
 
-                    "RSA_SHA256" ->
-                        Json.Decode.succeed RSA_SHA256
+                "RSA_SHA256" ->
+                    Json.Decode.succeed RSA_SHA256
 
-                    "RSA_SHA384" ->
-                        Json.Decode.succeed RSA_SHA384
+                "RSA_SHA384" ->
+                    Json.Decode.succeed RSA_SHA384
 
-                    "RSA_SHA512" ->
-                        Json.Decode.succeed RSA_SHA512
+                "RSA_SHA512" ->
+                    Json.Decode.succeed RSA_SHA512
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

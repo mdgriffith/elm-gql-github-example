@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder DeploymentReviewState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "APPROVED" ->
-                        Json.Decode.succeed APPROVED
+            case andThenUnpack of
+                "APPROVED" ->
+                    Json.Decode.succeed APPROVED
 
-                    "REJECTED" ->
-                        Json.Decode.succeed REJECTED
+                "REJECTED" ->
+                    Json.Decode.succeed REJECTED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

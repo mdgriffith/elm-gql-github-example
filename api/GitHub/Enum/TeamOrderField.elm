@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder TeamOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NAME" ->
-                        Json.Decode.succeed NAME
+            case andThenUnpack of
+                "NAME" ->
+                    Json.Decode.succeed NAME
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

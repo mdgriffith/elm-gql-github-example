@@ -31,27 +31,25 @@ decoder : Json.Decode.Decoder OrgRemoveMemberAuditEntryReason
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE" ->
-                        Json.Decode.succeed
-                            TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
+            case andThenUnpack of
+                "TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE" ->
+                    Json.Decode.succeed TWO_FACTOR_REQUIREMENT_NON_COMPLIANCE
 
-                    "SAML_EXTERNAL_IDENTITY_MISSING" ->
-                        Json.Decode.succeed SAML_EXTERNAL_IDENTITY_MISSING
+                "SAML_EXTERNAL_IDENTITY_MISSING" ->
+                    Json.Decode.succeed SAML_EXTERNAL_IDENTITY_MISSING
 
-                    "SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY" ->
-                        Json.Decode.succeed
-                            SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
+                "SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY" ->
+                    Json.Decode.succeed
+                        SAML_SSO_ENFORCEMENT_REQUIRES_EXTERNAL_IDENTITY
 
-                    "USER_ACCOUNT_DELETED" ->
-                        Json.Decode.succeed USER_ACCOUNT_DELETED
+                "USER_ACCOUNT_DELETED" ->
+                    Json.Decode.succeed USER_ACCOUNT_DELETED
 
-                    "TWO_FACTOR_ACCOUNT_RECOVERY" ->
-                        Json.Decode.succeed TWO_FACTOR_ACCOUNT_RECOVERY
+                "TWO_FACTOR_ACCOUNT_RECOVERY" ->
+                    Json.Decode.succeed TWO_FACTOR_ACCOUNT_RECOVERY
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

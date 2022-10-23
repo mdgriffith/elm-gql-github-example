@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder ProjectColumnPurpose
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TODO" ->
-                        Json.Decode.succeed TODO
+            case andThenUnpack of
+                "TODO" ->
+                    Json.Decode.succeed TODO
 
-                    "IN_PROGRESS" ->
-                        Json.Decode.succeed IN_PROGRESS
+                "IN_PROGRESS" ->
+                    Json.Decode.succeed IN_PROGRESS
 
-                    "DONE" ->
-                        Json.Decode.succeed DONE
+                "DONE" ->
+                    Json.Decode.succeed DONE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder EnterpriseServerUserAccountOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "LOGIN" ->
-                        Json.Decode.succeed LOGIN
+            case andThenUnpack of
+                "LOGIN" ->
+                    Json.Decode.succeed LOGIN
 
-                    "REMOTE_CREATED_AT" ->
-                        Json.Decode.succeed REMOTE_CREATED_AT
+                "REMOTE_CREATED_AT" ->
+                    Json.Decode.succeed REMOTE_CREATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

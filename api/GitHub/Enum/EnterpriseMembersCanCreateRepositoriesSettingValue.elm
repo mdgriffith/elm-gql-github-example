@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder EnterpriseMembersCanCreateRepositoriesSettingValue
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NO_POLICY" ->
-                        Json.Decode.succeed NO_POLICY
+            case andThenUnpack of
+                "NO_POLICY" ->
+                    Json.Decode.succeed NO_POLICY
 
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    "PRIVATE" ->
-                        Json.Decode.succeed PRIVATE
+                "PRIVATE" ->
+                    Json.Decode.succeed PRIVATE
 
-                    "DISABLED" ->
-                        Json.Decode.succeed DISABLED
+                "DISABLED" ->
+                    Json.Decode.succeed DISABLED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

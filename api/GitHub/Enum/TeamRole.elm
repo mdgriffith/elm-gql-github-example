@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder TeamRole
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+            case andThenUnpack of
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "MEMBER" ->
-                        Json.Decode.succeed MEMBER
+                "MEMBER" ->
+                    Json.Decode.succeed MEMBER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder TeamMembershipType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "IMMEDIATE" ->
-                        Json.Decode.succeed IMMEDIATE
+            case andThenUnpack of
+                "IMMEDIATE" ->
+                    Json.Decode.succeed IMMEDIATE
 
-                    "CHILD_TEAM" ->
-                        Json.Decode.succeed CHILD_TEAM
+                "CHILD_TEAM" ->
+                    Json.Decode.succeed CHILD_TEAM
 
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

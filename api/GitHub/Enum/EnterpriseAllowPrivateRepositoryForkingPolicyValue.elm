@@ -33,29 +33,27 @@ decoder : Json.Decode.Decoder EnterpriseAllowPrivateRepositoryForkingPolicyValue
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ENTERPRISE_ORGANIZATIONS" ->
-                        Json.Decode.succeed ENTERPRISE_ORGANIZATIONS
+            case andThenUnpack of
+                "ENTERPRISE_ORGANIZATIONS" ->
+                    Json.Decode.succeed ENTERPRISE_ORGANIZATIONS
 
-                    "SAME_ORGANIZATION" ->
-                        Json.Decode.succeed SAME_ORGANIZATION
+                "SAME_ORGANIZATION" ->
+                    Json.Decode.succeed SAME_ORGANIZATION
 
-                    "SAME_ORGANIZATION_USER_ACCOUNTS" ->
-                        Json.Decode.succeed SAME_ORGANIZATION_USER_ACCOUNTS
+                "SAME_ORGANIZATION_USER_ACCOUNTS" ->
+                    Json.Decode.succeed SAME_ORGANIZATION_USER_ACCOUNTS
 
-                    "ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS" ->
-                        Json.Decode.succeed
-                            ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS
+                "ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS" ->
+                    Json.Decode.succeed ENTERPRISE_ORGANIZATIONS_USER_ACCOUNTS
 
-                    "USER_ACCOUNTS" ->
-                        Json.Decode.succeed USER_ACCOUNTS
+                "USER_ACCOUNTS" ->
+                    Json.Decode.succeed USER_ACCOUNTS
 
-                    "EVERYWHERE" ->
-                        Json.Decode.succeed EVERYWHERE
+                "EVERYWHERE" ->
+                    Json.Decode.succeed EVERYWHERE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

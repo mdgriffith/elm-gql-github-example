@@ -49,52 +49,51 @@ decoder : Json.Decode.Decoder CheckRunState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ACTION_REQUIRED" ->
-                        Json.Decode.succeed ACTION_REQUIRED
+            case andThenUnpack of
+                "ACTION_REQUIRED" ->
+                    Json.Decode.succeed ACTION_REQUIRED
 
-                    "CANCELLED" ->
-                        Json.Decode.succeed CANCELLED
+                "CANCELLED" ->
+                    Json.Decode.succeed CANCELLED
 
-                    "COMPLETED" ->
-                        Json.Decode.succeed COMPLETED
+                "COMPLETED" ->
+                    Json.Decode.succeed COMPLETED
 
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    "IN_PROGRESS" ->
-                        Json.Decode.succeed IN_PROGRESS
+                "IN_PROGRESS" ->
+                    Json.Decode.succeed IN_PROGRESS
 
-                    "NEUTRAL" ->
-                        Json.Decode.succeed NEUTRAL
+                "NEUTRAL" ->
+                    Json.Decode.succeed NEUTRAL
 
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    "QUEUED" ->
-                        Json.Decode.succeed QUEUED
+                "QUEUED" ->
+                    Json.Decode.succeed QUEUED
 
-                    "SKIPPED" ->
-                        Json.Decode.succeed SKIPPED
+                "SKIPPED" ->
+                    Json.Decode.succeed SKIPPED
 
-                    "STALE" ->
-                        Json.Decode.succeed STALE
+                "STALE" ->
+                    Json.Decode.succeed STALE
 
-                    "STARTUP_FAILURE" ->
-                        Json.Decode.succeed STARTUP_FAILURE
+                "STARTUP_FAILURE" ->
+                    Json.Decode.succeed STARTUP_FAILURE
 
-                    "SUCCESS" ->
-                        Json.Decode.succeed SUCCESS
+                "SUCCESS" ->
+                    Json.Decode.succeed SUCCESS
 
-                    "TIMED_OUT" ->
-                        Json.Decode.succeed TIMED_OUT
+                "TIMED_OUT" ->
+                    Json.Decode.succeed TIMED_OUT
 
-                    "WAITING" ->
-                        Json.Decode.succeed WAITING
+                "WAITING" ->
+                    Json.Decode.succeed WAITING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

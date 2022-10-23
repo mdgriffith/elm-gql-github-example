@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder CollaboratorAffiliation
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "OUTSIDE" ->
-                        Json.Decode.succeed OUTSIDE
+            case andThenUnpack of
+                "OUTSIDE" ->
+                    Json.Decode.succeed OUTSIDE
 
-                    "DIRECT" ->
-                        Json.Decode.succeed DIRECT
+                "DIRECT" ->
+                    Json.Decode.succeed DIRECT
 
-                    "ALL" ->
-                        Json.Decode.succeed ALL
+                "ALL" ->
+                    Json.Decode.succeed ALL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

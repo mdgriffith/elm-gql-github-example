@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder OrgAddMemberAuditEntryPermission
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "READ" ->
-                        Json.Decode.succeed READ
+            case andThenUnpack of
+                "READ" ->
+                    Json.Decode.succeed READ
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

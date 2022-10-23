@@ -29,34 +29,33 @@ decoder : Json.Decode.Decoder PinnableItemType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "REPOSITORY" ->
-                        Json.Decode.succeed REPOSITORY
+            case andThenUnpack of
+                "REPOSITORY" ->
+                    Json.Decode.succeed REPOSITORY
 
-                    "GIST" ->
-                        Json.Decode.succeed GIST
+                "GIST" ->
+                    Json.Decode.succeed GIST
 
-                    "ISSUE" ->
-                        Json.Decode.succeed ISSUE
+                "ISSUE" ->
+                    Json.Decode.succeed ISSUE
 
-                    "PROJECT" ->
-                        Json.Decode.succeed PROJECT
+                "PROJECT" ->
+                    Json.Decode.succeed PROJECT
 
-                    "PULL_REQUEST" ->
-                        Json.Decode.succeed PULL_REQUEST
+                "PULL_REQUEST" ->
+                    Json.Decode.succeed PULL_REQUEST
 
-                    "USER" ->
-                        Json.Decode.succeed USER
+                "USER" ->
+                    Json.Decode.succeed USER
 
-                    "ORGANIZATION" ->
-                        Json.Decode.succeed ORGANIZATION
+                "ORGANIZATION" ->
+                    Json.Decode.succeed ORGANIZATION
 
-                    "TEAM" ->
-                        Json.Decode.succeed TEAM
+                "TEAM" ->
+                    Json.Decode.succeed TEAM
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

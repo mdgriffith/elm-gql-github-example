@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder IpAllowListEntryOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+            case andThenUnpack of
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    "ALLOW_LIST_VALUE" ->
-                        Json.Decode.succeed ALLOW_LIST_VALUE
+                "ALLOW_LIST_VALUE" ->
+                    Json.Decode.succeed ALLOW_LIST_VALUE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

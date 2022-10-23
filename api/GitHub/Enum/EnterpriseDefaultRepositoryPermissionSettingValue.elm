@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder EnterpriseDefaultRepositoryPermissionSettingValue
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NO_POLICY" ->
-                        Json.Decode.succeed NO_POLICY
+            case andThenUnpack of
+                "NO_POLICY" ->
+                    Json.Decode.succeed NO_POLICY
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    "WRITE" ->
-                        Json.Decode.succeed WRITE
+                "WRITE" ->
+                    Json.Decode.succeed WRITE
 
-                    "READ" ->
-                        Json.Decode.succeed READ
+                "READ" ->
+                    Json.Decode.succeed READ
 
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

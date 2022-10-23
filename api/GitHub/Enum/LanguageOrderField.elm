@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder LanguageOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "SIZE" ->
-                        Json.Decode.succeed SIZE
+            case andThenUnpack of
+                "SIZE" ->
+                    Json.Decode.succeed SIZE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder RequestableCheckStatusState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "QUEUED" ->
-                        Json.Decode.succeed QUEUED
+            case andThenUnpack of
+                "QUEUED" ->
+                    Json.Decode.succeed QUEUED
 
-                    "IN_PROGRESS" ->
-                        Json.Decode.succeed IN_PROGRESS
+                "IN_PROGRESS" ->
+                    Json.Decode.succeed IN_PROGRESS
 
-                    "COMPLETED" ->
-                        Json.Decode.succeed COMPLETED
+                "COMPLETED" ->
+                    Json.Decode.succeed COMPLETED
 
-                    "WAITING" ->
-                        Json.Decode.succeed WAITING
+                "WAITING" ->
+                    Json.Decode.succeed WAITING
 
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

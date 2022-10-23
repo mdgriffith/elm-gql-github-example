@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder SecurityAdvisoryOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PUBLISHED_AT" ->
-                        Json.Decode.succeed PUBLISHED_AT
+            case andThenUnpack of
+                "PUBLISHED_AT" ->
+                    Json.Decode.succeed PUBLISHED_AT
 
-                    "UPDATED_AT" ->
-                        Json.Decode.succeed UPDATED_AT
+                "UPDATED_AT" ->
+                    Json.Decode.succeed UPDATED_AT
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

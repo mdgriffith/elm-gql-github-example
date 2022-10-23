@@ -33,28 +33,27 @@ decoder : Json.Decode.Decoder SponsorsActivityAction
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NEW_SPONSORSHIP" ->
-                        Json.Decode.succeed NEW_SPONSORSHIP
+            case andThenUnpack of
+                "NEW_SPONSORSHIP" ->
+                    Json.Decode.succeed NEW_SPONSORSHIP
 
-                    "CANCELLED_SPONSORSHIP" ->
-                        Json.Decode.succeed CANCELLED_SPONSORSHIP
+                "CANCELLED_SPONSORSHIP" ->
+                    Json.Decode.succeed CANCELLED_SPONSORSHIP
 
-                    "TIER_CHANGE" ->
-                        Json.Decode.succeed TIER_CHANGE
+                "TIER_CHANGE" ->
+                    Json.Decode.succeed TIER_CHANGE
 
-                    "REFUND" ->
-                        Json.Decode.succeed REFUND
+                "REFUND" ->
+                    Json.Decode.succeed REFUND
 
-                    "PENDING_CHANGE" ->
-                        Json.Decode.succeed PENDING_CHANGE
+                "PENDING_CHANGE" ->
+                    Json.Decode.succeed PENDING_CHANGE
 
-                    "SPONSOR_MATCH_DISABLED" ->
-                        Json.Decode.succeed SPONSOR_MATCH_DISABLED
+                "SPONSOR_MATCH_DISABLED" ->
+                    Json.Decode.succeed SPONSOR_MATCH_DISABLED
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

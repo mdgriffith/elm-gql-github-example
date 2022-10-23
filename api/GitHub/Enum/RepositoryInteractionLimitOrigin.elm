@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder RepositoryInteractionLimitOrigin
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "REPOSITORY" ->
-                        Json.Decode.succeed REPOSITORY
+            case andThenUnpack of
+                "REPOSITORY" ->
+                    Json.Decode.succeed REPOSITORY
 
-                    "ORGANIZATION" ->
-                        Json.Decode.succeed ORGANIZATION
+                "ORGANIZATION" ->
+                    Json.Decode.succeed ORGANIZATION
 
-                    "USER" ->
-                        Json.Decode.succeed USER
+                "USER" ->
+                    Json.Decode.succeed USER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

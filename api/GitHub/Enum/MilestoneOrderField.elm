@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder MilestoneOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "DUE_DATE" ->
-                        Json.Decode.succeed DUE_DATE
+            case andThenUnpack of
+                "DUE_DATE" ->
+                    Json.Decode.succeed DUE_DATE
 
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    "UPDATED_AT" ->
-                        Json.Decode.succeed UPDATED_AT
+                "UPDATED_AT" ->
+                    Json.Decode.succeed UPDATED_AT
 
-                    "NUMBER" ->
-                        Json.Decode.succeed NUMBER
+                "NUMBER" ->
+                    Json.Decode.succeed NUMBER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

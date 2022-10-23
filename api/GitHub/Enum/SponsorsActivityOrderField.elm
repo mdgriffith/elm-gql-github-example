@@ -22,13 +22,12 @@ decoder : Json.Decode.Decoder SponsorsActivityOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "TIMESTAMP" ->
-                        Json.Decode.succeed TIMESTAMP
+            case andThenUnpack of
+                "TIMESTAMP" ->
+                    Json.Decode.succeed TIMESTAMP
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

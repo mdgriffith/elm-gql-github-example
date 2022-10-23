@@ -47,49 +47,48 @@ decoder : Json.Decode.Decoder ProjectV2FieldType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "ASSIGNEES" ->
-                        Json.Decode.succeed ASSIGNEES
+            case andThenUnpack of
+                "ASSIGNEES" ->
+                    Json.Decode.succeed ASSIGNEES
 
-                    "LINKED_PULL_REQUESTS" ->
-                        Json.Decode.succeed LINKED_PULL_REQUESTS
+                "LINKED_PULL_REQUESTS" ->
+                    Json.Decode.succeed LINKED_PULL_REQUESTS
 
-                    "REVIEWERS" ->
-                        Json.Decode.succeed REVIEWERS
+                "REVIEWERS" ->
+                    Json.Decode.succeed REVIEWERS
 
-                    "LABELS" ->
-                        Json.Decode.succeed LABELS
+                "LABELS" ->
+                    Json.Decode.succeed LABELS
 
-                    "MILESTONE" ->
-                        Json.Decode.succeed MILESTONE
+                "MILESTONE" ->
+                    Json.Decode.succeed MILESTONE
 
-                    "REPOSITORY" ->
-                        Json.Decode.succeed REPOSITORY
+                "REPOSITORY" ->
+                    Json.Decode.succeed REPOSITORY
 
-                    "TITLE" ->
-                        Json.Decode.succeed TITLE
+                "TITLE" ->
+                    Json.Decode.succeed TITLE
 
-                    "TEXT" ->
-                        Json.Decode.succeed TEXT
+                "TEXT" ->
+                    Json.Decode.succeed TEXT
 
-                    "SINGLE_SELECT" ->
-                        Json.Decode.succeed SINGLE_SELECT
+                "SINGLE_SELECT" ->
+                    Json.Decode.succeed SINGLE_SELECT
 
-                    "NUMBER" ->
-                        Json.Decode.succeed NUMBER
+                "NUMBER" ->
+                    Json.Decode.succeed NUMBER
 
-                    "DATE" ->
-                        Json.Decode.succeed DATE
+                "DATE" ->
+                    Json.Decode.succeed DATE
 
-                    "ITERATION" ->
-                        Json.Decode.succeed ITERATION
+                "ITERATION" ->
+                    Json.Decode.succeed ITERATION
 
-                    "TRACKS" ->
-                        Json.Decode.succeed TRACKS
+                "TRACKS" ->
+                    Json.Decode.succeed TRACKS
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

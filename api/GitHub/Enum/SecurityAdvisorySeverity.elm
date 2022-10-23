@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder SecurityAdvisorySeverity
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "LOW" ->
-                        Json.Decode.succeed LOW
+            case andThenUnpack of
+                "LOW" ->
+                    Json.Decode.succeed LOW
 
-                    "MODERATE" ->
-                        Json.Decode.succeed MODERATE
+                "MODERATE" ->
+                    Json.Decode.succeed MODERATE
 
-                    "HIGH" ->
-                        Json.Decode.succeed HIGH
+                "HIGH" ->
+                    Json.Decode.succeed HIGH
 
-                    "CRITICAL" ->
-                        Json.Decode.succeed CRITICAL
+                "CRITICAL" ->
+                    Json.Decode.succeed CRITICAL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

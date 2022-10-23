@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder IssueOrderField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CREATED_AT" ->
-                        Json.Decode.succeed CREATED_AT
+            case andThenUnpack of
+                "CREATED_AT" ->
+                    Json.Decode.succeed CREATED_AT
 
-                    "UPDATED_AT" ->
-                        Json.Decode.succeed UPDATED_AT
+                "UPDATED_AT" ->
+                    Json.Decode.succeed UPDATED_AT
 
-                    "COMMENTS" ->
-                        Json.Decode.succeed COMMENTS
+                "COMMENTS" ->
+                    Json.Decode.succeed COMMENTS
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

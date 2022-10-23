@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder OrganizationInvitationType
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "USER" ->
-                        Json.Decode.succeed USER
+            case andThenUnpack of
+                "USER" ->
+                    Json.Decode.succeed USER
 
-                    "EMAIL" ->
-                        Json.Decode.succeed EMAIL
+                "EMAIL" ->
+                    Json.Decode.succeed EMAIL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

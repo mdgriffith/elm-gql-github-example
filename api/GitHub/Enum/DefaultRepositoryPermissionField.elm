@@ -25,22 +25,21 @@ decoder : Json.Decode.Decoder DefaultRepositoryPermissionField
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+            case andThenUnpack of
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    "READ" ->
-                        Json.Decode.succeed READ
+                "READ" ->
+                    Json.Decode.succeed READ
 
-                    "WRITE" ->
-                        Json.Decode.succeed WRITE
+                "WRITE" ->
+                    Json.Decode.succeed WRITE
 
-                    "ADMIN" ->
-                        Json.Decode.succeed ADMIN
+                "ADMIN" ->
+                    Json.Decode.succeed ADMIN
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

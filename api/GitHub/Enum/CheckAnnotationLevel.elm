@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder CheckAnnotationLevel
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+            case andThenUnpack of
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    "NOTICE" ->
-                        Json.Decode.succeed NOTICE
+                "NOTICE" ->
+                    Json.Decode.succeed NOTICE
 
-                    "WARNING" ->
-                        Json.Decode.succeed WARNING
+                "WARNING" ->
+                    Json.Decode.succeed WARNING
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

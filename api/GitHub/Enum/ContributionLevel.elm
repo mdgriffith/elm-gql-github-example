@@ -26,25 +26,24 @@ decoder : Json.Decode.Decoder ContributionLevel
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "NONE" ->
-                        Json.Decode.succeed NONE
+            case andThenUnpack of
+                "NONE" ->
+                    Json.Decode.succeed NONE
 
-                    "FIRST_QUARTILE" ->
-                        Json.Decode.succeed FIRST_QUARTILE
+                "FIRST_QUARTILE" ->
+                    Json.Decode.succeed FIRST_QUARTILE
 
-                    "SECOND_QUARTILE" ->
-                        Json.Decode.succeed SECOND_QUARTILE
+                "SECOND_QUARTILE" ->
+                    Json.Decode.succeed SECOND_QUARTILE
 
-                    "THIRD_QUARTILE" ->
-                        Json.Decode.succeed THIRD_QUARTILE
+                "THIRD_QUARTILE" ->
+                    Json.Decode.succeed THIRD_QUARTILE
 
-                    "FOURTH_QUARTILE" ->
-                        Json.Decode.succeed FOURTH_QUARTILE
+                "FOURTH_QUARTILE" ->
+                    Json.Decode.succeed FOURTH_QUARTILE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

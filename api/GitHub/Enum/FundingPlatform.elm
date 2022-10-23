@@ -43,43 +43,42 @@ decoder : Json.Decode.Decoder FundingPlatform
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "GITHUB" ->
-                        Json.Decode.succeed GITHUB
+            case andThenUnpack of
+                "GITHUB" ->
+                    Json.Decode.succeed GITHUB
 
-                    "PATREON" ->
-                        Json.Decode.succeed PATREON
+                "PATREON" ->
+                    Json.Decode.succeed PATREON
 
-                    "OPEN_COLLECTIVE" ->
-                        Json.Decode.succeed OPEN_COLLECTIVE
+                "OPEN_COLLECTIVE" ->
+                    Json.Decode.succeed OPEN_COLLECTIVE
 
-                    "KO_FI" ->
-                        Json.Decode.succeed KO_FI
+                "KO_FI" ->
+                    Json.Decode.succeed KO_FI
 
-                    "TIDELIFT" ->
-                        Json.Decode.succeed TIDELIFT
+                "TIDELIFT" ->
+                    Json.Decode.succeed TIDELIFT
 
-                    "COMMUNITY_BRIDGE" ->
-                        Json.Decode.succeed COMMUNITY_BRIDGE
+                "COMMUNITY_BRIDGE" ->
+                    Json.Decode.succeed COMMUNITY_BRIDGE
 
-                    "LIBERAPAY" ->
-                        Json.Decode.succeed LIBERAPAY
+                "LIBERAPAY" ->
+                    Json.Decode.succeed LIBERAPAY
 
-                    "ISSUEHUNT" ->
-                        Json.Decode.succeed ISSUEHUNT
+                "ISSUEHUNT" ->
+                    Json.Decode.succeed ISSUEHUNT
 
-                    "OTECHIE" ->
-                        Json.Decode.succeed OTECHIE
+                "OTECHIE" ->
+                    Json.Decode.succeed OTECHIE
 
-                    "LFX_CROWDFUNDING" ->
-                        Json.Decode.succeed LFX_CROWDFUNDING
+                "LFX_CROWDFUNDING" ->
+                    Json.Decode.succeed LFX_CROWDFUNDING
 
-                    "CUSTOM" ->
-                        Json.Decode.succeed CUSTOM
+                "CUSTOM" ->
+                    Json.Decode.succeed CUSTOM
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

@@ -23,16 +23,15 @@ decoder : Json.Decode.Decoder EnterpriseUserDeployment
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "CLOUD" ->
-                        Json.Decode.succeed CLOUD
+            case andThenUnpack of
+                "CLOUD" ->
+                    Json.Decode.succeed CLOUD
 
-                    "SERVER" ->
-                        Json.Decode.succeed SERVER
+                "SERVER" ->
+                    Json.Decode.succeed SERVER
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

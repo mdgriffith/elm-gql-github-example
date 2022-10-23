@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder SquashMergeCommitMessage
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PR_BODY" ->
-                        Json.Decode.succeed PR_BODY
+            case andThenUnpack of
+                "PR_BODY" ->
+                    Json.Decode.succeed PR_BODY
 
-                    "COMMIT_MESSAGES" ->
-                        Json.Decode.succeed COMMIT_MESSAGES
+                "COMMIT_MESSAGES" ->
+                    Json.Decode.succeed COMMIT_MESSAGES
 
-                    "BLANK" ->
-                        Json.Decode.succeed BLANK
+                "BLANK" ->
+                    Json.Decode.succeed BLANK
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

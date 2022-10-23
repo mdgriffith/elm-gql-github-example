@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder RepositoryVisibility
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PRIVATE" ->
-                        Json.Decode.succeed PRIVATE
+            case andThenUnpack of
+                "PRIVATE" ->
+                    Json.Decode.succeed PRIVATE
 
-                    "PUBLIC" ->
-                        Json.Decode.succeed PUBLIC
+                "PUBLIC" ->
+                    Json.Decode.succeed PUBLIC
 
-                    "INTERNAL" ->
-                        Json.Decode.succeed INTERNAL
+                "INTERNAL" ->
+                    Json.Decode.succeed INTERNAL
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 

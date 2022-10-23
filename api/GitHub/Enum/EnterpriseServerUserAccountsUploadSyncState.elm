@@ -24,19 +24,18 @@ decoder : Json.Decode.Decoder EnterpriseServerUserAccountsUploadSyncState
 decoder =
     Json.Decode.andThen
         (\andThenUnpack ->
-            \string ->
-                case string of
-                    "PENDING" ->
-                        Json.Decode.succeed PENDING
+            case andThenUnpack of
+                "PENDING" ->
+                    Json.Decode.succeed PENDING
 
-                    "SUCCESS" ->
-                        Json.Decode.succeed SUCCESS
+                "SUCCESS" ->
+                    Json.Decode.succeed SUCCESS
 
-                    "FAILURE" ->
-                        Json.Decode.succeed FAILURE
+                "FAILURE" ->
+                    Json.Decode.succeed FAILURE
 
-                    _ ->
-                        Json.Decode.fail "Invalid type"
+                _ ->
+                    Json.Decode.fail "Invalid type"
         )
         Json.Decode.string
 
