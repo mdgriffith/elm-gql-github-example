@@ -19,6 +19,6 @@
   },
   "homepage": "https://github.com/mdgriffith/elm-gql-github-example#readme",
   "devDependencies": {
-    "elm-gql": "0.2.3"
+    "elm-gql": "0.3.3"
   }
 }
