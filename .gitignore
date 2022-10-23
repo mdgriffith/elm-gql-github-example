@@ -7,3 +7,4 @@ node_modules
 
 .elm-gql-cache
 .envrc
+index.html
