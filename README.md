@@ -44,6 +44,6 @@ For your project, you'll want to check in the `src/Github.elm` file that is gene
 
 If you're new to GraphQL, one of the advantages is having access to the schema to know what sorts of queries you can make.
 
-For GitHub, you can either check out their [Explorere](https://docs.github.com/en/graphql/overview/explorer), which will allow you to interactively explore the schema.
+For GitHub, you can either check out their [Explorer](https://docs.github.com/en/graphql/overview/explorer), which will allow you to interactively explore the schema.
 
 Or the static version of then[Github API documentation](https://docs.github.com/en/graphql/reference/queries).
