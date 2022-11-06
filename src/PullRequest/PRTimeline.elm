@@ -36,23 +36,25 @@ query args =
     GraphQL.Engine.bakeToSelection
         (Just "PRTimeline")
         (\version_ ->
-            ( GraphQL.Engine.inputObjectToFieldList
-                (GraphQL.Engine.inputObject "Input"
-                    |> GraphQL.Engine.addField
-                        "pullRequestCount"
-                        "Int!"
-                        (Json.Encode.int args.pullRequestCount)
-                    |> GraphQL.Engine.addField
-                        "name"
-                        "String!"
-                        (Json.Encode.string args.name)
-                    |> GraphQL.Engine.addField
-                        "owner"
-                        "String!"
-                        (Json.Encode.string args.owner)
-                )
-            , toPayload_ version_
-            )
+            { args =
+                GraphQL.Engine.inputObjectToFieldList
+                    (GraphQL.Engine.inputObject "Input"
+                        |> GraphQL.Engine.addField
+                            "pullRequestCount"
+                            "Int!"
+                            (Json.Encode.int args.pullRequestCount)
+                        |> GraphQL.Engine.addField
+                            "name"
+                            "String!"
+                            (Json.Encode.string args.name)
+                        |> GraphQL.Engine.addField
+                            "owner"
+                            "String!"
+                            (Json.Encode.string args.owner)
+                    )
+            , body = toPayload_ version_
+            , fragments = toFragments_ version_
+            }
         )
         decoder_
 
@@ -143,14 +145,14 @@ type Event
 
 
 type alias PullRequestReview_Details =
-    { body : String, author : Maybe PullRequest.Fragments.Actor.Actor }
+    { author : Maybe PullRequest.Fragments.Actor.Actor, body : String }
 
 
 {- IssueComment -}
 
 
 type alias IssueComment_Details =
-    { body : String, author : Maybe PullRequest.Fragments.Actor.Actor }
+    { issueAuthor : Maybe PullRequest.Fragments.Actor.Actor, body : String }
 
 
 decoder_ : Int -> Json.Decode.Decoder Response
@@ -196,17 +198,17 @@ decoder_ version_ =
                                                                                               IssueComment_Details
                                                                                                 |> GraphQL.Engine.versionedJsonField
                                                                                                     0
-                                                                                                    "body"
-                                                                                                    Json.Decode.string
-                                                                                                |> GraphQL.Engine.versionedJsonField
-                                                                                                    0
-                                                                                                    "author"
+                                                                                                    "issueAuthor"
                                                                                                     (GraphQL.Engine.decodeNullable
                                                                                                         (Json.Decode.succeed
                                                                                                             PullRequest.Fragments.Actor.Actor
                                                                                                             |> PullRequest.Fragments.Actor.decoder
                                                                                                         )
                                                                                                     )
+                                                                                                |> GraphQL.Engine.versionedJsonField
+                                                                                                    0
+                                                                                                    "body"
+                                                                                                    Json.Decode.string
                                                                                             )
 
                                                                                     "PullRequestReview" ->
@@ -216,10 +218,6 @@ decoder_ version_ =
                                                                                               PullRequestReview_Details
                                                                                                 |> GraphQL.Engine.versionedJsonField
                                                                                                     0
-                                                                                                    "body"
-                                                                                                    Json.Decode.string
-                                                                                                |> GraphQL.Engine.versionedJsonField
-                                                                                                    0
                                                                                                     "author"
                                                                                                     (GraphQL.Engine.decodeNullable
                                                                                                         (Json.Decode.succeed
@@ -227,6 +225,10 @@ decoder_ version_ =
                                                                                                             |> PullRequest.Fragments.Actor.decoder
                                                                                                         )
                                                                                                     )
+                                                                                                |> GraphQL.Engine.versionedJsonField
+                                                                                                    0
+                                                                                                    "body"
+                                                                                                    Json.Decode.string
                                                                                             )
 
                                                                                     "HeadRefRestoredEvent" ->
@@ -469,31 +471,47 @@ decoder_ version_ =
 
 toPayload_ : Int -> String
 toPayload_ version_ =
-    (((((((GraphQL.Engine.versionedAlias version_ "repository" ++ " (name: ")
-            ++ GraphQL.Engine.versionedName version_ "$name"
-         )
-            ++ ", owner: "
-        )
+    ((((((((((GraphQL.Engine.versionedAlias version_ "repository" ++ " (name: ")
+                ++ GraphQL.Engine.versionedName version_ "$name"
+            )
+                ++ ", owner: "
+           )
             ++ GraphQL.Engine.versionedName version_ "$owner"
-       )
-        ++ ") {pullRequests (first: "
-      )
-        ++ GraphQL.Engine.versionedName version_ "$pullRequestCount"
-     )
-        ++ """) {pullRequestDetails: nodes {timelineItems (first: 100) {event: nodes {__typename
+          )
+            ++ ") {pullRequests (first: "
+         )
+            ++ GraphQL.Engine.versionedName version_ "$pullRequestCount"
+        )
+            ++ """) {pullRequestDetails: nodes {timelineItems (first: 100) {event: nodes {__typename
 
 ... on PullRequestReview {author {
-...Actor
+..."""
+       )
+        ++ GraphQL.Engine.versionedName version_ "Actor"
+      )
+        ++ """
  }
 body}
-... on IssueComment {author {
-...Actor
+... on IssueComment {issueAuthor: author {
+..."""
+     )
+        ++ GraphQL.Engine.versionedName version_ "Actor"
+    )
+        ++ """
  }
 body} } } } } }"""
-    )
-        ++ """fragment Actor on Actor {login
+
+
+toFragments_ : Int -> String
+toFragments_ version_ =
+    String.join
+        """
+"""
+        [ ("fragment " ++ GraphQL.Engine.versionedName version_ "Actor")
+            ++ """ on Actor {login
 avatarUrl
 resourcePath
  }"""
+        ]
 
 

@@ -33,15 +33,17 @@ query args =
     GraphQL.Engine.bakeToSelection
         (Just "RepoList")
         (\version_ ->
-            ( GraphQL.Engine.inputObjectToFieldList
-                (GraphQL.Engine.inputObject "Input"
-                    |> GraphQL.Engine.addField
-                        "numberOfRepos"
-                        "Int!"
-                        (Json.Encode.int args.numberOfRepos)
-                )
-            , toPayload_ version_
-            )
+            { args =
+                GraphQL.Engine.inputObjectToFieldList
+                    (GraphQL.Engine.inputObject "Input"
+                        |> GraphQL.Engine.addField
+                            "numberOfRepos"
+                            "Int!"
+                            (Json.Encode.int args.numberOfRepos)
+                    )
+            , body = toPayload_ version_
+            , fragments = toFragments_ version_
+            }
         )
         decoder_
 
@@ -54,7 +56,7 @@ type alias Response =
 
 
 type alias Viewer =
-    { repositories : Repositories, name : Maybe String }
+    { name : Maybe String, repositories : Repositories }
 
 
 type alias Repositories =
@@ -72,6 +74,10 @@ decoder_ version_ =
             version_
             "viewer"
             (Json.Decode.succeed Viewer
+                |> GraphQL.Engine.versionedJsonField
+                    0
+                    "name"
+                    (GraphQL.Engine.decodeNullable Json.Decode.string)
                 |> GraphQL.Engine.versionedJsonField
                     0
                     "repositories"
@@ -92,10 +98,6 @@ decoder_ version_ =
                                 )
                             )
                     )
-                |> GraphQL.Engine.versionedJsonField
-                    0
-                    "name"
-                    (GraphQL.Engine.decodeNullable Json.Decode.string)
             )
 
 
@@ -108,5 +110,11 @@ repositories (last: """
         ++ GraphQL.Engine.versionedName version_ "$numberOfRepos"
     )
         ++ ") {nodes {name } } }"
+
+
+toFragments_ : Int -> String
+toFragments_ version_ =
+    String.join """
+""" []
 
 

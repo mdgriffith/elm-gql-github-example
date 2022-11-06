@@ -4,7 +4,7 @@ module GraphQL.Engine exposing
     , enum, maybeEnum
     , field, fieldWith
     , union
-    , Selection, select, with, map, map2, recover
+    , Selection, select, with, map, map2, recover, withName
     , arg, argList, Optional, optional
     , Query, query, Mutation, mutation, Error(..)
     , queryString
@@ -30,7 +30,7 @@ module GraphQL.Engine exposing
 
 @docs union
 
-@docs Selection, select, with, map, map2, recover
+@docs Selection, select, with, map, map2, recover, withName
 
 @docs arg, argList, Optional, optional
 
@@ -76,16 +76,20 @@ batch selections =
             )
             (\context ->
                 List.foldl
-                    (\(Selection (Details _ toFieldsGql _)) ( ctxt, fields ) ->
+                    (\(Selection (Details _ toFieldsGql _)) cursor ->
                         let
-                            ( newCtxt, newFields ) =
-                                toFieldsGql ctxt
+                            new =
+                                toFieldsGql cursor.context
                         in
-                        ( newCtxt
-                        , fields ++ newFields
-                        )
+                        { context = new.context
+                        , fields = cursor.fields ++ new.fields
+                        , fragments = cursor.fragments ++ new.fragments
+                        }
                     )
-                    ( context, [] )
+                    { context = context
+                    , fields = []
+                    , fragments = ""
+                    }
                     selections
             )
             (\context ->
@@ -144,29 +148,30 @@ union options =
                         List.foldl
                             (\( name, Selection (Details _ fragQuery _) ) ( frags, currentContext ) ->
                                 let
-                                    ( newContext, fields ) =
+                                    rendered =
                                         fragQuery currentContext
 
                                     nonEmptyFields =
-                                        case fields of
+                                        case rendered.fields of
                                             [] ->
                                                 -- we're already selecting typename at the root.
                                                 -- this is just so we don't have an empty set of brackets
                                                 [ Field "__typename" Nothing [] [] ]
 
-                                            _ ->
+                                            fields ->
                                                 fields
                                 in
                                 ( Fragment name nonEmptyFields :: frags
-                                , newContext
+                                , rendered.context
                                 )
                             )
                             ( [], context )
                             options
                 in
-                ( fragmentContext
-                , Field "__typename" Nothing [] [] :: fragments
-                )
+                { context = fragmentContext
+                , fields = Field "__typename" Nothing [] [] :: fragments
+                , fragments = ""
+                }
             )
             (\context ->
                 let
@@ -291,16 +296,21 @@ objectWith inputObj name (Selection (Details opName toFieldsGql toFieldsDecoder)
             opName
             (\context ->
                 let
-                    ( fieldContext, fields ) =
+                    rendered =
                         toFieldsGql { context | aliases = Dict.empty }
+
+                    fieldContext =
+                        rendered.context
 
                     new =
                         applyContext inputObj name { fieldContext | aliases = context.aliases }
                 in
-                ( new.context
-                , [ Field name new.aliasString new.args fields
-                  ]
-                )
+                { context = new.context
+                , fields =
+                    [ Field name new.aliasString new.args rendered.fields
+                    ]
+                , fragments = rendered.fragments
+                }
             )
             (\context ->
                 let
@@ -329,9 +339,10 @@ decode decoder =
     Selection <|
         Details Nothing
             (\context ->
-                ( context
-                , []
-                )
+                { context = context
+                , fields = []
+                , fragments = ""
+                }
             )
             (\context ->
                 ( context
@@ -346,10 +357,12 @@ selectTypeNameButSkip =
     Selection <|
         Details Nothing
             (\context ->
-                ( context
-                , [ Field "__typename" Nothing [] []
-                  ]
-                )
+                { context = context
+                , fields =
+                    [ Field "__typename" Nothing [] []
+                    ]
+                , fragments = ""
+                }
             )
             (\context ->
                 ( context
@@ -374,10 +387,12 @@ fieldWith args name gqlType decoder =
                     new =
                         applyContext args name context
                 in
-                ( new.context
-                , [ Field name new.aliasString new.args []
-                  ]
-                )
+                { context = new.context
+                , fields =
+                    [ Field name new.aliasString new.args []
+                    ]
+                , fragments = ""
+                }
             )
             (\context ->
                 let
@@ -511,7 +526,7 @@ type alias Context =
 
 type alias VariableDetails =
     { gqlTypeName : String
-    , value : Json.Encode.Value
+    , value : Maybe Json.Encode.Value
     }
 
 
@@ -543,6 +558,11 @@ empty =
     }
 
 
+withName : String -> Selection source data -> Selection source data
+withName name (Selection (Details _ toGql toDecoder)) =
+    Selection (Details (Just name) toGql toDecoder)
+
+
 {-| An unguarded GQL query.
 -}
 type Details selected
@@ -553,7 +573,13 @@ type Details selected
         -- Both of these take a Set String, which is how we're keeping track of
         -- what needs to be aliased
         -- How to make the gql query
-        (Context -> ( Context, List Field ))
+        (Context
+         ->
+            { context : Context
+            , fields : List Field
+            , fragments : String
+            }
+        )
         -- How to decode the data coming back
         (Context -> ( Context, Json.Decode.Decoder selected ))
 
@@ -605,7 +631,7 @@ addField fieldName gqlFieldType val (InputObject name inputFields) =
     InputObject name
         (( fieldName
          , { gqlTypeName = gqlFieldType
-           , value = val
+           , value = Just val
            }
          )
             :: inputFields
@@ -618,13 +644,13 @@ addOptionalField fieldName gqlFieldType optionalValue toJsonValue (InputObject n
     InputObject name
         (case optionalValue of
             Absent ->
-                inputFields
+                ( fieldName, { value = Nothing, gqlTypeName = gqlFieldType } ) :: inputFields
 
             Null ->
-                ( fieldName, { value = Json.Encode.null, gqlTypeName = gqlFieldType } ) :: inputFields
+                ( fieldName, { value = Just Json.Encode.null, gqlTypeName = gqlFieldType } ) :: inputFields
 
             Present val ->
-                ( fieldName, { value = toJsonValue val, gqlTypeName = gqlFieldType } ) :: inputFields
+                ( fieldName, { value = Just (toJsonValue val), gqlTypeName = gqlFieldType } ) :: inputFields
         )
 
 
@@ -667,7 +693,17 @@ inputObjectToFieldList (InputObject _ fields) =
 {-| -}
 encodeInputObjectAsJson : InputObject value -> Json.Decode.Value
 encodeInputObjectAsJson (InputObject _ fields) =
-    Json.Encode.object (List.map (\( fieldName, details ) -> ( fieldName, details.value )) fields)
+    fields
+        |> List.filterMap
+            (\( varName, var ) ->
+                case var.value of
+                    Nothing ->
+                        Nothing
+
+                    Just value ->
+                        Just ( varName, value )
+            )
+        |> Json.Encode.object
 
 
 {-| -}
@@ -753,7 +789,10 @@ select data =
     Selection
         (Details Nothing
             (\context ->
-                ( context, [] )
+                { context = context
+                , fields = []
+                , fragments = ""
+                }
             )
             (\context ->
                 ( context, Json.Decode.succeed data )
@@ -803,15 +842,16 @@ map2 fn (Selection (Details oneOpName oneFields oneDecoder)) (Selection (Details
             (mergeOpNames oneOpName twoOpName)
             (\aliases ->
                 let
-                    ( oneAliasesNew, oneFieldsNew ) =
+                    one =
                         oneFields aliases
 
-                    ( twoAliasesNew, twoFieldsNew ) =
-                        twoFields oneAliasesNew
+                    two =
+                        twoFields one.context
                 in
-                ( twoAliasesNew
-                , oneFieldsNew ++ twoFieldsNew
-                )
+                { context = two.context
+                , fields = one.fields ++ two.fields
+                , fragments = one.fragments ++ two.fragments
+                }
             )
             (\aliases ->
                 let
@@ -830,7 +870,14 @@ map2 fn (Selection (Details oneOpName oneFields oneDecoder)) (Selection (Details
 {-| -}
 bakeToSelection :
     Maybe String
-    -> (Int -> ( List ( String, VariableDetails ), String ))
+    ->
+        (Int
+         ->
+            { args : List ( String, VariableDetails )
+            , body : String
+            , fragments : String
+            }
+        )
     -> (Int -> Json.Decode.Decoder data)
     -> Selection source data
 bakeToSelection maybeOpName toGql toDecoder =
@@ -838,19 +885,21 @@ bakeToSelection maybeOpName toGql toDecoder =
         (Details maybeOpName
             (\context ->
                 let
-                    ( args, gql ) =
+                    gql =
                         toGql context.version
                 in
-                ( { context
-                    | version = context.version + 1
-                    , variables =
-                        args
-                            |> List.map (protectArgs context.version)
-                            |> Dict.fromList
-                            |> Dict.union context.variables
-                  }
-                , [ Baked gql ]
-                )
+                { context =
+                    { context
+                        | version = context.version + 1
+                        , variables =
+                            gql.args
+                                |> List.map (protectArgs context.version)
+                                |> Dict.fromList
+                                |> Dict.union context.variables
+                    }
+                , fields = [ Baked gql.body ]
+                , fragments = gql.fragments
+                }
             )
             (\context ->
                 let
@@ -1025,7 +1074,15 @@ body operation q =
         encodedVariables =
             variables
                 |> Dict.toList
-                |> List.map (Tuple.mapSecond .value)
+                |> List.filterMap
+                    (\( varName, var ) ->
+                        case var.value of
+                            Nothing ->
+                                Nothing
+
+                            Just value ->
+                                Just ( varName, value )
+                    )
                 |> Json.Encode.object
     in
     Http.jsonBody
@@ -1064,10 +1121,10 @@ sanitizeOperationName input =
 getContext : Selection source selected -> Context
 getContext (Selection (Details maybeOpName gql _)) =
     let
-        ( context, fields ) =
+        rendered =
             gql empty
     in
-    context
+    rendered.context
 
 
 {-| -}
@@ -1130,16 +1187,17 @@ type Error
 queryString : String -> Selection source data -> String
 queryString operation (Selection (Details maybeOpName gql _)) =
     let
-        ( context, fields ) =
+        rendered =
             gql empty
     in
     operation
         ++ " "
         ++ Maybe.withDefault "" maybeOpName
-        ++ renderParameters context.variables
+        ++ renderParameters rendered.context.variables
         ++ "{"
-        ++ fieldsToQueryString fields ""
+        ++ fieldsToQueryString rendered.fields ""
         ++ "}"
+        ++ rendered.fragments
 
 
 renderParameters : Dict String VariableDetails -> String

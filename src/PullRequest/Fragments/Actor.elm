@@ -19,7 +19,7 @@ import Json.Decode
 
 
 type alias Actor =
-    { resourcePath : GitHub.Uri, avatarUrl : GitHub.Uri, login : String }
+    { login : String, avatarUrl : GitHub.Uri, resourcePath : GitHub.Uri }
 
 
 decoder start_ =

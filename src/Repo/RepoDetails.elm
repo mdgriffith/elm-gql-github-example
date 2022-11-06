@@ -33,19 +33,21 @@ query args =
     GraphQL.Engine.bakeToSelection
         (Just "RepoDetails")
         (\version_ ->
-            ( GraphQL.Engine.inputObjectToFieldList
-                (GraphQL.Engine.inputObject "Input"
-                    |> GraphQL.Engine.addField
-                        "name"
-                        "String!"
-                        (Json.Encode.string args.name)
-                    |> GraphQL.Engine.addField
-                        "owner"
-                        "String!"
-                        (Json.Encode.string args.owner)
-                )
-            , toPayload_ version_
-            )
+            { args =
+                GraphQL.Engine.inputObjectToFieldList
+                    (GraphQL.Engine.inputObject "Input"
+                        |> GraphQL.Engine.addField
+                            "name"
+                            "String!"
+                            (Json.Encode.string args.name)
+                        |> GraphQL.Engine.addField
+                            "owner"
+                            "String!"
+                            (Json.Encode.string args.owner)
+                    )
+            , body = toPayload_ version_
+            , fragments = toFragments_ version_
+            }
         )
         decoder_
 
@@ -58,10 +60,10 @@ type alias Response =
 
 
 type alias Repository =
-    { diskUsageKB : Maybe Int
-    , homepageUrl : Maybe GitHub.Uri
+    { name : String
     , description : Maybe String
-    , name : String
+    , homepageUrl : Maybe GitHub.Uri
+    , diskUsageKB : Maybe Int
     }
 
 
@@ -75,20 +77,20 @@ decoder_ version_ =
                 (Json.Decode.succeed Repository
                     |> GraphQL.Engine.versionedJsonField
                         0
-                        "diskUsageKB"
-                        (GraphQL.Engine.decodeNullable Json.Decode.int)
-                    |> GraphQL.Engine.versionedJsonField
-                        0
-                        "homepageUrl"
-                        (GraphQL.Engine.decodeNullable GitHub.uri.decoder)
+                        "name"
+                        Json.Decode.string
                     |> GraphQL.Engine.versionedJsonField
                         0
                         "description"
                         (GraphQL.Engine.decodeNullable Json.Decode.string)
                     |> GraphQL.Engine.versionedJsonField
                         0
-                        "name"
-                        Json.Decode.string
+                        "homepageUrl"
+                        (GraphQL.Engine.decodeNullable GitHub.uri.decoder)
+                    |> GraphQL.Engine.versionedJsonField
+                        0
+                        "diskUsageKB"
+                        (GraphQL.Engine.decodeNullable Json.Decode.int)
                 )
             )
 
@@ -106,5 +108,11 @@ toPayload_ version_ =
 description
 homepageUrl
 diskUsageKB: diskUsage }"""
+
+
+toFragments_ : Int -> String
+toFragments_ version_ =
+    String.join """
+""" []
 
 

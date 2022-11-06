@@ -20,10 +20,10 @@ import Json.Decode
 
 
 type alias Issue =
-    { labels : Maybe Labels
-    , activeLockReason : Maybe GitHub.Enum.LockReason.LockReason
+    { title : String
     , url : GitHub.Uri
-    , title : String
+    , activeLockReason : Maybe GitHub.Enum.LockReason.LockReason
+    , labels : Maybe Labels
     }
 
 
@@ -41,6 +41,12 @@ type alias Label =
 
 decoder start_ =
     start_
+        |> GraphQL.Engine.versionedJsonField 0 "title" Json.Decode.string
+        |> GraphQL.Engine.versionedJsonField 0 "url" GitHub.uri.decoder
+        |> GraphQL.Engine.versionedJsonField
+            0
+            "activeLockReason"
+            (GraphQL.Engine.decodeNullable GitHub.Enum.LockReason.decoder)
         |> GraphQL.Engine.versionedJsonField
             0
             "labels"
@@ -70,11 +76,5 @@ decoder start_ =
                         )
                 )
             )
-        |> GraphQL.Engine.versionedJsonField
-            0
-            "activeLockReason"
-            (GraphQL.Engine.decodeNullable GitHub.Enum.LockReason.decoder)
-        |> GraphQL.Engine.versionedJsonField 0 "url" GitHub.uri.decoder
-        |> GraphQL.Engine.versionedJsonField 0 "title" Json.Decode.string
 
 

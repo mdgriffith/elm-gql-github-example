@@ -23,6 +23,7 @@ type ProjectV2FieldType
     | DATE
     | ITERATION
     | TRACKS
+    | TRACKED_BY
 
 
 all : List ProjectV2FieldType
@@ -40,6 +41,7 @@ all =
     , DATE
     , ITERATION
     , TRACKS
+    , TRACKED_BY
     ]
 
 
@@ -86,6 +88,9 @@ decoder =
 
                 "TRACKS" ->
                     Json.Decode.succeed TRACKS
+
+                "TRACKED_BY" ->
+                    Json.Decode.succeed TRACKED_BY
 
                 _ ->
                     Json.Decode.fail "Invalid type"
@@ -134,5 +139,8 @@ encode val =
 
         TRACKS ->
             Json.Encode.string "TRACKS"
+
+        TRACKED_BY ->
+            Json.Encode.string "TRACKED_BY"
 
 

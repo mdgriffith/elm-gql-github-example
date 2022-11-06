@@ -1,4 +1,4 @@
-module GitHub.Input.UpdateRepositoryInput exposing (UpdateRepositoryInput, clientMutationId, description, hasIssuesEnabled, hasProjectsEnabled, hasWikiEnabled, homepageUrl, input, name, null, template)
+module GitHub.Input.UpdateRepositoryInput exposing (UpdateRepositoryInput, clientMutationId, description, hasDiscussionsEnabled, hasIssuesEnabled, hasProjectsEnabled, hasWikiEnabled, homepageUrl, input, name, null, template)
 
 {-| 
 ## Creating an input
@@ -11,7 +11,7 @@ module GitHub.Input.UpdateRepositoryInput exposing (UpdateRepositoryInput, clien
 
 ## Optional fields
 
-@docs clientMutationId, hasProjectsEnabled, hasIssuesEnabled, hasWikiEnabled, homepageUrl, template, description, name
+@docs clientMutationId, hasDiscussionsEnabled, hasProjectsEnabled, hasIssuesEnabled, hasWikiEnabled, homepageUrl, template, description, name
 -}
 
 
@@ -97,6 +97,15 @@ hasProjectsEnabled newArg_ inputObj_ =
         inputObj_
 
 
+hasDiscussionsEnabled : Bool -> UpdateRepositoryInput -> UpdateRepositoryInput
+hasDiscussionsEnabled newArg_ inputObj_ =
+    GraphQL.Engine.addField
+        "hasDiscussionsEnabled"
+        "Boolean"
+        (Json.Encode.bool newArg_)
+        inputObj_
+
+
 clientMutationId : String -> UpdateRepositoryInput -> UpdateRepositoryInput
 clientMutationId newArg_ inputObj_ =
     GraphQL.Engine.addField
@@ -114,6 +123,7 @@ null :
     , hasWikiEnabled : UpdateRepositoryInput -> UpdateRepositoryInput
     , hasIssuesEnabled : UpdateRepositoryInput -> UpdateRepositoryInput
     , hasProjectsEnabled : UpdateRepositoryInput -> UpdateRepositoryInput
+    , hasDiscussionsEnabled : UpdateRepositoryInput -> UpdateRepositoryInput
     , clientMutationId : UpdateRepositoryInput -> UpdateRepositoryInput
     }
 null =
@@ -159,6 +169,13 @@ null =
         \inputObj ->
             GraphQL.Engine.addField
                 "hasProjectsEnabled"
+                "Boolean"
+                Json.Encode.null
+                inputObj
+    , hasDiscussionsEnabled =
+        \inputObj ->
+            GraphQL.Engine.addField
+                "hasDiscussionsEnabled"
                 "Boolean"
                 Json.Encode.null
                 inputObj

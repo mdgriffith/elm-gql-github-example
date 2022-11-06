@@ -1,4 +1,4 @@
-module GitHub.Input.CreateBranchProtectionRuleInput exposing (CreateBranchProtectionRuleInput, allowsDeletions, allowsForcePushes, blocksCreations, bypassForcePushActorIds, bypassPullRequestActorIds, clientMutationId, dismissesStaleReviews, input, isAdminEnforced, null, pushActorIds, requiredApprovingReviewCount, requiredStatusCheckContexts, requiredStatusChecks, requiresApprovingReviews, requiresCodeOwnerReviews, requiresCommitSignatures, requiresConversationResolution, requiresLinearHistory, requiresStatusChecks, requiresStrictStatusChecks, restrictsPushes, restrictsReviewDismissals, reviewDismissalActorIds)
+module GitHub.Input.CreateBranchProtectionRuleInput exposing (CreateBranchProtectionRuleInput, allowsDeletions, allowsForcePushes, blocksCreations, bypassForcePushActorIds, bypassPullRequestActorIds, clientMutationId, dismissesStaleReviews, input, isAdminEnforced, lockAllowsFetchAndMerge, lockBranch, null, pushActorIds, requireLastPushApproval, requiredApprovingReviewCount, requiredStatusCheckContexts, requiredStatusChecks, requiresApprovingReviews, requiresCodeOwnerReviews, requiresCommitSignatures, requiresConversationResolution, requiresLinearHistory, requiresStatusChecks, requiresStrictStatusChecks, restrictsPushes, restrictsReviewDismissals, reviewDismissalActorIds)
 
 {-| 
 ## Creating an input
@@ -11,7 +11,7 @@ module GitHub.Input.CreateBranchProtectionRuleInput exposing (CreateBranchProtec
 
 ## Optional fields
 
-@docs clientMutationId, requiresConversationResolution, requiredStatusChecks, requiredStatusCheckContexts, pushActorIds, restrictsPushes, bypassForcePushActorIds, bypassPullRequestActorIds, reviewDismissalActorIds, restrictsReviewDismissals, dismissesStaleReviews, requiresCodeOwnerReviews, requiresStrictStatusChecks, requiresStatusChecks, isAdminEnforced, allowsDeletions, allowsForcePushes, blocksCreations, requiresLinearHistory, requiresCommitSignatures, requiredApprovingReviewCount, requiresApprovingReviews
+@docs clientMutationId, lockAllowsFetchAndMerge, lockBranch, requireLastPushApproval, requiresConversationResolution, requiredStatusChecks, requiredStatusCheckContexts, pushActorIds, restrictsPushes, bypassForcePushActorIds, bypassPullRequestActorIds, reviewDismissalActorIds, restrictsReviewDismissals, dismissesStaleReviews, requiresCodeOwnerReviews, requiresStrictStatusChecks, requiresStatusChecks, isAdminEnforced, allowsDeletions, allowsForcePushes, blocksCreations, requiresLinearHistory, requiresCommitSignatures, requiredApprovingReviewCount, requiresApprovingReviews
 -}
 
 
@@ -264,6 +264,36 @@ requiresConversationResolution newArg_ inputObj_ =
         inputObj_
 
 
+requireLastPushApproval :
+    Bool -> CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+requireLastPushApproval newArg_ inputObj_ =
+    GraphQL.Engine.addField
+        "requireLastPushApproval"
+        "Boolean"
+        (Json.Encode.bool newArg_)
+        inputObj_
+
+
+lockBranch :
+    Bool -> CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+lockBranch newArg_ inputObj_ =
+    GraphQL.Engine.addField
+        "lockBranch"
+        "Boolean"
+        (Json.Encode.bool newArg_)
+        inputObj_
+
+
+lockAllowsFetchAndMerge :
+    Bool -> CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+lockAllowsFetchAndMerge newArg_ inputObj_ =
+    GraphQL.Engine.addField
+        "lockAllowsFetchAndMerge"
+        "Boolean"
+        (Json.Encode.bool newArg_)
+        inputObj_
+
+
 clientMutationId :
     String -> CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
 clientMutationId newArg_ inputObj_ =
@@ -316,6 +346,12 @@ null :
     , requiredStatusChecks :
         CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
     , requiresConversationResolution :
+        CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+    , requireLastPushApproval :
+        CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+    , lockBranch :
+        CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
+    , lockAllowsFetchAndMerge :
         CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
     , clientMutationId :
         CreateBranchProtectionRuleInput -> CreateBranchProtectionRuleInput
@@ -465,6 +501,27 @@ null =
         \inputObj ->
             GraphQL.Engine.addField
                 "requiresConversationResolution"
+                "Boolean"
+                Json.Encode.null
+                inputObj
+    , requireLastPushApproval =
+        \inputObj ->
+            GraphQL.Engine.addField
+                "requireLastPushApproval"
+                "Boolean"
+                Json.Encode.null
+                inputObj
+    , lockBranch =
+        \inputObj ->
+            GraphQL.Engine.addField
+                "lockBranch"
+                "Boolean"
+                Json.Encode.null
+                inputObj
+    , lockAllowsFetchAndMerge =
+        \inputObj ->
+            GraphQL.Engine.addField
+                "lockAllowsFetchAndMerge"
                 "Boolean"
                 Json.Encode.null
                 inputObj

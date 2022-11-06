@@ -1,4 +1,4 @@
-module Repo.RepoIssues exposing (Input, Issues, Issues_Edges, Repository, Response, query)
+module Repo.RepoIssues exposing (Edges, Input, Issues, Repository, Response, query)
 
 {-| 
 This file is generated from src/Repo.graphql using `elm-gql`
@@ -12,7 +12,7 @@ Please avoid modifying directly.
 
 @docs query
 
-@docs Issues_Edges, Issues, Repository
+@docs Edges, Issues, Repository
 
 
 -}
@@ -39,30 +39,32 @@ query args =
     GraphQL.Engine.bakeToSelection
         (Just "RepoIssues")
         (\version_ ->
-            ( GraphQL.Engine.inputObjectToFieldList
-                (GraphQL.Engine.inputObject "Input"
-                    |> GraphQL.Engine.addField
-                        "states"
-                        "[IssueState!]!"
-                        (Json.Encode.list
-                            GitHub.Enum.IssueState.encode
-                            args.states
-                        )
-                    |> GraphQL.Engine.addField
-                        "issueCount"
-                        "Int!"
-                        (Json.Encode.int args.issueCount)
-                    |> GraphQL.Engine.addField
-                        "repoName"
-                        "String!"
-                        (Json.Encode.string args.repoName)
-                    |> GraphQL.Engine.addField
-                        "repoOwner"
-                        "String!"
-                        (Json.Encode.string args.repoOwner)
-                )
-            , toPayload_ version_
-            )
+            { args =
+                GraphQL.Engine.inputObjectToFieldList
+                    (GraphQL.Engine.inputObject "Input"
+                        |> GraphQL.Engine.addField
+                            "states"
+                            "[IssueState!]!"
+                            (Json.Encode.list
+                                GitHub.Enum.IssueState.encode
+                                args.states
+                            )
+                        |> GraphQL.Engine.addField
+                            "issueCount"
+                            "Int!"
+                            (Json.Encode.int args.issueCount)
+                        |> GraphQL.Engine.addField
+                            "repoName"
+                            "String!"
+                            (Json.Encode.string args.repoName)
+                        |> GraphQL.Engine.addField
+                            "repoOwner"
+                            "String!"
+                            (Json.Encode.string args.repoOwner)
+                    )
+            , body = toPayload_ version_
+            , fragments = toFragments_ version_
+            }
         )
         decoder_
 
@@ -79,10 +81,10 @@ type alias Repository =
 
 
 type alias Issues =
-    { edges : Maybe (List (Maybe Issues_Edges)) }
+    { edges : Maybe (List (Maybe Edges)) }
 
 
-type alias Issues_Edges =
+type alias Edges =
     { node : Maybe Repo.Fragments.Issue.Issue }
 
 
@@ -104,7 +106,7 @@ decoder_ version_ =
                                 (GraphQL.Engine.decodeNullable
                                     (Json.Decode.list
                                         (GraphQL.Engine.decodeNullable
-                                            (Json.Decode.succeed Issues_Edges
+                                            (Json.Decode.succeed Edges
                                                 |> GraphQL.Engine.versionedJsonField
                                                     0
                                                     "node"
@@ -125,27 +127,39 @@ decoder_ version_ =
 
 toPayload_ : Int -> String
 toPayload_ version_ =
-    (((((((((GraphQL.Engine.versionedAlias version_ "repository" ++ " (name: ")
+    ((((((((((GraphQL.Engine.versionedAlias version_ "repository" ++ " (name: ")
                 ++ GraphQL.Engine.versionedName version_ "$repoName"
+            )
+                ++ ", owner: "
            )
-            ++ ", owner: "
-          )
             ++ GraphQL.Engine.versionedName version_ "$repoOwner"
-         )
+          )
             ++ ") {issues (states: "
-        )
+         )
             ++ GraphQL.Engine.versionedName version_ "$states"
+        )
+            ++ ", last: "
        )
-        ++ ", last: "
-      )
         ++ GraphQL.Engine.versionedName version_ "$issueCount"
-     )
+      )
         ++ """) {edges {node {
-...Issue } } } }"""
+..."""
+     )
+        ++ GraphQL.Engine.versionedName version_ "Issue"
     )
-        ++ """fragment Issue on Issue { {title
+        ++ " } } } }"
+
+
+toFragments_ : Int -> String
+toFragments_ version_ =
+    String.join
+        """
+"""
+        [ ("fragment " ++ GraphQL.Engine.versionedName version_ "Issue")
+            ++ """ on Issue {title
 url
 activeLockReason
-labels(first: 5) {edges {label: node {name}}}} }"""
+labels(first: 5) {edges {label: node {name}}} }"""
+        ]
 
 
