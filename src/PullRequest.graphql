@@ -15,7 +15,7 @@ query PRTimeline($owner: String!, $name: String!, $pullRequestCount: Int!) {
             }
 
             ... on IssueComment {
-              author {
+              issueAuthor: author {
                 ...Actor
               }
               body
