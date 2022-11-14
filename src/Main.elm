@@ -12,6 +12,7 @@ import Repo.RepoDetails as RepoDetails
 import Repo.RepoList as RepoList
 
 
+main : Program () Model Msg
 main =
     Browser.document
         { init = init
@@ -25,7 +26,7 @@ type alias Model =
     { authToken : Maybe String
     , repos : Maybe RepoList.Response
     , details : Dict String RepoDetails.Response
-    , selected : Maybe String
+    , selected : Maybe RepoId
     }
 
 
@@ -40,13 +41,28 @@ init flags =
     )
 
 
+type alias RepoId =
+    { owner : String, name : String }
+
+
+repoIdToString : RepoId -> String
+repoIdToString repo =
+    repo.owner ++ repo.name
+
+
 type Msg
     = AuthTokenEntered String
-    | RepoDetailsClicked String
+    | SearchClicked
+    | RepoDetailsClicked RepoId
     | RepoListFetched (Result GraphQL.Engine.Error RepoList.Response)
-    | RepoDetailsFetched String (Result GraphQL.Engine.Error RepoDetails.Response)
+    | RepoDetailsFetched RepoId (Result GraphQL.Engine.Error RepoDetails.Response)
 
 
+request :
+    Maybe String
+    -> (Result GraphQL.Engine.Error data -> msg)
+    -> GitHub.Query data
+    -> Cmd msg
 request maybeAuthToken toMsg query =
     case maybeAuthToken of
         Nothing ->
@@ -70,15 +86,22 @@ update msg model =
             , Cmd.none
             )
 
-        RepoDetailsClicked id ->
-            ( { model | selected = Just id }
+        SearchClicked ->
+            ( model
             , request model.authToken
                 RepoListFetched
                 (RepoList.query { numberOfRepos = 20 })
             )
 
+        RepoDetailsClicked id ->
+            ( { model | selected = Just id }
+            , request model.authToken
+                (RepoDetailsFetched id)
+                (RepoDetails.query id)
+            )
+
         RepoListFetched (Ok repoList) ->
-            ( model
+            ( { model | repos = Just repoList }
             , Cmd.none
             )
 
@@ -88,7 +111,7 @@ update msg model =
             )
 
         RepoDetailsFetched id (Ok details) ->
-            ( { model | details = model.details |> Dict.insert id details }
+            ( { model | details = model.details |> Dict.insert (repoIdToString id) details }
             , Cmd.none
             )
 
@@ -133,14 +156,14 @@ viewRepoListItem node =
     Html.text node.name
 
 
-viewSelected : Maybe String -> Dict String RepoDetails.Response -> Html Msg
+viewSelected : Maybe RepoId -> Dict String RepoDetails.Response -> Html Msg
 viewSelected maybeId detailsCache =
     case maybeId of
         Nothing ->
             Html.div [] []
 
         Just id ->
-            case Dict.get id detailsCache of
+            case Dict.get (repoIdToString id) detailsCache of
                 Nothing ->
                     -- loading
                     Html.div [] []
